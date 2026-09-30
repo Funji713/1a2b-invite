@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>加入 1A2B 房間</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, "Microsoft JhengHei", sans-serif; background: #101925; color: #f3f7fb; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
+    main { box-sizing: border-box; width: min(100%, 540px); padding: 32px 24px; }
+    .card { background: #1b2a39; border: 1px solid #375064; border-radius: 18px; padding: 28px; }
+    h1 { margin-top: 0; font-size: 1.8rem; }
+    p { line-height: 1.65; }
+    .room { font-size: 1.35rem; font-weight: 700; color: #7de0d4; }
+    button { min-height: 48px; padding: 10px 18px; border: 0; border-radius: 10px; cursor: pointer; font: inherit; font-weight: 700; }
+    #open { background: #7de0d4; color: #10212c; }
+    #copy { background: #dce9ef; color: #10212c; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    code { overflow-wrap: anywhere; user-select: all; }
+    .muted { color: #b9cbd4; }
+    .error { color: #ffb8b8; }
+  </style>
+</head>
+<body>
+  <main><div class="card">
+    <h1>1A2B 房間邀請</h1>
+    <div id="valid" hidden>
+      <p>房號：<span id="room" class="room"></span></p>
+      <p class="muted">請確認邀請來源可信。按下按鈕後，瀏覽器會詢問是否開啟已安裝的 1A2B。</p>
+      <div class="actions"><button id="open" type="button">開啟 1A2B</button><button id="copy" type="button">複製邀請碼</button></div>
+      <p id="copy-status" role="status"></p>
+      <p>若按鈕無法使用，請開啟 1A2B，在「加入房間」貼上邀請碼：</p>
+      <p><code id="manual"></code></p>
+      <p class="muted">尚未安裝遊戲？請向邀請你的朋友索取 Windows 安裝檔。</p>
+    </div>
+    <p id="error" class="error" role="alert" hidden>邀請連結無效。請向房主索取完整的新連結或邀請碼。</p>
+  </div></main>
+  <script src="relay.js"></script>
+</body>
+</html>
