@@ -42,7 +42,8 @@ def capture(label,ocr=False):
     report['last_capture']=label;save();print('IOS_CAPTURE',label,flush=True)
     native()
     path=out/(label+'.png');path.write_bytes(base64.b64decode(cmd('GET','/screenshot')))
-    out.joinpath(label+'.xml').write_text(cmd('GET','/source'))
+    # A full accessibility snapshot during WebAssembly compilation can block WDA.
+    # Screenshots/OCR are the required rendered evidence; native queries stay targeted.
     if ocr:
         rows=json.loads(subprocess.check_output(['./qa-ios/ocr',str(path)],timeout=40))
         out.joinpath(label+'-ocr.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False));return rows
@@ -91,7 +92,7 @@ def close_room():
         capture('room-cleaned',True);code=None
     except Exception as e:report['cleanup_error']=str(e);save()
 try:
-    caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':'26.5','appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
+    caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':'26.5','appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:additionalWebviewBundleIds':['*'],'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
     value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}});session=value['sessionId']
     report['phase']='native-ready';save();capture('native-session-ready')
     report['active_app']=execute('mobile: activeAppInfo');save()
@@ -168,6 +169,12 @@ try:
     tap_ocr('1位','position-select')
     tap_ocr('設為數字3','position-three')
     capture('actual-note-confirmed',True)
+    rows=capture('position-drag-baseline',True)
+    position=next(r for r in rows if r['text'].replace(' ','')=='1位')
+    rect=cmd('GET','/window/rect')
+    execute('mobile: dragFromToForDuration',[{'duration':0.5,'fromX':position['x']*rect['width'],'fromY':position['y']*rect['height'],'toX':rect['width']*0.9,'toY':rect['height']*0.35}]);time.sleep(1)
+    rows=capture('position-drag-released',True)
+    check('native position button drag release cancels popup',not any('設為數字' in r['text'].replace(' ','') for r in rows),[r['text'] for r in rows])
     cmd('POST','/orientation',{'orientation':'LANDSCAPE'});time.sleep(2);capture('actual-landscape-notes',True);layout_check('actual iOS landscape canvas bounds')
     cmd('POST','/orientation',{'orientation':'PORTRAIT'});time.sleep(2);capture('actual-portrait-restored',True);layout_check('actual iOS portrait canvas bounds')
     native();execute('mobile: pinch',[{'scale':1.5,'velocity':1.0}]);time.sleep(1)
@@ -221,7 +228,14 @@ try:
     check('standalone native keyboard visible',execute('mobile: isKeyboardShown'))
     active=cmd('GET','/element/active');cmd('POST','/element/'+eid(active)+'/clear',{});cmd('POST','/element/'+eid(active)+'/value',{'text':'StandaloneiOSQA'})
     capture('standalone-native-input',True)
-    native();execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2);check('installed app relaunch',click_native('1A2B',True));time.sleep(3);capture('installed-relaunched')
+    native();execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2);check('installed app background return',click_native('1A2B',True));time.sleep(3);capture('installed-background-return')
+    execute('mobile: terminateApp',[{'bundleId':info['bundleId']}]);execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2)
+    check('terminated installed app icon launch',click_native('1A2B',True));time.sleep(6);web=None
+    state=page_state();check('terminated app returns in actual standalone context',state.get('standalone') is True,state)
+    rows=capture('installed-process-relaunched',True)
+    if any('開始遊戲' in r['text'].replace(' ','') for r in rows):tap_ocr('開始遊戲','standalone-relaunch-start')
+    rows=capture('installed-relaunch-persisted-name',True)
+    check('standalone nickname persisted after process termination',any('StandaloneiOSQA' in r['text'].replace(' ','') for r in rows),[r['text'] for r in rows])
     report['phase']='complete';report['passed']=all(c['passed'] for c in report['checks']);save()
     assert report['passed'],'One or more independent checks failed; retained results are not an overall pass'
     print('IOS26_FUNCTIONAL_ACCEPTANCE_PASSED',flush=True)
