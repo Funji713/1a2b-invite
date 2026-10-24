@@ -235,7 +235,7 @@
       try {
         const missing = Engine.getMissingFeatures({ threads: false });
         if (missing.length) throw new Error('Unsupported browser');
-        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4656088,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4656328,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
         config.executable = backend + '/index';
         config.mainPack = backend + '/index.pck';
         config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
