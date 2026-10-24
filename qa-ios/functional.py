@@ -88,7 +88,7 @@ try:
         if click_native(name):capture('onboarding-'+name.replace(' ','-'))
     click_native('xmark.circle.fill')
     webview(allow_blank=True)
-    control=execute('const c=document.createElement("canvas");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext("webgl2");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),error:gl.getError()};')
+    control=execute('const c=document.createElement("canvas");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext("webgl2");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),glError:gl.getError()};')
     capture('webgl2-positive-control',True)
     check('plain WebGL2 positive control on actual simulator',control.get('supported') and not control.get('lost') and control.get('pixel')==[0,255,0,255],control)
     webview(allow_blank=True);cmd('POST','/url',{'url':root},timeout=90);web=None
