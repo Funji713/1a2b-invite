@@ -1,6 +1,6 @@
 {
-  "started": "2026-10-24T16:51:20Z",
-  "run": "40112636285",
+  "started": "2026-10-24T17:07:38Z",
+  "run": "40114478657",
   "checks": [],
   "phase": "native-ready",
   "active_app": {
@@ -9,9 +9,9 @@
       "args": []
     },
     "name": "",
-    "pid": 55552,
+    "pid": 5091,
     "bundleId": "com.apple.mobilesafari"
   },
-  "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 86, in <module>\n    state=page_state()\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 61, in page_state\n    webview()\n    ~~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 33, in webview\n    raise AssertionError('No actual Safari web context')\nAssertionError: No actual Safari web context\n",
+  "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 91, in <module>\n    control=execute('const c=document.createElement(\"canvas\");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext(\"webgl2\");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),error:gl.getError()};')\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 17, in execute\n    def execute(script,args=None):return cmd('POST','/execute/sync',{'script':script,'args':args or []})\n                                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 16, in cmd\n    def cmd(method,path,body=None,timeout=None):return call(method,'/session/'+session+path,body,timeout)\n                                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 14, in call\n    if isinstance(value,dict) and 'error' in value:raise RuntimeError(str(value))\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: {'supported': True, 'lost': False, 'pixel': [0, 255, 0, 255], 'renderer': 'WebKit WebGL', 'error': 0}\n",
   "passed": false
 }
