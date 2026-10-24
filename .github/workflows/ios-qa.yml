@@ -10,52 +10,67 @@ permissions:
   contents: write
 jobs:
   ios:
-    runs-on: macos-26
-    timeout-minutes: 18
+    runs-on: macos-26-intel
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - name: Install Appium and current XCUITest driver
+        timeout-minutes: 5
         run: |
           npm install --global appium@3
           appium driver install xcuitest
           appium --version
           appium driver list --installed
-      - name: Boot actual iOS Simulator and open live Safari
+      - name: Boot one actual iOS Simulator with bounded diagnostics
+        timeout-minutes: 7
         run: |
           mkdir -p qa-ios-evidence
-          xcodebuild -version | tee qa-ios-evidence/xcode.txt
-          xcrun simctl list -j > qa-ios-evidence/simctl.json
-          UDID=$(python3 - <<'PY'
-          import json
-          d=json.load(open('qa-ios-evidence/simctl.json'))
-          for runtime, devices in sorted(d['devices'].items(),reverse=True):
-              if 'iOS' not in runtime: continue
-              for device in devices:
-                  if device.get('isAvailable') and 'iPhone' in device['name']:
-                      print(device['udid']);raise SystemExit(0)
-          raise SystemExit('No available iPhone simulator')
+          python3 - <<'PY'
+          import json,subprocess,time
+          from pathlib import Path
+          out=Path('qa-ios-evidence')
+          def run(args,limit=60):
+              started=time.monotonic()
+              print('RUN',args,flush=True)
+              with open(out/'boot.log','a') as log:
+                  log.write('\nCOMMAND '+repr(args)+'\n');log.flush()
+                  try:
+                      subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,timeout=limit,check=True)
+                  finally:
+                      elapsed=round(time.monotonic()-started,2)
+                      log.write('ELAPSED '+str(elapsed)+'\n')
+                      print('ELAPSED',elapsed,flush=True)
+          run(['xcodebuild','-version'])
+          data=subprocess.check_output(['xcrun','simctl','list','-j'],timeout=30)
+          out.joinpath('simctl.json').write_bytes(data)
+          d=json.loads(data)
+          chosen=next(dev for rt,devices in sorted(d['devices'].items(),reverse=True) if 'iOS' in rt for dev in devices if dev.get('isAvailable') and 'iPhone' in dev['name'])
+          udid=chosen['udid'];out.joinpath('udid.txt').write_text(udid)
+          run(['xcrun','simctl','boot',udid],60)
+          run(['xcrun','simctl','bootstatus',udid,'-b'],240)
+          run(['open','-a','Simulator','--args','-CurrentDeviceUDID',udid],20)
+          run(['xcrun','simctl','list','devices','booted'],20)
+          time.sleep(10)
+          run(['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')],30)
           PY
-          )
-          echo "$UDID" > qa-ios-evidence/udid.txt
-          open -a Simulator
-          xcrun simctl boot "$UDID"
-          xcrun simctl bootstatus "$UDID" -b
-          xcrun simctl launch "$UDID" com.apple.mobilesafari || true
-          sleep 20
-          xcrun simctl io "$UDID" screenshot qa-ios-evidence/pre-appium.png
+      - name: Actual Safari inspection through Appium
+        timeout-minutes: 8
+        run: |
           appium --log qa-ios-evidence/appium.log --log-level info > qa-ios-evidence/appium-stdout.log 2>&1 &
-          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4723/status && break; sleep 1; done
+          for i in $(seq 1 30); do curl --max-time 2 -sf http://127.0.0.1:4723/status && break; sleep 1; done
           python3 qa-ios/safari.py
       - name: Preserve non-sensitive simulator evidence on QA branch
         if: always()
+        timeout-minutes: 2
         run: |
           git config user.name "1A2B QA"
           git config user.email "qa@users.noreply.github.com"
           git add qa-ios-evidence
-          git diff --cached --quiet || git commit -m "Record actual iOS Simulator smoke evidence"
+          git diff --cached --quiet || git commit -m "Record bounded actual iOS Simulator diagnostics"
           git push origin HEAD:qa-ios-remaining-20261024
       - uses: actions/upload-artifact@v4
         if: always()
+        timeout-minutes: 2
         with:
           name: ios-simulator-evidence
           path: qa-ios-evidence
