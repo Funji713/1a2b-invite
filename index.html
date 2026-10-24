@@ -7,7 +7,7 @@
   <title>1A2B</title>
   <style>
     html, body { margin: 0; padding: 0; background: #101925; color: #f3f7fb; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
-    canvas { display: block; touch-action: none; outline: none; }
+    canvas { display: block; touch-action: pinch-zoom; outline: none; }
     #status { position: fixed; inset: 0; display: grid; place-content: center; gap: 16px; padding: 24px; text-align: center; background: #101925; z-index: 1; }
     #status[hidden] { display: none; }
     h1 { margin: 0; font-size: 1.8rem; }
@@ -40,6 +40,119 @@
       document.body.appendChild(relay);
       return;
     }
+    // Keep browser zoom gestures separate from Godot's single-finger UI input.
+// Godot's touch listener otherwise cancels native pinch; its pointermove
+// listener also treats a finger as a hovering desktop mouse.
+(() => {
+    const canvas = document.getElementById('canvas');
+    let pointer = 'mouse';
+    let activeTouch = null;
+    let zoomTap = null;
+    let zoomTapScale = 1;
+    let browserGesture = false;
+    const zoomed = () => window.visualViewport && visualViewport.scale > 1.01;
+    function touchAction() {
+        // At 1x, game panels own single-finger scrolling. Once zoomed, the
+        // browser owns panning as well as pinching the enlarged page.
+        canvas.style.touchAction = zoomed() ? 'auto' : 'pinch-zoom';
+        if (zoomTap && Math.abs(visualViewport.scale - zoomTapScale) > 0.01) zoomTap = null;
+    }
+    function forward(type, touches, changedTouches) {
+        // Godot consumes these three lists without requiring a TouchEvent.
+        // WebKit builds reject the TouchEvent dictionary constructor, so use
+        // a plain event for this internal bridge, leaving native events intact.
+        const event = new Event(type, { bubbles: true, cancelable: false });
+        Object.defineProperties(event, {
+            touches: { value: touches }, targetTouches: { value: touches },
+            changedTouches: { value: changedTouches }
+        });
+        canvas.dispatchEvent(event);
+    }
+    function cancelGameTouch() {
+        if (!activeTouch) return;
+        // Godot's DOM touchcancel is an ordinary release. Its game-side bridge
+        // injects a genuinely canceled touch: no button activation or fake drag.
+        const rect = canvas.getBoundingClientRect();
+        window.__onea2bCancelTouch?.(activeTouch.identifier,
+            (activeTouch.clientX - rect.left) * canvas.width / rect.width,
+            (activeTouch.clientY - rect.top) * canvas.height / rect.height);
+        activeTouch = null;
+    }
+    function onTouch(event) {
+        // Noncancelable clones reach Godot; the trusted originals remain
+        // uncanceled for the browser's native gesture recognizer.
+        if (!event.isTrusted) return;
+        pointer = 'touch';
+        event.stopImmediatePropagation();
+        // A native pinch often ends with touchcancel, without a later DOM
+        // touchend. The first contact of the next gesture starts fresh.
+        if (event.type === 'touchstart' && event.touches.length === event.changedTouches.length) {
+            cancelGameTouch();
+            browserGesture = false;
+            zoomTap = null;
+        }
+        if (event.type === 'touchcancel' || event.touches.length > 1) {
+            browserGesture = true;
+            zoomTap = null;
+            cancelGameTouch();
+        }
+        if (!browserGesture && zoomed()) {
+            // Keep zoomed controls tappable. Buffer the press until a real tap
+            // finishes; moving fingers belong entirely to native page panning.
+            if (event.type === 'touchstart') { zoomTap = event.touches[0]; zoomTapScale = visualViewport.scale; }
+            if (event.type === 'touchmove' && zoomTap) {
+                const current = event.touches[0];
+                if (!current || Math.hypot(current.clientX - zoomTap.clientX, current.clientY - zoomTap.clientY) * zoomTapScale > 8) zoomTap = null;
+            }
+            if (event.type === 'touchend' && zoomTap) {
+                const ended = Array.from(event.changedTouches).find(touch => touch.identifier === zoomTap.identifier);
+                if (ended) { forward('touchstart', [ended], [ended]); forward('touchend', [], [ended]); }
+                zoomTap = null;
+            }
+            if (event.touches.length === 0) browserGesture = false;
+            return;
+        }
+        if (!browserGesture) {
+            const touches = Array.from(event.touches);
+            forward(event.type, touches, Array.from(event.changedTouches));
+            activeTouch = touches[0] || null;
+        }
+        if (event.touches.length === 0) {
+            activeTouch = null;
+            zoomTap = null;
+            browserGesture = false;
+        }
+    }
+    for (const type of ['touchstart', 'touchmove', 'touchend', 'touchcancel']) {
+        canvas.addEventListener(type, onTouch, { capture: true, passive: true });
+    }
+    for (const type of ['pointerdown', 'pointermove', 'pointerover']) {
+        window.addEventListener(type, event => {
+            pointer = event.pointerType;
+            if (pointer === 'touch' && type === 'pointermove') event.stopImmediatePropagation();
+        }, { capture: true, passive: true });
+    }
+    // Uncanceled taps can also produce compatibility mouse events. Godot
+    // already receives the touch and its own mouse emulation; prevent doubles.
+    // A real mouse/pen pointer event immediately restores mouse handling,
+    // including on touchscreen laptops, without a timer or device-wide lock.
+    for (const type of ['mousedown', 'mouseup', 'mousemove', 'mouseover', 'click']) {
+        window.addEventListener(type, event => {
+            if (event.target === canvas && (pointer === 'touch' || event.sourceCapabilities?.firesTouchEvents)) {
+                event.stopImmediatePropagation();
+                // Suppressing propagation alone still lets mousedown's default
+                // focus steal Godot's newly opened native input back to canvas.
+                if (type === 'mousedown' && event.cancelable) event.preventDefault();
+            }
+        }, { capture: true, passive: false });
+    }
+    if (window.visualViewport) {
+        visualViewport.addEventListener('resize', touchAction);
+        visualViewport.addEventListener('scroll', () => { zoomTap = null; });
+    }
+    touchAction();
+})();
+
     // Canvas resize policy is None: the browser's visible area owns its bounds.
 // Mobile keyboards can shrink visualViewport while innerHeight stays unchanged.
 (() => {
@@ -113,7 +226,7 @@
       try {
         const missing = Engine.getMissingFeatures({ threads: false });
         if (missing.length) throw new Error('Unsupported browser');
-        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4655064,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4656088,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
         config.executable = backend + '/index';
         config.mainPack = backend + '/index.pck';
         config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
