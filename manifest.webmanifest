@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "1A2B 猜數字",
+  "short_name": "1A2B",
+  "description": "和朋友連線遊玩 1A2B 猜數字；需要網路連線。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101925",
+  "theme_color": "#101925",
+  "icons": [
+    { "src": "./app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

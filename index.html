@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <title>1A2B</title>
+  <meta name="theme-color" content="#101925">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="1A2B">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="./app-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./app-icon-192.png">
+
   <style>
     html, body { margin: 0; padding: 0; background: #101925; color: #f3f7fb; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
     canvas { display: block; touch-action: pinch-zoom; outline: none; }
@@ -23,7 +31,7 @@
     <h1>1A2B</h1>
     <p id="message">正在載入遊戲…首次開啟需下載約 45 MB。</p>
     <progress id="progress" aria-label="遊戲下載進度"></progress>
-    <p id="recovery" hidden><a href="./">重新載入</a> · <a id="direct" href="https://140-120-53-5.sslip.io/">使用備用遊戲入口</a><br><a href="https://github.com/Funji713/1a2b-invite/releases/latest">下載 Windows 版</a></p>
+    <p id="recovery" hidden><a id="retry" href="./">重新載入</a> · <a id="direct" href="https://140-120-53-5.sslip.io/">使用備用遊戲入口</a><br><a href="https://github.com/Funji713/1a2b-invite/releases/latest">下載 Windows 版</a></p>
   </main>
   <noscript>請開啟 JavaScript 以遊玩 1A2B。</noscript>
   <script>
@@ -205,6 +213,7 @@
     const progress = document.getElementById('progress');
     const message = document.getElementById('message');
     const recovery = document.getElementById('recovery');
+    document.getElementById('retry').href = location.href;
     const room = query.get('room') || '';
     if (/^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5}$/.test(room)) document.getElementById('direct').href += '?room=' + room;
     let failed = false;
