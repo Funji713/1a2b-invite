@@ -1,0 +1,25 @@
+<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1"><title>Godot iOS diagnostic</title>
+<style>html,body{margin:0;background:#102030}canvas{display:block;width:100vw;height:100vh}</style>
+<canvas id="canvas"></canvas><script>
+window.qa={logs:[],alerts:[],events:[],contexts:[],resolved:false,rejected:null,started:Date.now()};
+const q=new URLSearchParams(location.search),canvas=document.getElementById('canvas');
+canvas.width=q.get('size')==='small'?480:Math.round(innerWidth*devicePixelRatio);
+canvas.height=q.get('size')==='small'?800:Math.round(innerHeight*devicePixelRatio);
+qa.viewport={innerWidth,innerHeight,dpr:devicePixelRatio,width:canvas.width,height:canvas.height};
+window.alert=message=>qa.alerts.push(String(message));
+window.addEventListener('error',event=>qa.logs.push('error: '+event.message));
+window.addEventListener('unhandledrejection',event=>qa.logs.push('rejection: '+String(event.reason)));
+const originalContext=HTMLCanvasElement.prototype.getContext;
+HTMLCanvasElement.prototype.getContext=function(kind,...args){
+  const gl=originalContext.call(this,kind,...args);
+  if(gl&&kind.includes('webgl')){
+    const e=gl.getExtension('WEBGL_debug_renderer_info');
+    qa.contexts.push({kind,args,width:this.width,height:this.height,renderer:gl.getParameter(gl.RENDERER),vendor:gl.getParameter(gl.VENDOR),unmasked:e?gl.getParameter(e.UNMASKED_RENDERER_WEBGL):null,maxTexture:gl.getParameter(gl.MAX_TEXTURE_SIZE),maxRenderbuffer:gl.getParameter(gl.MAX_RENDERBUFFER_SIZE),extensions:gl.getSupportedExtensions()});
+    this.addEventListener('webglcontextlost',event=>qa.events.push({type:event.type,message:event.statusMessage,at:Date.now()}));
+    this.addEventListener('webglcontextrestored',event=>qa.events.push({type:event.type,at:Date.now()}));
+  }
+  return gl;
+};
+</script><script src="index.js"></script><script>
+new Engine({executable:'index',mainPack:q.get('pack')+'.pck',canvas,canvasResizePolicy:0,args:[],experimentalVK:true,onPrint:(...args)=>qa.logs.push(args.join(' ')),onPrintError:(...args)=>qa.logs.push('stderr: '+args.join(' '))}).startGame().then(()=>qa.resolved=true).catch(error=>qa.rejected=String(error));
+</script>
