@@ -11,7 +11,7 @@ permissions:
 jobs:
   ios:
     runs-on: macos-26-intel
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - name: Start a fresh evidence set (prior commits retained)
@@ -58,6 +58,19 @@ jobs:
           run(['xcrun','simctl','list','devices','booted'],20)
           time.sleep(10)
           run(['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')],30)
+          PY
+      - name: Bind actual test to final publicly shipped pack
+        timeout-minutes: 2
+        run: |
+          python3 - <<'PY'
+          import urllib.request,hashlib,json,time
+          from pathlib import Path
+          url='https://140-120-53-5.sslip.io/index.pck'
+          data=urllib.request.urlopen(url,timeout=45).read()
+          digest=hashlib.sha256(data).hexdigest()
+          Path('qa-ios-evidence/published-pack.json').write_text(json.dumps({'url':url,'sha256':digest,'bytes':len(data),'at':time.time()},indent=2))
+          assert digest=='063548ccc315df21cb7559386f030e1d5e0c376cd81ca0ecf1d1315f03ef7cb3',digest
+          print('FINAL_PUBLIC_PACK_VERIFIED',digest)
           PY
       - name: Actual Safari inspection through Appium
         timeout-minutes: 12
