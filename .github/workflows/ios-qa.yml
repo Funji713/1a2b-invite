@@ -10,7 +10,10 @@ permissions:
   contents: write
 jobs:
   ios:
-    runs-on: macos-26
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
+      IOS_VERSION: '26.0'
     timeout-minutes: 48
     steps:
       - uses: actions/checkout@v4
@@ -50,7 +53,7 @@ jobs:
           data=subprocess.check_output(['xcrun','simctl','list','-j'],timeout=120)
           out.joinpath('simctl.json').write_bytes(data)
           d=json.loads(data)
-          chosen=next(dev for rt,devices in sorted(d['devices'].items(),reverse=True) if 'iOS' in rt for dev in devices if dev.get('isAvailable') and 'iPhone' in dev['name'])
+          chosen=next(dev for rt,devices in sorted(d['devices'].items(),reverse=True) if rt.endswith('iOS-26-0') for dev in devices if dev.get('isAvailable') and 'iPhone' in dev['name'])
           udid=chosen['udid'];out.joinpath('udid.txt').write_text(udid)
           run(['xcrun','simctl','boot',udid],60)
           run(['xcrun','simctl','bootstatus',udid,'-b'],240)
@@ -83,7 +86,7 @@ jobs:
           python3 - <<'PY'
           import urllib.request,hashlib,json
           from pathlib import Path
-          expected={'index.js':'33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba','index.wasm':'fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0'}
+          expected={'index.js':'33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba','index.wasm':'fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0','index.audio.worklet.js':'5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3','index.audio.position.worklet.js':'be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8'}
           result={}
           for name,digest in expected.items():
               data=urllib.request.urlopen('https://140-120-53-5.sslip.io/'+name,timeout=60).read()

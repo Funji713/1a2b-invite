@@ -72,7 +72,7 @@ def focus_nickname(label):
     raise AssertionError({'nickname_field_not_found':[r['text'] for r in rows]})
 def page_state():
     webview()
-    return execute('const s=document.getElementById("status");return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!s && !s.hidden && getComputedStyle(s).display!=="none" && getComputedStyle(s).visibility!=="hidden",engine:typeof Engine,standalone:navigator.standalone};')
+    return execute('const s=document.getElementById("status");return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],ua:navigator.userAgent,buffer:[document.querySelector("canvas")?.width,document.querySelector("canvas")?.height],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!s && !s.hidden && getComputedStyle(s).display!=="none" && getComputedStyle(s).visibility!=="hidden",engine:typeof Engine,standalone:navigator.standalone};')
 def layout_check(name):
     webview()
     state=execute('const r=document.querySelector("canvas").getBoundingClientRect(),v=visualViewport;return {rect:r.toJSON(),viewport:{width:v.width,height:v.height,offsetTop:v.offsetTop,offsetLeft:v.offsetLeft,scale:v.scale},innerHeight:innerHeight};')
@@ -92,7 +92,7 @@ def close_room():
         capture('room-cleaned',True);code=None
     except Exception as e:report['cleanup_error']=str(e);save()
 try:
-    caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':'26.5','appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:additionalWebviewBundleIds':['*'],'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
+    caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':os.getenv('IOS_VERSION','26.5'),'appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:additionalWebviewBundleIds':['*'],'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
     caps['appium:webviewConnectTimeout']=60000
     try:
         value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}})
@@ -128,7 +128,7 @@ try:
             for sample in range(3):
                 rows=capture(label+'-'+str(sample),True)
                 webview()
-                state=execute('return {qa:window.qa||null,url:location.href,canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON()};')
+                state=execute('return {qa:window.qa||null,url:location.href,ua:navigator.userAgent,buffer:[document.querySelector("canvas")?.width,document.querySelector("canvas")?.height],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON()};')
                 report['diagnostics'].append({'case':label,'sample':sample,'state':state,'ocr':[r['text'] for r in rows]});save()
                 if state.get('qa',{}).get('events') or state.get('qa',{}).get('alerts'):break
                 if state.get('qa',{}).get('resolved'):
@@ -136,7 +136,7 @@ try:
                         native();tap_ocr('Native clicks: 0',label+'-button')
                         rows=capture(label+'-clicked',True)
                         record(label+' actual native click',any('Nativeclicks:1' in r['text'].replace(' ','') for r in rows),[r['text'] for r in rows])
-                    break
+                    if pack.startswith('minimal') or sample>=1:break
                 time.sleep(15)
             native()
         except Exception:

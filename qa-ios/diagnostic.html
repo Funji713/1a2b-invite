@@ -2,13 +2,14 @@
 <style>html,body{margin:0;background:#102030}canvas{display:block;width:100vw;height:100vh}</style>
 <canvas id="canvas"></canvas><script>
 window.qa={logs:[],alerts:[],events:[],contexts:[],resolved:false,rejected:null,started:Date.now()};
+let logCount=0;const recordLog=value=>{qa.logCount=++logCount;if(qa.logs.length<200)qa.logs.push(value);};
 const q=new URLSearchParams(location.search),canvas=document.getElementById('canvas');
 canvas.width=q.get('size')==='small'?480:Math.round(innerWidth*devicePixelRatio);
 canvas.height=q.get('size')==='small'?800:Math.round(innerHeight*devicePixelRatio);
 qa.viewport={innerWidth,innerHeight,dpr:devicePixelRatio,width:canvas.width,height:canvas.height};
 window.alert=message=>qa.alerts.push(String(message));
-window.addEventListener('error',event=>qa.logs.push('error: '+event.message));
-window.addEventListener('unhandledrejection',event=>qa.logs.push('rejection: '+String(event.reason)));
+window.addEventListener('error',event=>recordLog('error: '+event.message));
+window.addEventListener('unhandledrejection',event=>recordLog('rejection: '+String(event.reason)));
 const originalContext=HTMLCanvasElement.prototype.getContext;
 HTMLCanvasElement.prototype.getContext=function(kind,...args){
   const gl=originalContext.call(this,kind,...args);
@@ -21,5 +22,6 @@ HTMLCanvasElement.prototype.getContext=function(kind,...args){
   return gl;
 };
 </script><script src="index.js"></script><script>
-new Engine({executable:'index',mainPack:q.get('pack')+'.pck',canvas,canvasResizePolicy:0,args:[],experimentalVK:true,onPrint:(...args)=>qa.logs.push(args.join(' ')),onPrintError:(...args)=>qa.logs.push('stderr: '+args.join(' '))}).startGame().then(()=>qa.resolved=true).catch(error=>qa.rejected=String(error));
+new Engine({executable:'index',mainPack:q.get('pack')+'.pck',canvas,canvasResizePolicy:0,args:[],experimentalVK:true,onPrint:(...args)=>recordLog(args.join(' ')),onPrintError:(...args)=>recordLog('stderr: '+args.join(' '))}).startGame().then(()=>qa.resolved=true).catch(error=>qa.rejected=String(error));
 </script>
+
