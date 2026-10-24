@@ -11,16 +11,22 @@ permissions:
 jobs:
   ios:
     runs-on: macos-26-intel
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+      - name: Start a fresh evidence set (prior commits retained)
+        run: git rm -r --ignore-unmatch qa-ios-evidence
       - name: Install Appium and current XCUITest driver
-        timeout-minutes: 5
+        timeout-minutes: 6
         run: |
           npm install --global appium@3
           appium driver install xcuitest
           appium --version
           appium driver list --installed
+          appium driver run xcuitest download-wda -- --outdir="$PWD/qa-wda" --kind=sim --platform=ios
+          mkdir -p qa-ios-evidence
+          python3 -c "from pathlib import Path; p=next(Path('qa-wda').rglob('*.app')); Path('qa-ios-evidence/wda-path.txt').write_text(str(p.resolve()))"
+          swiftc qa-ios/ocr.swift -o qa-ios/ocr
       - name: Boot one actual iOS Simulator with bounded diagnostics
         timeout-minutes: 7
         run: |
@@ -54,11 +60,11 @@ jobs:
           run(['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')],30)
           PY
       - name: Actual Safari inspection through Appium
-        timeout-minutes: 8
+        timeout-minutes: 12
         run: |
           appium --log qa-ios-evidence/appium.log --log-level info > qa-ios-evidence/appium-stdout.log 2>&1 &
           for i in $(seq 1 30); do curl --max-time 2 -sf http://127.0.0.1:4723/status && break; sleep 1; done
-          python3 qa-ios/safari.py
+          python3 qa-ios/functional.py
       - name: Preserve non-sensitive simulator evidence on QA branch
         if: always()
         timeout-minutes: 2
