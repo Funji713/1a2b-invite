@@ -1,6 +1,6 @@
 {
-  "started": "2026-10-24T17:54:42Z",
-  "run": "40117814849",
+  "started": "2026-10-24T18:11:57Z",
+  "run": "40119351229",
   "checks": [
     {
       "name": "plain WebGL2 positive control on actual simulator",
@@ -19,17 +19,339 @@
       }
     }
   ],
-  "phase": "native-ready",
-  "last_capture": "failure-native",
+  "phase": "diagnostic-complete",
+  "last_capture": "production-small-0",
   "active_app": {
     "processArguments": {
       "env": {},
       "args": []
     },
     "name": "",
-    "pid": 7726,
+    "pid": 6934,
     "bundleId": "com.apple.mobilesafari"
   },
-  "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 124, in <module>\n    rows=capture('startup-render-'+str(attempt),True);attempt+=1\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 44, in capture\n    path=out/(label+'.png');path.write_bytes(base64.b64decode(cmd('GET','/screenshot')))\n                                                              ~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 16, in cmd\n    def cmd(method,path,body=None,timeout=None):return call(method,'/session/'+session+path,body,timeout)\n                                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 11, in call\n    with urllib.request.urlopen(req,timeout=timeout or (420 if path=='/session' else 35)) as r:result=json.load(r)\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 489, in open\n    response = self._open(req, data)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 506, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1364, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1339, in do_open\n    r = h.getresponse()\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 1490, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 350, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 306, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0_1/Frameworks/Python.framework/Versions/3.15/lib/python3.15/socket.py\", line 738, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n",
-  "passed": false
+  "diagnostics": [
+    {
+      "case": "minimal-full",
+      "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 130, in <module>\n    webview()\n    ~~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 32, in webview\n    native()\n    ~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 18, in native\n    def native():cmd('POST','/context',{'name':'NATIVE_APP'})\n                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 16, in cmd\n    def cmd(method,path,body=None,timeout=None):return call(method,'/session/'+session+path,body,timeout)\n                                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 11, in call\n    with urllib.request.urlopen(req,timeout=timeout or (420 if path=='/session' else 35)) as r:result=json.load(r)\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 489, in open\n    response = self._open(req, data)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 506, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1364, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1339, in do_open\n    r = h.getresponse()\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 1490, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 350, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 306, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/socket.py\", line 738, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+    },
+    {
+      "case": "minimal-no-msdf-full",
+      "sample": 0,
+      "state": {
+        "qa": {
+          "logs": [
+            "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+            "OpenGL API OpenGL ES 3.0 (WebGL 2.0) - Compatibility - Using Device: WebKit - WebKit WebGL",
+            "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.",
+            "rejection: AbortError: Importing a module script failed.",
+            "rejection: AbortError: Importing a module script failed."
+          ],
+          "alerts": [
+            "WebGL context lost, please reload the page"
+          ],
+          "events": [
+            {
+              "type": "webglcontextlost",
+              "message": "",
+              "at": 1792865841848
+            },
+            {
+              "type": "webglcontextlost",
+              "message": "",
+              "at": 1792865841868
+            },
+            {
+              "type": "webglcontextrestored",
+              "at": 1792865841986
+            }
+          ],
+          "contexts": [
+            {
+              "kind": "webgl2",
+              "args": [],
+              "width": 300,
+              "height": 150,
+              "renderer": "WebKit WebGL",
+              "vendor": "WebKit",
+              "unmasked": "Apple GPU",
+              "maxTexture": 8192,
+              "maxRenderbuffer": 8192,
+              "extensions": [
+                "EXT_clip_control",
+                "EXT_color_buffer_float",
+                "EXT_color_buffer_half_float",
+                "EXT_conservative_depth",
+                "EXT_depth_clamp",
+                "EXT_polygon_offset_clamp",
+                "EXT_render_snorm",
+                "EXT_texture_filter_anisotropic",
+                "EXT_texture_mirror_clamp_to_edge",
+                "EXT_texture_norm16",
+                "KHR_parallel_shader_compile",
+                "NV_shader_noperspective_interpolation",
+                "OES_draw_buffers_indexed",
+                "OES_sample_variables",
+                "WEBGL_blend_func_extended",
+                "WEBGL_clip_cull_distance",
+                "WEBGL_compressed_texture_astc",
+                "WEBGL_compressed_texture_etc",
+                "WEBGL_compressed_texture_etc1",
+                "WEBGL_debug_renderer_info",
+                "WEBGL_debug_shaders",
+                "WEBGL_lose_context",
+                "WEBGL_multi_draw",
+                "WEBGL_polygon_mode",
+                "WEBGL_provoking_vertex",
+                "WEBGL_stencil_texturing"
+              ]
+            },
+            {
+              "kind": "webgl2",
+              "args": [
+                {
+                  "alpha": false,
+                  "depth": true,
+                  "stencil": false,
+                  "antialias": false,
+                  "premultipliedAlpha": true,
+                  "preserveDrawingBuffer": true,
+                  "powerPreference": "default",
+                  "failIfMajorPerformanceCaveat": false,
+                  "majorVersion": 2,
+                  "minorVersion": 0,
+                  "enableExtensionsByDefault": 1,
+                  "explicitSwapControl": 1,
+                  "proxyContextToMainThread": 0,
+                  "renderViaOffscreenBackBuffer": true
+                }
+              ],
+              "width": 1206,
+              "height": 2142,
+              "renderer": "WebKit WebGL",
+              "vendor": "WebKit",
+              "unmasked": "Apple GPU",
+              "maxTexture": 8192,
+              "maxRenderbuffer": 8192,
+              "extensions": [
+                "EXT_clip_control",
+                "EXT_color_buffer_float",
+                "EXT_color_buffer_half_float",
+                "EXT_conservative_depth",
+                "EXT_depth_clamp",
+                "EXT_polygon_offset_clamp",
+                "EXT_render_snorm",
+                "EXT_texture_filter_anisotropic",
+                "EXT_texture_mirror_clamp_to_edge",
+                "EXT_texture_norm16",
+                "KHR_parallel_shader_compile",
+                "NV_shader_noperspective_interpolation",
+                "OES_draw_buffers_indexed",
+                "OES_sample_variables",
+                "WEBGL_blend_func_extended",
+                "WEBGL_clip_cull_distance",
+                "WEBGL_compressed_texture_astc",
+                "WEBGL_compressed_texture_etc",
+                "WEBGL_compressed_texture_etc1",
+                "WEBGL_debug_renderer_info",
+                "WEBGL_debug_shaders",
+                "WEBGL_lose_context",
+                "WEBGL_multi_draw",
+                "WEBGL_polygon_mode",
+                "WEBGL_provoking_vertex",
+                "WEBGL_stencil_texturing"
+              ]
+            }
+          ],
+          "resolved": true,
+          "rejected": null,
+          "started": 1792865822248,
+          "viewport": {
+            "innerWidth": 402,
+            "innerHeight": 714,
+            "dpr": 3,
+            "width": 1206,
+            "height": 2142
+          }
+        },
+        "url": "http://127.0.0.1:8765/diagnostic.html?pack=minimal-no-msdf&size=full",
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 754,
+          "top": 0,
+          "right": 402,
+          "bottom": 754,
+          "left": 0
+        }
+      },
+      "ocr": [
+        "6:17",
+        "••.",
+        "127.0.0.1"
+      ]
+    },
+    {
+      "case": "production-full",
+      "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 130, in <module>\n    webview()\n    ~~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 32, in webview\n    native()\n    ~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 18, in native\n    def native():cmd('POST','/context',{'name':'NATIVE_APP'})\n                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 16, in cmd\n    def cmd(method,path,body=None,timeout=None):return call(method,'/session/'+session+path,body,timeout)\n                                                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/diagnostic.py\", line 11, in call\n    with urllib.request.urlopen(req,timeout=timeout or (420 if path=='/session' else 35)) as r:result=json.load(r)\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 489, in open\n    response = self._open(req, data)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 506, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1364, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/urllib/request.py\", line 1339, in do_open\n    r = h.getresponse()\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 1490, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 350, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/http/client.py\", line 306, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.15/3.15.0/Frameworks/Python.framework/Versions/3.15/lib/python3.15/socket.py\", line 738, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+    },
+    {
+      "case": "production-small",
+      "sample": 0,
+      "state": {
+        "qa": {
+          "logs": [
+            "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+            "OpenGL API OpenGL ES 3.0 (WebGL 2.0) - Compatibility - Using Device: WebKit - WebKit WebGL",
+            "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.",
+            "rejection: AbortError: Importing a module script failed.",
+            "rejection: AbortError: Importing a module script failed."
+          ],
+          "alerts": [
+            "WebGL context lost, please reload the page"
+          ],
+          "events": [
+            {
+              "type": "webglcontextlost",
+              "message": "",
+              "at": 1792866035030
+            },
+            {
+              "type": "webglcontextlost",
+              "message": "",
+              "at": 1792866035030
+            },
+            {
+              "type": "webglcontextrestored",
+              "at": 1792866035066
+            }
+          ],
+          "contexts": [
+            {
+              "kind": "webgl2",
+              "args": [],
+              "width": 300,
+              "height": 150,
+              "renderer": "WebKit WebGL",
+              "vendor": "WebKit",
+              "unmasked": "Apple GPU",
+              "maxTexture": 8192,
+              "maxRenderbuffer": 8192,
+              "extensions": [
+                "EXT_clip_control",
+                "EXT_color_buffer_float",
+                "EXT_color_buffer_half_float",
+                "EXT_conservative_depth",
+                "EXT_depth_clamp",
+                "EXT_polygon_offset_clamp",
+                "EXT_render_snorm",
+                "EXT_texture_filter_anisotropic",
+                "EXT_texture_mirror_clamp_to_edge",
+                "EXT_texture_norm16",
+                "KHR_parallel_shader_compile",
+                "NV_shader_noperspective_interpolation",
+                "OES_draw_buffers_indexed",
+                "OES_sample_variables",
+                "WEBGL_blend_func_extended",
+                "WEBGL_clip_cull_distance",
+                "WEBGL_compressed_texture_astc",
+                "WEBGL_compressed_texture_etc",
+                "WEBGL_compressed_texture_etc1",
+                "WEBGL_debug_renderer_info",
+                "WEBGL_debug_shaders",
+                "WEBGL_lose_context",
+                "WEBGL_multi_draw",
+                "WEBGL_polygon_mode",
+                "WEBGL_provoking_vertex",
+                "WEBGL_stencil_texturing"
+              ]
+            },
+            {
+              "kind": "webgl2",
+              "args": [
+                {
+                  "alpha": false,
+                  "depth": true,
+                  "stencil": false,
+                  "antialias": false,
+                  "premultipliedAlpha": true,
+                  "preserveDrawingBuffer": true,
+                  "powerPreference": "default",
+                  "failIfMajorPerformanceCaveat": false,
+                  "majorVersion": 2,
+                  "minorVersion": 0,
+                  "enableExtensionsByDefault": 1,
+                  "explicitSwapControl": 1,
+                  "proxyContextToMainThread": 0,
+                  "renderViaOffscreenBackBuffer": true
+                }
+              ],
+              "width": 480,
+              "height": 800,
+              "renderer": "WebKit WebGL",
+              "vendor": "WebKit",
+              "unmasked": "Apple GPU",
+              "maxTexture": 8192,
+              "maxRenderbuffer": 8192,
+              "extensions": [
+                "EXT_clip_control",
+                "EXT_color_buffer_float",
+                "EXT_color_buffer_half_float",
+                "EXT_conservative_depth",
+                "EXT_depth_clamp",
+                "EXT_polygon_offset_clamp",
+                "EXT_render_snorm",
+                "EXT_texture_filter_anisotropic",
+                "EXT_texture_mirror_clamp_to_edge",
+                "EXT_texture_norm16",
+                "KHR_parallel_shader_compile",
+                "NV_shader_noperspective_interpolation",
+                "OES_draw_buffers_indexed",
+                "OES_sample_variables",
+                "WEBGL_blend_func_extended",
+                "WEBGL_clip_cull_distance",
+                "WEBGL_compressed_texture_astc",
+                "WEBGL_compressed_texture_etc",
+                "WEBGL_compressed_texture_etc1",
+                "WEBGL_debug_renderer_info",
+                "WEBGL_debug_shaders",
+                "WEBGL_lose_context",
+                "WEBGL_multi_draw",
+                "WEBGL_polygon_mode",
+                "WEBGL_provoking_vertex",
+                "WEBGL_stencil_texturing"
+              ]
+            }
+          ],
+          "resolved": true,
+          "rejected": null,
+          "started": 1792866015487,
+          "viewport": {
+            "innerWidth": 402,
+            "innerHeight": 714,
+            "dpr": 3,
+            "width": 480,
+            "height": 800
+          }
+        },
+        "url": "http://127.0.0.1:8765/diagnostic.html?pack=production&size=small",
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 754,
+          "top": 0,
+          "right": 402,
+          "bottom": 754,
+          "left": 0
+        }
+      },
+      "ocr": [
+        "6:20",
+        "••.",
+        "127.0.0.1"
+      ]
+    }
+  ]
 }

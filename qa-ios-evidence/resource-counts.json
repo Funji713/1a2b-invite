@@ -1,0 +1,23 @@
+{
+  "note": "Only allowlisted numeric counts are exported. Raw host processes, OS logs, crash report contents, paths and filenames are not saved.",
+  "host_memory_pages": {
+    "free": 44523,
+    "active": 131161,
+    "inactive": 127441,
+    "wired": 126418,
+    "compressor": 21394
+  },
+  "simulator_log_keyword_counts": {
+    "context lost": 0,
+    "jetsam": 862,
+    "GPU Process exited": 0,
+    "out of memory": 0
+  },
+  "own_simulator_crash_filename_counts": {
+    "GPU": 0,
+    "WebKit": 0,
+    "Safari": 0,
+    "Jetsam": 0,
+    "WebContent": 0
+  }
+}

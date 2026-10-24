@@ -1,160 +1,269 @@
-2026-10-24 17:54:38:795 [Appium] Welcome to Appium v3.8.0 (REV 8f10429b56be28a25032b87463fffc95e556b5bc)
-2026-10-24 17:54:38:797 [Appium] Non-default server args:
-2026-10-24 17:54:38:797 [Appium] { loglevel: 'info' }
-2026-10-24 17:54:38:809 [Appium] Attempting to load driver xcuitest...
-2026-10-24 17:54:41:610 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
-2026-10-24 17:54:41:611 [Appium] You can provide the following URLs in your client code to connect to this server:
+2026-10-24 18:11:51:955 [Appium] Welcome to Appium v3.8.0 (REV cdc1ca503231b9a96da64526774915d913c3ec9f)
+2026-10-24 18:11:51:957 [Appium] Non-default server args:
+2026-10-24 18:11:51:957 [Appium] { loglevel: 'info' }
+2026-10-24 18:11:51:983 [Appium] Attempting to load driver xcuitest...
+2026-10-24 18:11:55:887 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2026-10-24 18:11:55:893 [Appium] You can provide the following URLs in your client code to connect to this server:
 	http://127.0.0.1:4723/ (only accessible from the same host)
-	http://192.168.64.9:4723/
-2026-10-24 17:54:41:611 [Appium] Available drivers:
-2026-10-24 17:54:41:611 [Appium]   - xcuitest@12.20.0 (automationName 'XCUITest')
-2026-10-24 17:54:41:611 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2026-10-24 17:54:42:350 [HTTP] --> GET /status 
-2026-10-24 17:54:42:359 [HTTP] <-- GET /status 200 5 ms - 199
-2026-10-24 17:54:42:792 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","browserName":"Safari","appium:platformVersion":"26.5","appium:safariInitialUrl":"about:blank","appium:webviewConnectTimeout":60000,"appium:automationName":"XCUITest","appium:udid":"77AA4492-C787-4EEE-A772-05D4B3E9ECCD","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:additionalWebviewBundleIds":["*"],"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":false}}}
-2026-10-24 17:54:42:815 [Appium] Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
-2026-10-24 17:54:42:815 [Appium] The 'xcuitest' driver was installed and matched caps.
-2026-10-24 17:54:42:816 [Appium] Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
-2026-10-24 17:54:42:817 [AppiumDriver@2959] Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
-2026-10-24 17:54:42:817 [AppiumDriver@2959] Checking BaseDriver versions for Appium and XCUITestDriver
-2026-10-24 17:54:42:818 [AppiumDriver@2959] Appium's BaseDriver version is 10.8.1
-2026-10-24 17:54:42:818 [AppiumDriver@2959] XCUITestDriver's BaseDriver version is 10.8.1
-2026-10-24 17:54:42:831 [4e7590f3][XCUITestDriver@6a6a] Session created with session id: 4e7590f3-88df-4596-a4f3-c8ee88abc649
-2026-10-24 17:54:43:261 [4e7590f3][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
-2026-10-24 17:54:49:849 [4e7590f3][XCUITestDriver@6a6a] Constructing iOS simulator for Xcode version 26.6 with udid '77AA4492-C787-4EEE-A772-05D4B3E9ECCD'
-2026-10-24 17:54:49:856 [4e7590f3][XCUITestDriver@6a6a] Determining device to run tests on: udid: '77AA4492-C787-4EEE-A772-05D4B3E9ECCD', real device: false
-2026-10-24 17:54:49:860 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:54:49:864 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidContended'
-2026-10-24 17:54:49:865 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidReleased'
-2026-10-24 17:54:49:881 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidContended'
-2026-10-24 17:54:49:883 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidReleased'
-2026-10-24 17:54:49:884 [4e7590f3][XCUITestDriver@6a6a] Safari test requested
-2026-10-24 17:54:50:128 [4e7590f3][XCUITestDriver@6a6a] Reset: failed to terminate Simulator application with id "com.apple.mobilesafari"
-2026-10-24 17:54:50:344 [4e7590f3][XCUITestDriver@6a6a] Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
-2026-10-24 17:54:50:371 [4e7590f3][XCUITestDriver@6a6a] Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
-2026-10-24 17:54:52:069 [4e7590f3][XCUITestDriver@6a6a] Setting up simulator
-2026-10-24 17:54:57:805 [4e7590f3][XCUITestDriver@6a6a] Both Simulator with UDID '77AA4492-C787-4EEE-A772-05D4B3E9ECCD' and the UI client are currently running
-2026-10-24 17:54:59:259 [4e7590f3][XCUITestDriver@6a6a] Requesting connection for device 77AA4492-C787-4EEE-A772-05D4B3E9ECCD on local port 8100
-2026-10-24 17:54:59:262 [4e7590f3][XCUITestDriver@6a6a] Successfully requested the connection for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100
-2026-10-24 17:54:59:714 [4e7590f3][XCUITestDriver@6a6a] Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
-2026-10-24 17:55:22:341 [4e7590f3][XCUITestDriver@6a6a] The app has been successfully installed in 15571ms
-2026-10-24 17:55:22:665 [4e7590f3][XCUITestDriver@6a6a] Selected 'simulator' WebDriverAgent startup strategy
-2026-10-24 17:55:22:666 [4e7590f3][XCUITestDriver@6a6a] Launching WebDriverAgent on the device without xcodebuild
-2026-10-24 17:55:26:388 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:26:772 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:27:484 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:27:822 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:28:279 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:29:334 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:30:230 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:30:719 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:31:324 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:31:756 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:32:390 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:33:022 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:33:452 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:33:807 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:34:484 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:34:891 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:35:269 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:35:696 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:37:001 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:37:539 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:55:48:480 [4e7590f3][XCUITestDriver@6a6a] Determined the downstream protocol as 'W3C'
-2026-10-24 17:55:48:481 [4e7590f3][XCUITestDriver@6a6a] WDA session startup took 10365ms
-2026-10-24 17:55:48:580 [4e7590f3][XCUITestDriver@6a6a] WebDriverAgent version: '16.17.1'
-2026-10-24 17:55:52:100 [4e7590f3][RemoteDebugger] Remote Debugger version 17.7.6
-2026-10-24 17:56:16:478 [4e7590f3][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
-2026-10-24 17:56:16:620 [4e7590f3][XCUITestDriver@6a6a] Picking webview 'WEBVIEW_7726.1' after 27120ms
-2026-10-24 17:56:16:911 [4e7590f3][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:7726': {"targetId":"frame-8589934593","type":"frame"}
-2026-10-24 17:56:17:149 [4e7590f3][RemoteDebugger] Page '1' for app 'PID:7726' is ready after 41.139667ms
-2026-10-24 17:56:17:151 [4e7590f3][XCUITestDriver@6a6a] About to set the initial Safari URL to 'about:blank'
-2026-10-24 17:56:22:033 [4e7590f3][XCUITestDriver@6a6a] Requesting connection for device 77AA4492-C787-4EEE-A772-05D4B3E9ECCD on local port 9100, device port 9100
-2026-10-24 17:56:22:034 [4e7590f3][XCUITestDriver@6a6a] Successfully requested the connection for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD:9100
-2026-10-24 17:56:22:037 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:56:22:037 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:56:22:041 [4e7590f3][AppiumDriver@2959] New XCUITestDriver session created successfully, session 4e7590f3-88df-4596-a4f3-c8ee88abc649 added to master session list
-2026-10-24 17:56:22:067 [HTTP] <-- POST /session 200 99269 ms - 822
-2026-10-24 17:56:23:061 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:23:096 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 37 ms - 14
-2026-10-24 17:56:23:156 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:56:23:588 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 431 ms - 259732
-2026-10-24 17:56:23:707 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"mobile: activeAppInfo","args":[]}
-2026-10-24 17:56:23:715 [4e7590f3][XCUITestDriver@6a6a] Proxying to WDA with an unknown route: GET /wda/activeAppInfo
-2026-10-24 17:56:23:981 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 274 ms - 108
-2026-10-24 17:56:23:987 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:23:990 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
-2026-10-24 17:56:23:991 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Continue\" OR name == \"Continue\""}
-2026-10-24 17:56:24:150 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 159 ms - 12
-2026-10-24 17:56:24:152 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:24:153 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
-2026-10-24 17:56:24:159 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Start Browsing\" OR name == \"Start Browsing\""}
-2026-10-24 17:56:24:325 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 164 ms - 12
-2026-10-24 17:56:24:337 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:24:516 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
-2026-10-24 17:56:24:530 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Not Now\" OR name == \"Not Now\""}
-2026-10-24 17:56:24:717 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 158 ms - 12
-2026-10-24 17:56:24:723 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:24:726 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 2 ms - 14
-2026-10-24 17:56:24:730 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"xmark.circle.fill\" OR name == \"xmark.circle.fill\""}
-2026-10-24 17:56:24:960 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 231 ms - 139
-2026-10-24 17:56:24:962 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/element/28000000-0000-0000-2E1E-000000000000/click {}
-2026-10-24 17:56:24:963 [4e7590f3][XCUITestDriver@6a6a] Driver proxy active, passing request on via HTTP proxy
-2026-10-24 17:56:26:333 [4e7590f3][XCUITestDriver@6a6a] Replacing sessionId 0217A567-A924-404C-9FF7-63A315AB3E60 with 4e7590f3-88df-4596-a4f3-c8ee88abc649
-2026-10-24 17:56:26:336 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/element/28000000-0000-0000-2E1E-000000000000/click 200 1373 ms - 14
-2026-10-24 17:56:27:498 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/contexts 
-2026-10-24 17:56:27:502 [4e7590f3][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
-2026-10-24 17:56:27:519 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/contexts 200 22 ms - 41
-2026-10-24 17:56:27:521 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"WEBVIEW_7726.1"}
-2026-10-24 17:56:27:523 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
-2026-10-24 17:56:27:525 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"return location.href","args":[]}
-2026-10-24 17:56:27:559 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 34 ms - 23
-2026-10-24 17:56:27:560 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"const c=document.createElement(\"canvas\");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext(\"webgl2\");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),glError:gl.getError()};","args":[]}
-2026-10-24 17:56:27:801 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 241 ms - 101
-2026-10-24 17:56:27:844 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:27:846 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
-2026-10-24 17:56:27:847 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:56:29:021 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 1173 ms - 113032
-2026-10-24 17:56:37:892 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"WEBVIEW_7726.1"}
-2026-10-24 17:56:37:898 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 22 ms - 14
-2026-10-24 17:56:37:904 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/url {"url":"https://funji713.github.io/1a2b-invite/"}
-2026-10-24 17:56:45:391 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/url 200 7283 ms - 14
-2026-10-24 17:56:46:656 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:46:666 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 5 ms - 14
-2026-10-24 17:56:46:968 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:56:46:979 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
-2026-10-24 17:56:47:284 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"xmark.circle.fill\" OR name == \"xmark.circle.fill\""}
-2026-10-24 17:56:53:376 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 5778 ms - 12
-2026-10-24 17:57:01:547 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:57:01:560 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 205 ms - 14
-2026-10-24 17:57:01:567 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:57:02:120 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 552 ms - 151884
-2026-10-24 17:57:02:708 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:57:02:712 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 5 ms - 14
-2026-10-24 17:57:02:714 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:57:02:954 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 239 ms - 151884
-2026-10-24 17:57:33:776 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:57:34:194 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1543 ms - 14
-2026-10-24 17:57:34:316 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:57:35:005 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 429 ms - 169560
-2026-10-24 17:58:07:757 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:58:07:931 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 151 ms - 14
-2026-10-24 17:58:08:633 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:58:09:298 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 360 ms - 170500
-2026-10-24 17:58:39:696 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:58:39:720 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 34 ms - 14
-2026-10-24 17:58:39:724 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:59:14:750 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot - - ms - -
-2026-10-24 17:59:14:832 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:59:40:242 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 24700 ms - 14
-2026-10-24 17:59:40:662 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
-2026-10-24 17:59:41:181 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 501 ms - 170352
-2026-10-24 17:59:54:548 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
-2026-10-24 17:59:54:555 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 12 ms - 14
-2026-10-24 17:59:54:558 [4e7590f3][HTTP] --> DELETE /session/4e7590f3-88df-4596-a4f3-c8ee88abc649 
-2026-10-24 17:59:54:567 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:59:57:136 [4e7590f3][XCUITestDriver@6a6a] Stopping the XCTest session
-2026-10-24 17:59:57:872 [4e7590f3][XCUITestDriver@6a6a] Releasing connections for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD device on any port number
-2026-10-24 17:59:57:873 [4e7590f3][XCUITestDriver@6a6a] Found cached connections to release: ["77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100","77AA4492-C787-4EEE-A772-05D4B3E9ECCD:9100"]
-2026-10-24 17:59:58:010 [4e7590f3][AppiumDriver@2959] Removing session 4e7590f3-88df-4596-a4f3-c8ee88abc649 from our master session list
-2026-10-24 17:59:58:015 [HTTP] <-- DELETE /session/4e7590f3-88df-4596-a4f3-c8ee88abc649 200 3456 ms - 14
+	http://192.168.64.5:4723/
+2026-10-24 18:11:55:894 [Appium] Available drivers:
+2026-10-24 18:11:55:894 [Appium]   - xcuitest@12.20.0 (automationName 'XCUITest')
+2026-10-24 18:11:55:894 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2026-10-24 18:11:56:775 [HTTP] --> GET /status 
+2026-10-24 18:11:56:781 [HTTP] <-- GET /status 200 17 ms - 199
+2026-10-24 18:11:57:311 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","browserName":"Safari","appium:platformVersion":"26.5","appium:safariInitialUrl":"about:blank","appium:webviewConnectTimeout":60000,"appium:automationName":"XCUITest","appium:udid":"E839A11B-51B4-4AD3-ACF4-A53B95B7C957","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:additionalWebviewBundleIds":["*"],"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":false}}}
+2026-10-24 18:11:57:329 [Appium] Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
+2026-10-24 18:11:57:329 [Appium] The 'xcuitest' driver was installed and matched caps.
+2026-10-24 18:11:57:330 [Appium] Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
+2026-10-24 18:11:57:331 [AppiumDriver@cdb8] Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
+2026-10-24 18:11:57:332 [AppiumDriver@cdb8] Checking BaseDriver versions for Appium and XCUITestDriver
+2026-10-24 18:11:57:332 [AppiumDriver@cdb8] Appium's BaseDriver version is 10.8.1
+2026-10-24 18:11:57:332 [AppiumDriver@cdb8] XCUITestDriver's BaseDriver version is 10.8.1
+2026-10-24 18:11:57:338 [c6a0a5db][XCUITestDriver@d632] Session created with session id: c6a0a5db-228c-473b-bf04-ac6bade0176a
+2026-10-24 18:11:57:740 [c6a0a5db][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+2026-10-24 18:11:59:994 [c6a0a5db][XCUITestDriver@d632] Constructing iOS simulator for Xcode version 26.6 with udid 'E839A11B-51B4-4AD3-ACF4-A53B95B7C957'
+2026-10-24 18:11:59:996 [c6a0a5db][XCUITestDriver@d632] Determining device to run tests on: udid: 'E839A11B-51B4-4AD3-ACF4-A53B95B7C957', real device: false
+2026-10-24 18:12:00:000 [c6a0a5db][BaseDriver] Subscribing d632c16d-cdc2-4675-8cfd-11108f390458 to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 18:12:00:000 [c6a0a5db][BaseDriver] Subscribing d632c16d-cdc2-4675-8cfd-11108f390458 to topic 'xcuitest:sessionUdidContended'
+2026-10-24 18:12:00:000 [c6a0a5db][BaseDriver] Subscribing d632c16d-cdc2-4675-8cfd-11108f390458 to topic 'xcuitest:sessionUdidReleased'
+2026-10-24 18:12:00:014 [c6a0a5db][BaseDriver] Unsubscribing d632c16d-cdc2-4675-8cfd-11108f390458 from topic 'xcuitest:sessionUdidContended'
+2026-10-24 18:12:00:019 [c6a0a5db][BaseDriver] Unsubscribing d632c16d-cdc2-4675-8cfd-11108f390458 from topic 'xcuitest:sessionUdidReleased'
+2026-10-24 18:12:00:022 [c6a0a5db][XCUITestDriver@d632] Safari test requested
+2026-10-24 18:12:00:401 [c6a0a5db][XCUITestDriver@d632] Reset: failed to terminate Simulator application with id "com.apple.mobilesafari"
+2026-10-24 18:12:00:480 [c6a0a5db][XCUITestDriver@d632] Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+2026-10-24 18:12:00:481 [c6a0a5db][XCUITestDriver@d632] Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+2026-10-24 18:12:02:042 [c6a0a5db][XCUITestDriver@d632] Setting up simulator
+2026-10-24 18:12:02:829 [c6a0a5db][XCUITestDriver@d632] Both Simulator with UDID 'E839A11B-51B4-4AD3-ACF4-A53B95B7C957' and the UI client are currently running
+2026-10-24 18:12:03:222 [c6a0a5db][XCUITestDriver@d632] Requesting connection for device E839A11B-51B4-4AD3-ACF4-A53B95B7C957 on local port 8100
+2026-10-24 18:12:03:223 [c6a0a5db][XCUITestDriver@d632] Successfully requested the connection for E839A11B-51B4-4AD3-ACF4-A53B95B7C957:8100
+2026-10-24 18:12:03:298 [c6a0a5db][XCUITestDriver@d632] Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
+2026-10-24 18:12:23:874 [c6a0a5db][XCUITestDriver@d632] The app has been successfully installed in 16763ms
+2026-10-24 18:12:23:877 [c6a0a5db][XCUITestDriver@d632] Selected 'simulator' WebDriverAgent startup strategy
+2026-10-24 18:12:23:877 [c6a0a5db][XCUITestDriver@d632] Launching WebDriverAgent on the device without xcodebuild
+2026-10-24 18:12:26:374 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:26:683 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:27:027 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:27:922 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:28:250 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:28:674 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:29:083 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:29:497 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:30:066 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:30:485 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:30:849 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:31:291 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:31:815 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:32:198 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:32:563 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:32:875 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:33:182 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:33:485 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:33:789 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:34:091 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:34:399 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:34:701 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:35:003 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:35:305 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:35:608 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:35:913 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:36:215 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:36:518 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:36:820 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:37:125 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:37:430 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:37:736 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:38:038 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:38:344 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:38:654 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:38:958 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:39:262 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:39:566 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:39:870 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:40:174 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:40:481 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:40:784 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:41:087 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:41:391 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:41:694 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:41:996 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:42:299 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:42:603 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:42:904 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:43:208 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:43:512 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:43:817 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:44:121 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:44:422 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:44:726 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:45:030 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:45:334 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:45:642 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:45:946 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:46:250 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:46:553 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:46:857 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:47:158 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:47:462 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:47:765 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:48:068 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:48:375 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:48:680 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:48:984 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:49:287 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:49:589 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:49:892 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:50:213 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:51:221 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:12:51:626 [c6a0a5db][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 18:13:42:664 [c6a0a5db][XCUITestDriver@d632] Determined the downstream protocol as 'W3C'
+2026-10-24 18:13:42:830 [c6a0a5db][XCUITestDriver@d632] WDA session startup took 50094ms
+2026-10-24 18:13:43:281 [c6a0a5db][XCUITestDriver@d632] WebDriverAgent version: '16.17.1'
+2026-10-24 18:13:45:932 [c6a0a5db][RemoteDebugger] Remote Debugger version 17.7.6
+2026-10-24 18:13:50:749 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:13:51:251 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:13:51:753 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:13:51:807 [c6a0a5db][XCUITestDriver@d632] Picking webview 'WEBVIEW_6934.1' after 8508ms
+2026-10-24 18:13:51:821 [c6a0a5db][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:6934': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 18:13:51:941 [c6a0a5db][RemoteDebugger] Page '1' for app 'PID:6934' is ready after 11.17325ms
+2026-10-24 18:13:51:941 [c6a0a5db][XCUITestDriver@d632] About to set the initial Safari URL to 'about:blank'
+2026-10-24 18:13:57:990 [c6a0a5db][XCUITestDriver@d632] Requesting connection for device E839A11B-51B4-4AD3-ACF4-A53B95B7C957 on local port 9100, device port 9100
+2026-10-24 18:13:57:991 [c6a0a5db][XCUITestDriver@d632] Successfully requested the connection for E839A11B-51B4-4AD3-ACF4-A53B95B7C957:9100
+2026-10-24 18:13:57:993 [c6a0a5db][BaseDriver] Unsubscribing d632c16d-cdc2-4675-8cfd-11108f390458 from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 18:13:57:993 [c6a0a5db][BaseDriver] Subscribing d632c16d-cdc2-4675-8cfd-11108f390458 to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 18:13:57:994 [c6a0a5db][AppiumDriver@cdb8] New XCUITestDriver session created successfully, session c6a0a5db-228c-473b-bf04-ac6bade0176a added to master session list
+2026-10-24 18:13:58:010 [HTTP] <-- POST /session 200 120639 ms - 822
+2026-10-24 18:13:58:053 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:13:58:056 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 4 ms - 14
+2026-10-24 18:13:58:057 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:14:04:758 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 6439 ms - 483080
+2026-10-24 18:14:05:649 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: activeAppInfo","args":[]}
+2026-10-24 18:14:05:666 [c6a0a5db][XCUITestDriver@d632] Proxying to WDA with an unknown route: GET /wda/activeAppInfo
+2026-10-24 18:14:20:732 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 15062 ms - 108
+2026-10-24 18:14:21:151 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:21:156 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 4 ms - 14
+2026-10-24 18:14:21:173 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements {"using":"-ios predicate string","value":"label == \"Continue\" OR name == \"Continue\""}
+2026-10-24 18:14:21:718 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements 200 544 ms - 12
+2026-10-24 18:14:21:792 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:21:794 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 1 ms - 14
+2026-10-24 18:14:21:798 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements {"using":"-ios predicate string","value":"label == \"Start Browsing\" OR name == \"Start Browsing\""}
+2026-10-24 18:14:21:885 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements 200 87 ms - 12
+2026-10-24 18:14:21:891 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:21:893 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 2 ms - 14
+2026-10-24 18:14:21:901 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements {"using":"-ios predicate string","value":"label == \"Not Now\" OR name == \"Not Now\""}
+2026-10-24 18:14:21:999 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements 200 98 ms - 12
+2026-10-24 18:14:22:000 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:22:001 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 1 ms - 14
+2026-10-24 18:14:22:003 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements {"using":"-ios predicate string","value":"label == \"xmark.circle.fill\" OR name == \"xmark.circle.fill\""}
+2026-10-24 18:14:22:144 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/elements 200 141 ms - 139
+2026-10-24 18:14:22:146 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/element/28000000-0000-0000-161B-000000000000/click {}
+2026-10-24 18:14:22:146 [c6a0a5db][XCUITestDriver@d632] Driver proxy active, passing request on via HTTP proxy
+2026-10-24 18:14:23:362 [c6a0a5db][XCUITestDriver@d632] Replacing sessionId CC3CF183-744D-4959-9543-30D48301E8EC with c6a0a5db-228c-473b-bf04-ac6bade0176a
+2026-10-24 18:14:23:378 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/element/28000000-0000-0000-161B-000000000000/click 200 1217 ms - 14
+2026-10-24 18:14:24:457 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 
+2026-10-24 18:14:24:466 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:14:24:471 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 200 15 ms - 41
+2026-10-24 18:14:24:479 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"WEBVIEW_6934.1"}
+2026-10-24 18:14:24:481 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 1 ms - 14
+2026-10-24 18:14:24:482 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return location.href","args":[]}
+2026-10-24 18:14:24:613 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 131 ms - 23
+2026-10-24 18:14:24:615 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"const c=document.createElement(\"canvas\");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext(\"webgl2\");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),glError:gl.getError()};","args":[]}
+2026-10-24 18:14:24:806 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 191 ms - 101
+2026-10-24 18:14:24:901 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:24:904 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 3 ms - 14
+2026-10-24 18:14:24:907 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:14:25:986 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 997 ms - 112696
+2026-10-24 18:14:36:487 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:36:488 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 2 ms - 14
+2026-10-24 18:14:36:490 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: terminateApp","args":[{"bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:14:37:535 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1045 ms - 14
+2026-10-24 18:14:40:664 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: deepLink","args":[{"url":"http://127.0.0.1:8765/diagnostic.html?pack=minimal&size=full","bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:14:46:677 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 5931 ms - 14
+2026-10-24 18:14:58:761 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:14:58:770 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 10 ms - 14
+2026-10-24 18:14:58:775 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:14:58:993 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 212 ms - 161188
+2026-10-24 18:15:12:039 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 
+2026-10-24 18:15:12:053 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:15:15:410 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 200 3371 ms - 41
+2026-10-24 18:15:15:414 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"WEBVIEW_9141.1"}
+2026-10-24 18:15:17:240 [c6a0a5db][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:9141': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 18:15:51:503 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context - - ms - -
+2026-10-24 18:15:52:362 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:16:32:137 [c6a0a5db][RemoteDebugger] Page '1' took too long to initialize, skipping readiness check
+2026-10-24 18:16:40:915 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 41326 ms - 14
+2026-10-24 18:16:43:681 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:16:44:449 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 754 ms - 14
+2026-10-24 18:16:47:169 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: terminateApp","args":[{"bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:16:51:594 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 4421 ms - 14
+2026-10-24 18:16:54:885 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: deepLink","args":[{"url":"http://127.0.0.1:8765/diagnostic.html?pack=minimal-no-msdf&size=full","bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:16:56:249 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1303 ms - 14
+2026-10-24 18:17:08:381 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:17:08:387 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 5 ms - 14
+2026-10-24 18:17:08:389 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:17:08:583 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 194 ms - 161208
+2026-10-24 18:17:11:635 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 
+2026-10-24 18:17:11:637 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:17:11:641 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 200 6 ms - 42
+2026-10-24 18:17:11:643 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"WEBVIEW_11020.1"}
+2026-10-24 18:17:11:652 [c6a0a5db][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:11020': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 18:17:22:219 [c6a0a5db][RemoteDebugger] Page '1' took too long to initialize, skipping readiness check
+2026-10-24 18:17:22:223 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 10579 ms - 14
+2026-10-24 18:17:22:229 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return location.href","args":[]}
+2026-10-24 18:17:22:240 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 11 ms - 80
+2026-10-24 18:17:22:252 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return {qa:window.qa||null,url:location.href,canvas:document.querySelector(\"canvas\")?.getBoundingClientRect().toJSON()};","args":[]}
+2026-10-24 18:17:23:504 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1260 ms - 3009
+2026-10-24 18:17:24:578 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:17:24:785 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 2 ms - 14
+2026-10-24 18:17:25:121 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:17:25:252 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 117 ms - 14
+2026-10-24 18:17:25:767 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: terminateApp","args":[{"bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:17:26:950 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1184 ms - 14
+2026-10-24 18:17:30:108 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: deepLink","args":[{"url":"http://127.0.0.1:8765/diagnostic.html?pack=production&size=full","bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:17:31:283 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1175 ms - 14
+2026-10-24 18:17:43:499 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:17:43:501 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 5 ms - 14
+2026-10-24 18:17:43:503 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:17:43:709 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 205 ms - 161208
+2026-10-24 18:17:46:181 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 
+2026-10-24 18:17:46:183 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:17:46:187 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 200 6 ms - 42
+2026-10-24 18:17:46:213 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"WEBVIEW_12292.1"}
+2026-10-24 18:17:46:244 [c6a0a5db][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:12292': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 18:18:01:837 [c6a0a5db][RemoteDebugger] Page '1' took too long to initialize, skipping readiness check
+2026-10-24 18:18:02:260 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 16037 ms - 14
+2026-10-24 18:18:04:070 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return location.href","args":[]}
+2026-10-24 18:19:50:410 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync - - ms - -
+2026-10-24 18:19:52:534 [c6a0a5db][XCUITestDriver@d632] Got response with status 404: {"value":{"error":"no such alert","message":"An attempt was made to operate on a modal dialog when one was not open","traceback":""},"sessionId":"CC3CF183-744D-4959-9543-30D48301E8EC"}
+2026-10-24 18:19:54:539 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:19:55:128 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:19:55:599 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context - - ms - -
+2026-10-24 18:20:05:846 [c6a0a5db][XCUITestDriver@d632] Got response with status 404: {"value":{"error":"no such alert","message":"An attempt was made to operate on a modal dialog when one was not open","traceback":""},"sessionId":"CC3CF183-744D-4959-9543-30D48301E8EC"}
+2026-10-24 18:20:05:983 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 10854 ms - 14
+2026-10-24 18:20:06:012 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: terminateApp","args":[{"bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:20:07:061 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1050 ms - 14
+2026-10-24 18:20:10:076 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"mobile: deepLink","args":[{"url":"http://127.0.0.1:8765/diagnostic.html?pack=production&size=small","bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 18:20:10:548 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 470 ms - 14
+2026-10-24 18:20:22:956 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:20:22:962 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 22 ms - 14
+2026-10-24 18:20:22:965 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 
+2026-10-24 18:20:23:149 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/screenshot 200 168 ms - 162608
+2026-10-24 18:20:30:165 [c6a0a5db][HTTP] --> GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 
+2026-10-24 18:20:30:166 [c6a0a5db][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 18:20:30:258 [HTTP] <-- GET /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/contexts 200 77 ms - 42
+2026-10-24 18:20:30:293 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"WEBVIEW_14645.1"}
+2026-10-24 18:20:30:304 [c6a0a5db][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:14645': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 18:20:35:310 [c6a0a5db][RemoteDebugger] Page '1' for app 'PID:14645' is ready after 5.321709ms
+2026-10-24 18:20:35:400 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 5106 ms - 14
+2026-10-24 18:20:35:654 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return location.href","args":[]}
+2026-10-24 18:20:36:921 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 1183 ms - 76
+2026-10-24 18:20:37:087 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync {"script":"return {qa:window.qa||null,url:location.href,canvas:document.querySelector(\"canvas\")?.getBoundingClientRect().toJSON()};","args":[]}
+2026-10-24 18:20:37:321 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/execute/sync 200 217 ms - 3001
+2026-10-24 18:20:37:389 [c6a0a5db][HTTP] --> POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context {"name":"NATIVE_APP"}
+2026-10-24 18:20:37:391 [HTTP] <-- POST /session/c6a0a5db-228c-473b-bf04-ac6bade0176a/context 200 1 ms - 14
+2026-10-24 18:20:37:453 [c6a0a5db][HTTP] --> DELETE /session/c6a0a5db-228c-473b-bf04-ac6bade0176a 
+2026-10-24 18:20:37:638 [c6a0a5db][BaseDriver] Unsubscribing d632c16d-cdc2-4675-8cfd-11108f390458 from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 18:20:39:000 [c6a0a5db][XCUITestDriver@d632] Stopping the XCTest session
+2026-10-24 18:20:39:709 [c6a0a5db][XCUITestDriver@d632] Releasing connections for E839A11B-51B4-4AD3-ACF4-A53B95B7C957 device on any port number
+2026-10-24 18:20:39:711 [c6a0a5db][XCUITestDriver@d632] Found cached connections to release: ["E839A11B-51B4-4AD3-ACF4-A53B95B7C957:8100","E839A11B-51B4-4AD3-ACF4-A53B95B7C957:9100"]
+2026-10-24 18:20:39:972 [c6a0a5db][AppiumDriver@cdb8] Removing session c6a0a5db-228c-473b-bf04-ac6bade0176a from our master session list
+2026-10-24 18:20:39:973 [HTTP] <-- DELETE /session/c6a0a5db-228c-473b-bf04-ac6bade0176a 200 2520 ms - 14
