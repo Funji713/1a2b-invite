@@ -7,6 +7,14 @@
     "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
     "bytes": 39514754
   },
+  "index.audio.worklet.js": {
+    "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "bytes": 7298
+  },
+  "index.audio.position.worklet.js": {
+    "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "bytes": 2973
+  },
   "minimal.pck": {
     "sha256": "09c5931a3702c3fb20e50f294e0ba1d517a0a9721d939a1afb30480e2b01da3c",
     "bytes": 2800

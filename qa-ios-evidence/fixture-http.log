@@ -1,84 +1,27 @@
-127.0.0.1 - - [24/Oct/2026 18:14:52] "GET /diagnostic.html?pack=minimal&size=full HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:14:52] "GET /index.js HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:14:52] "GET /index.wasm HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:14:52] "GET /minimal.pck HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:15:17] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:15:17] "GET /index.audio.position.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:15:17] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:15:17] "GET /favicon.ico HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:15:17] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:15:17] "GET /index.audio.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:17:02] "GET /diagnostic.html?pack=minimal-no-msdf&size=full HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:17:02] "GET /index.js HTTP/1.1" 304 -
-127.0.0.1 - - [24/Oct/2026 18:17:02] "GET /minimal-no-msdf.pck HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:17:03] "GET /index.wasm HTTP/1.1" 304 -
-127.0.0.1 - - [24/Oct/2026 18:17:21] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:17:21] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:17:21] "GET /index.audio.position.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:17:21] "GET /index.audio.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:17:34] "GET /diagnostic.html?pack=production&size=full HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:17:35] "GET /production.pck HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:17:53] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:17:53] "GET /index.audio.position.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:17:53] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:17:53] "GET /index.audio.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:17:59] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:17:59] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:02] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:02] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:04] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:04] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:06] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:07] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:18] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:18] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:19] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:19] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:21] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:21] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:23] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:24] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:27] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:27] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:29] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:29] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:31] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:31] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:34] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:34] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:36] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:36] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:18:38] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:18:38] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:15] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:16] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:18] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:18] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:24] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:24] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:26] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:26] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:28] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:28] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:38] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:38] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:40] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:40] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:42] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:42] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:44] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:44] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:46] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:46] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:19:49] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:19:49] "GET /api/rooms HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:20:15] "GET /diagnostic.html?pack=production&size=small HTTP/1.1" 200 -
-127.0.0.1 - - [24/Oct/2026 18:20:15] "GET /index.js HTTP/1.1" 304 -
-127.0.0.1 - - [24/Oct/2026 18:20:16] "GET /production.pck HTTP/1.1" 304 -
-127.0.0.1 - - [24/Oct/2026 18:20:16] "GET /index.wasm HTTP/1.1" 304 -
-127.0.0.1 - - [24/Oct/2026 18:20:34] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:20:34] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:20:34] "GET /index.audio.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:20:34] "GET /index.audio.position.worklet.js HTTP/1.1" 404 -
-127.0.0.1 - - [24/Oct/2026 18:20:37] code 404, message File not found
-127.0.0.1 - - [24/Oct/2026 18:20:37] "GET /api/rooms HTTP/1.1" 404 -
+127.0.0.1 - - [24/Oct/2026 18:29:42] "GET /diagnostic.html?pack=minimal&size=full HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:29:48] "GET /index.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:29:49] "GET /index.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:29:49] "GET /minimal.pck HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:29:50] code 404, message File not found
+127.0.0.1 - - [24/Oct/2026 18:29:50] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [24/Oct/2026 18:30:15] "GET /index.audio.position.worklet.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:15] "GET /index.audio.worklet.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:27] "GET /diagnostic.html?pack=minimal-no-msdf&size=full HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:27] "GET /index.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:30:27] "GET /minimal-no-msdf.pck HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:27] "GET /index.wasm HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:30:34] "GET /index.audio.position.worklet.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:30:34] "GET /index.audio.worklet.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:30:52] "GET /diagnostic.html?pack=production&size=full HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:53] "GET /index.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:30:53] "GET /production.pck HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:30:54] "GET /index.wasm HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:31:01] "GET /index.audio.position.worklet.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:31:01] "GET /index.audio.worklet.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:31:14] "GET /diagnostic.html?pack=production&size=small HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 18:31:14] "GET /index.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:31:14] "GET /index.wasm HTTP/1.1" 304 -
+127.0.0.1 - - [24/Oct/2026 18:31:23] code 404, message File not found
+127.0.0.1 - - [24/Oct/2026 18:31:23] "GET /api/rooms HTTP/1.1" 404 -
+127.0.0.1 - - [24/Oct/2026 18:31:25] code 404, message File not found
+127.0.0.1 - - [24/Oct/2026 18:31:25] "GET /api/rooms HTTP/1.1" 404 -
