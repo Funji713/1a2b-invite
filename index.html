@@ -4,39 +4,131 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <title>加入 1A2B 房間</title>
+  <title>1A2B</title>
   <style>
-    :root { color-scheme: dark; font-family: system-ui, "Microsoft JhengHei", sans-serif; background: #101925; color: #f3f7fb; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
-    main { box-sizing: border-box; width: min(100%, 540px); padding: 32px 24px; }
-    .card { background: #1b2a39; border: 1px solid #375064; border-radius: 18px; padding: 28px; }
-    h1 { margin-top: 0; font-size: 1.8rem; }
-    p { line-height: 1.65; }
-    .room { font-size: 1.35rem; font-weight: 700; color: #7de0d4; }
-    button { min-height: 48px; padding: 10px 18px; border: 0; border-radius: 10px; cursor: pointer; font: inherit; font-weight: 700; }
-    #open { background: #7de0d4; color: #10212c; }
-    #copy { background: #dce9ef; color: #10212c; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    code { overflow-wrap: anywhere; user-select: all; }
-    .muted { color: #b9cbd4; }
-    .error { color: #ffb8b8; }
+    html, body { margin: 0; padding: 0; background: #101925; color: #f3f7fb; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
+    canvas { display: block; touch-action: none; outline: none; }
+    #status { position: fixed; inset: 0; display: grid; place-content: center; gap: 16px; padding: 24px; text-align: center; background: #101925; z-index: 1; }
+    #status[hidden] { display: none; }
+    h1 { margin: 0; font-size: 1.8rem; }
+    p { margin: 0; line-height: 1.6; }
+    progress { width: min(80vw, 360px); margin: auto; accent-color: #7de0d4; }
+    a { color: #7de0d4; }
+    #recovery { line-height: 2.4; }
   </style>
 </head>
 <body>
-  <main><div class="card">
-    <h1>1A2B 房間邀請</h1>
-    <div id="valid" hidden>
-      <p>房號：<span id="room" class="room"></span></p>
-      <p class="muted">請確認邀請來源可信。按下按鈕後，瀏覽器會詢問是否開啟已安裝的 1A2B。</p>
-      <div class="actions"><button id="open" type="button">開啟 1A2B</button><button id="copy" type="button">複製邀請碼</button></div>
-      <p id="copy-status" role="status"></p>
-      <p>若按鈕無法使用，請開啟 1A2B，在「加入房間」貼上邀請碼：</p>
-      <p><code id="manual"></code></p>
-      <p class="muted">Windows 與網頁版可加入同一個正式房間。</p>
-    </div>
-    <p id="error" class="error" role="alert" hidden>邀請連結無效。請向房主索取完整的新連結或邀請碼。</p>
-    <p><a style="color:#7de0d4" href="https://140-120-53-5.sslip.io/">直接玩網頁版 1A2B</a> · <a style="color:#7de0d4" href="https://github.com/Funji713/1a2b-invite/releases/latest">下載 Windows 最新版</a></p>
-  </div></main>
-  <script src="relay.js"></script>
+  <canvas id="canvas" tabindex="0">此瀏覽器不支援遊戲畫面。</canvas>
+  <main id="status" role="status" aria-live="polite">
+    <h1>1A2B</h1>
+    <p id="message">正在載入遊戲…首次開啟需下載約 45 MB。</p>
+    <progress id="progress" aria-label="遊戲下載進度"></progress>
+    <p id="recovery" hidden><a href="./">重新載入</a> · <a id="direct" href="https://140-120-53-5.sslip.io/">使用備用遊戲入口</a><br><a href="https://github.com/Funji713/1a2b-invite/releases/latest">下載 Windows 版</a></p>
+  </main>
+  <noscript>請開啟 JavaScript 以遊玩 1A2B。</noscript>
+  <script>
+  (() => {
+    const query = new URLSearchParams(location.search);
+    // Keep every old host/port/room invitation on its original Pages URL.
+    // Only the existing strict relay parser can launch a native deep link.
+    if (query.has('host') || query.has('port')) {
+      const legacy = new DOMParser().parseFromString("\u003c!doctype html\u003e\n\u003chtml lang=\u0022zh-Hant\u0022\u003e\n\u003chead\u003e\n  \u003cmeta charset=\u0022utf-8\u0022\u003e\n  \u003cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003e\n  \u003cmeta name=\u0022referrer\u0022 content=\u0022no-referrer\u0022\u003e\n  \u003ctitle\u003e加入 1A2B 房間\u003c/title\u003e\n  \u003cstyle\u003e\n    :root { color-scheme: dark; font-family: system-ui, \u0022Microsoft JhengHei\u0022, sans-serif; background: #101925; color: #f3f7fb; }\n    body { margin: 0; min-height: 100vh; display: grid; place-items: center; }\n    main { box-sizing: border-box; width: min(100%, 540px); padding: 32px 24px; }\n    .card { background: #1b2a39; border: 1px solid #375064; border-radius: 18px; padding: 28px; }\n    h1 { margin-top: 0; font-size: 1.8rem; }\n    p { line-height: 1.65; }\n    .room { font-size: 1.35rem; font-weight: 700; color: #7de0d4; }\n    button { min-height: 48px; padding: 10px 18px; border: 0; border-radius: 10px; cursor: pointer; font: inherit; font-weight: 700; }\n    #open { background: #7de0d4; color: #10212c; }\n    #copy { background: #dce9ef; color: #10212c; }\n    .actions { display: flex; flex-wrap: wrap; gap: 12px; }\n    code { overflow-wrap: anywhere; user-select: all; }\n    .muted { color: #b9cbd4; }\n    .error { color: #ffb8b8; }\n  \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n  \u003cmain\u003e\u003cdiv class=\u0022card\u0022\u003e\n    \u003ch1\u003e1A2B 房間邀請\u003c/h1\u003e\n    \u003cdiv id=\u0022valid\u0022 hidden\u003e\n      \u003cp\u003e房號：\u003cspan id=\u0022room\u0022 class=\u0022room\u0022\u003e\u003c/span\u003e\u003c/p\u003e\n      \u003cp class=\u0022muted\u0022\u003e請確認邀請來源可信。按下按鈕後，瀏覽器會詢問是否開啟已安裝的 1A2B。\u003c/p\u003e\n      \u003cdiv class=\u0022actions\u0022\u003e\u003cbutton id=\u0022open\u0022 type=\u0022button\u0022\u003e開啟 1A2B\u003c/button\u003e\u003cbutton id=\u0022copy\u0022 type=\u0022button\u0022\u003e複製邀請碼\u003c/button\u003e\u003c/div\u003e\n      \u003cp id=\u0022copy-status\u0022 role=\u0022status\u0022\u003e\u003c/p\u003e\n      \u003cp\u003e若按鈕無法使用，請開啟 1A2B，在「加入房間」貼上邀請碼：\u003c/p\u003e\n      \u003cp\u003e\u003ccode id=\u0022manual\u0022\u003e\u003c/code\u003e\u003c/p\u003e\n      \u003cp class=\u0022muted\u0022\u003eWindows 與網頁版可加入同一個正式房間。\u003c/p\u003e\n    \u003c/div\u003e\n    \u003cp id=\u0022error\u0022 class=\u0022error\u0022 role=\u0022alert\u0022 hidden\u003e邀請連結無效。請向房主索取完整的新連結或邀請碼。\u003c/p\u003e\n    \u003cp\u003e\u003ca style=\u0022color:#7de0d4\u0022 href=\u0022https://140-120-53-5.sslip.io/\u0022\u003e直接玩網頁版 1A2B\u003c/a\u003e · \u003ca style=\u0022color:#7de0d4\u0022 href=\u0022https://github.com/Funji713/1a2b-invite/releases/latest\u0022\u003e下載 Windows 最新版\u003c/a\u003e\u003c/p\u003e\n  \u003c/div\u003e\u003c/main\u003e\n  \u003cscript src=\u0022relay.js\u0022\u003e\u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n", 'text/html');
+      document.title = legacy.title;
+      document.head.appendChild(legacy.querySelector('style'));
+      document.body.replaceChildren(legacy.querySelector('main'));
+      const relay = document.createElement('script'); relay.src = 'relay.js';
+      document.body.appendChild(relay);
+      return;
+    }
+    // Canvas resize policy is None: the browser's visible area owns its bounds.
+// Mobile keyboards can shrink visualViewport while innerHeight stays unchanged.
+(() => {
+    const canvas = document.getElementById('canvas');
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.height = '100%';
+    document.body.style.position = 'fixed';
+    document.body.style.inset = '0';
+    document.body.style.overflow = 'hidden';
+    let pending = false;
+    function resize() {
+        pending = false;
+        const view = window.visualViewport;
+        // Keep browser pinch zoom available without resizing the game underneath it.
+        if (view && Math.abs(view.scale - 1) > 0.01) return;
+        const width = Math.max(1, Math.round(view ? view.width : innerWidth));
+        const height = Math.max(1, Math.round(view ? view.height : innerHeight));
+        const left = view ? Math.max(0, Math.min(view.offsetLeft, innerWidth - width)) : 0;
+        const top = view ? Math.max(0, Math.min(view.offsetTop, innerHeight - height)) : 0;
+        const ratio = window.devicePixelRatio || 1;
+        canvas.style.position = 'absolute';
+        canvas.style.left = `${window.scrollX + left}px`;
+        canvas.style.top = `${window.scrollY + top}px`;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        const bufferWidth = Math.round(width * ratio);
+        const bufferHeight = Math.round(height * ratio);
+        // Assigning even an unchanged buffer size clears a canvas.
+        if (canvas.width !== bufferWidth) canvas.width = bufferWidth;
+        if (canvas.height !== bufferHeight) canvas.height = bufferHeight;
+    }
+    function schedule() {
+        if (!pending) {
+            pending = true;
+            requestAnimationFrame(resize);
+        }
+    }
+    window.addEventListener('resize', schedule);
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('pageshow', schedule);
+    if (window.visualViewport) {
+        visualViewport.addEventListener('resize', schedule);
+        visualViewport.addEventListener('scroll', schedule);
+    }
+    resize();
+})();
+
+    const backend = 'https://140-120-53-5.sslip.io';
+    const status = document.getElementById('status');
+    const progress = document.getElementById('progress');
+    const message = document.getElementById('message');
+    const recovery = document.getElementById('recovery');
+    const room = query.get('room') || '';
+    if (/^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5}$/.test(room)) document.getElementById('direct').href += '?room=' + room;
+    let failed = false;
+    let deadline;
+    const started = Date.now();
+    let downloaded = 0;
+    function fail() {
+      failed = true; clearTimeout(deadline);
+      status.hidden = false; progress.hidden = true; recovery.hidden = false;
+      message.textContent = '遊戲暫時無法載入。請檢查網路後重試，或使用備用入口。';
+    }
+    // No automatic reload/retry, so a service outage never loops navigation.
+    function armDeadline() { clearTimeout(deadline); deadline = setTimeout(fail, Math.max(0, Math.min(45000, 180000 - (Date.now() - started)))); }
+    const loader = document.createElement('script');
+    loader.src = backend + '/index.js'; loader.crossOrigin = 'anonymous';
+    loader.onerror = fail;
+    loader.onload = async () => {
+      if (failed) return;
+      try {
+        const missing = Engine.getMissingFeatures({ threads: false });
+        if (missing.length) throw new Error('Unsupported browser');
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4655064,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        config.executable = backend + '/index';
+        config.mainPack = backend + '/index.pck';
+        config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
+        config.onProgress = (current, total) => {
+          if (failed) return;
+          if (current > downloaded) { downloaded = current; armDeadline(); }
+          if (total > 0) { progress.max = total; progress.value = current; }
+        };
+        const engine = new Engine(config);
+        await engine.startGame();
+        if (!failed) { clearTimeout(deadline); status.hidden = true; }
+      } catch (_) { fail(); }
+    };
+    armDeadline(); document.body.appendChild(loader);
+  })();
+  </script>
 </body>
 </html>
