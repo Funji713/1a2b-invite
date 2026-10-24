@@ -11,7 +11,7 @@ permissions:
 jobs:
   ios:
     runs-on: macos-26
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: Start a fresh evidence set (prior commits retained)
@@ -58,15 +58,7 @@ jobs:
               log.write('GUI launch requested for selected UDID '+udid+'\\n');log.flush()
               subprocess.Popen(['open','-a','Simulator','--args','-CurrentDeviceUDID',udid],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
           time.sleep(10)
-          diagnostics=[['xcrun','simctl','list','devices','booted'],['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')]]
-          warnings=[]
-          for args in diagnostics:
-              try:
-                  run(args,30)
-              except (subprocess.TimeoutExpired,subprocess.CalledProcessError) as e:
-                  warnings.append({'command':args,'result':str(e)})
-                  print('DIAGNOSTIC_WARNING',args,str(e),flush=True)
-          out.joinpath('diagnostic-warnings.json').write_text(json.dumps(warnings,indent=2))
+          out.joinpath('diagnostic-warnings.json').write_text(json.dumps([{'note':'Booted inventory and preview screenshot omitted after repeated cold diagnostic delays; WDA screenshots are required by functional acceptance.'}],indent=2))
           PY
       - name: Bind actual test to final publicly shipped pack
         timeout-minutes: 2
@@ -82,7 +74,7 @@ jobs:
           print('FINAL_PUBLIC_PACK_VERIFIED',digest)
           PY
       - name: Actual Safari inspection through Appium
-        timeout-minutes: 12
+        timeout-minutes: 18
         run: |
           appium --log qa-ios-evidence/appium.log --log-level info > qa-ios-evidence/appium-stdout.log 2>&1 &
           for i in $(seq 1 30); do curl --max-time 2 -sf http://127.0.0.1:4723/status && break; sleep 1; done

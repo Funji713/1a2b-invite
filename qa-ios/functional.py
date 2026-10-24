@@ -93,12 +93,24 @@ def close_room():
     except Exception as e:report['cleanup_error']=str(e);save()
 try:
     caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':'26.5','appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:additionalWebviewBundleIds':['*'],'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
-    value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}});session=value['sessionId']
+    caps['appium:webviewConnectTimeout']=60000
+    try:
+        value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}})
+    except RuntimeError as e:
+        if 'did not return any connected web applications' not in str(e):raise
+        # One bounded recovery on this already booted device, never restart until green.
+        report['safari_startup_failure']=str(e);report['native_session_fallback']=True;save()
+        caps.pop('browserName');caps.pop('appium:safariInitialUrl')
+        caps.update({'appium:bundleId':'com.apple.mobilesafari','appium:autoWebview':False,'appium:noReset':True})
+        value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}})
+    session=value['sessionId']
     report['phase']='native-ready';save();capture('native-session-ready')
     report['active_app']=execute('mobile: activeAppInfo');save()
     for name in ['Continue','Start Browsing','Not Now']:
         if click_native(name):capture('onboarding-'+name.replace(' ','-'))
     click_native('xmark.circle.fill')
+    if report.get('native_session_fallback'):
+        execute('mobile: deepLink',[{'url':'about:blank','bundleId':'com.apple.mobilesafari'}]);time.sleep(3);capture('native-blank-opened',True)
     webview(allow_blank=True)
     control=execute('const c=document.createElement("canvas");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext("webgl2");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),glError:gl.getError()};')
     capture('webgl2-positive-control',True)
@@ -106,7 +118,13 @@ try:
     webview(allow_blank=True);cmd('POST','/url',{'url':root},timeout=90);web=None
     native();click_native('xmark.circle.fill');time.sleep(8)
     capture('safari-opened')
-    deadline=time.monotonic()+100;state={}
+    # Observe cold Wasm startup without blocking its main thread on JS or AX queries.
+    deadline=time.monotonic()+180;attempt=0
+    while time.monotonic()<deadline:
+        rows=capture('startup-render-'+str(attempt),True);attempt+=1
+        if any('以訪客身分登入' in r['text'].replace(' ','') or '開始遊戲' in r['text'].replace(' ','') for r in rows):break
+        time.sleep(12)
+    deadline=time.monotonic()+60;state={}
     while time.monotonic()<deadline:
         state=page_state()
         if state.get('canvas') and state.get('engine')=='function' and not state['status']:break
