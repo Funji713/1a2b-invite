@@ -14,7 +14,7 @@ jobs:
     env:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
       IOS_VERSION: '26.0'
-    timeout-minutes: 48
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: Start a fresh evidence set (prior commits retained)
@@ -78,62 +78,12 @@ jobs:
           assert digest=='063548ccc315df21cb7559386f030e1d5e0c376cd81ca0ecf1d1315f03ef7cb3',digest
           print('FINAL_PUBLIC_PACK_VERIFIED',digest)
           PY
-      - name: Prepare same-engine minimal controls on runner localhost
-        timeout-minutes: 3
-        run: |
-          cp qa-ios/minimal*.pck qa-ios-fixture/
-          cp qa-ios/diagnostic.html qa-ios/gl-control.html qa-ios-fixture/
-          python3 - <<'PY'
-          import urllib.request,hashlib,json
-          from pathlib import Path
-          expected={'index.js':'33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba','index.wasm':'fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0','index.audio.worklet.js':'5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3','index.audio.position.worklet.js':'be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8'}
-          result={}
-          for name,digest in expected.items():
-              data=urllib.request.urlopen('https://140-120-53-5.sslip.io/'+name,timeout=60).read()
-              observed=hashlib.sha256(data).hexdigest()
-              assert observed==digest,(name,observed)
-              Path('qa-ios-fixture',name).write_bytes(data)
-              result[name]={'sha256':observed,'bytes':len(data)}
-          for name in ['minimal.pck','minimal-no-msdf.pck','production.pck']:
-              data=Path('qa-ios-fixture',name).read_bytes()
-              result[name]={'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)}
-          Path('qa-ios-evidence/fixture-assets.json').write_text(json.dumps(result,indent=2))
-          PY
-      - name: Actual Safari inspection through Appium
+      - name: Actual independent iOS Home Screen installation
         timeout-minutes: 18
         run: |
-          python3 -m http.server 8765 --bind 127.0.0.1 --directory qa-ios-fixture > qa-ios-evidence/fixture-http.log 2>&1 &
           appium --log qa-ios-evidence/appium.log --log-level info > qa-ios-evidence/appium-stdout.log 2>&1 &
           for i in $(seq 1 30); do curl --max-time 2 -sf http://127.0.0.1:4723/status && break; sleep 1; done
-          python3 qa-ios/diagnostic.py
-      - name: Record allowlisted numeric simulator resource diagnostics
-        if: always()
-        timeout-minutes: 2
-        run: |
-          python3 - <<'PY'
-          import subprocess,json,re
-          from pathlib import Path
-          out=Path('qa-ios-evidence');out.mkdir(exist_ok=True)
-          summary={'note':'Only allowlisted numeric counts are exported. Raw host processes, OS logs, crash report contents, paths and filenames are not saved.'}
-          try:
-              data=subprocess.check_output(['vm_stat'],timeout=15,text=True)
-              counts={}
-              for label,key in [('Pages free','free'),('Pages active','active'),('Pages inactive','inactive'),('Pages wired down','wired'),('Pages occupied by compressor','compressor')]:
-                  match=re.search(re.escape(label)+r':\s*([0-9]+)',data)
-                  if match:counts[key]=int(match.group(1))
-              summary['host_memory_pages']=counts
-          except Exception:summary['memory_read_unavailable']=True
-          udid=out.joinpath('udid.txt').read_text().strip() if out.joinpath('udid.txt').exists() else None
-          if udid:
-              try:
-                  args=['xcrun','simctl','spawn',udid,'log','show','--last','15m','--style','compact','--predicate','process CONTAINS[c] "GPU" OR eventMessage CONTAINS[c] "WebGL" OR eventMessage CONTAINS[c] "jetsam"']
-                  data=subprocess.check_output(args,timeout=35,stderr=subprocess.DEVNULL,text=True)
-                  summary['simulator_log_keyword_counts']={key:len(re.findall(re.escape(key),data,re.I)) for key in ['context lost','jetsam','GPU Process exited','out of memory']}
-              except Exception:summary['simulator_log_read_unavailable']=True
-              folder=Path.home()/'Library/Developer/CoreSimulator/Devices'/udid/'data/Library/Logs/CrashReporter'
-              summary['own_simulator_crash_filename_counts']={key:sum(bool(re.search(key,p.name,re.I)) for p in folder.glob('*.ips')) for key in ['GPU','WebKit','Safari','Jetsam','WebContent']}
-          out.joinpath('resource-counts.json').write_text(json.dumps(summary,indent=2))
-          PY
+          python3 qa-ios/pwa-os.py
       - name: Preserve non-sensitive simulator evidence on QA branch
         if: always()
         timeout-minutes: 2
