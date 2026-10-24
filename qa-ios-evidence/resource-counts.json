@@ -1,15 +1,15 @@
 {
   "note": "Only allowlisted numeric counts are exported. Raw host processes, OS logs, crash report contents, paths and filenames are not saved.",
   "host_memory_pages": {
-    "free": 21050,
-    "active": 76127,
-    "inactive": 66479,
-    "wired": 153338,
-    "compressor": 129033
+    "free": 4125,
+    "active": 78074,
+    "inactive": 70854,
+    "wired": 189096,
+    "compressor": 108486
   },
   "simulator_log_keyword_counts": {
     "context lost": 0,
-    "jetsam": 521,
+    "jetsam": 557,
     "GPU Process exited": 0,
     "out of memory": 0
   },
