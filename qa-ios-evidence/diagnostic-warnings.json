@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "booted"
+    ],
+    "result": "Command '['xcrun', 'simctl', 'list', 'devices', 'booted']' timed out after 30 seconds"
+  },
+  {
+    "command": [
+      "xcrun",
+      "simctl",
+      "io",
+      "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
+      "screenshot",
+      "qa-ios-evidence/pre-appium.png"
+    ],
+    "result": "Command '['xcrun', 'simctl', 'io', '77AA4492-C787-4EEE-A772-05D4B3E9ECCD', 'screenshot', 'qa-ios-evidence/pre-appium.png']' timed out after 30 seconds"
+  }
+]
