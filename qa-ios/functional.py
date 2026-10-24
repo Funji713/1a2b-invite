@@ -33,9 +33,13 @@ def webview(allow_blank=False):
         time.sleep(4)
     raise AssertionError('No actual Safari web context')
 def check(name,condition,details=None):
-    report['checks'].append({'name':name,'passed':bool(condition),'details':details});save()
+    record(name,condition,details)
     assert condition,name
+def record(name,condition,details=None):
+    report['checks'].append({'name':name,'passed':bool(condition),'details':details});save()
+    print('IOS_CHECK',name,bool(condition),flush=True)
 def capture(label,ocr=False):
+    report['last_capture']=label;save();print('IOS_CAPTURE',label,flush=True)
     native()
     path=out/(label+'.png');path.write_bytes(base64.b64decode(cmd('GET','/screenshot')))
     out.joinpath(label+'.xml').write_text(cmd('GET','/source'))
@@ -53,11 +57,18 @@ def click_native(label,contains=False):
     cmd('POST','/element/'+eid(found[-1])+'/click',{});time.sleep(1);return True
 def tap_ocr(needle,label,exact=False,lowest=False):
     rows=capture(label,True)
-    matches=[r for r in rows if (r['text'].replace(' ','')==needle.replace(' ','') if exact else needle.replace(' ','') in r['text'].replace(' ',''))]
+    norm=lambda text:text.replace(' ','').replace('…','...')
+    matches=[r for r in rows if (norm(r['text'])==norm(needle) if exact else norm(needle) in norm(r['text']))]
     assert matches,{'missing':needle,'ocr':[r['text'] for r in rows]}
     row=max(matches,key=lambda x:x['y']) if lowest else matches[0]
     rect=cmd('GET','/window/rect')
     execute('mobile: tap',[{'x':row['x']*rect['width'],'y':row['y']*rect['height']}]);time.sleep(1)
+def focus_nickname(label):
+    rows=capture(label,True)
+    for value in ['你的暱稱','iOS26QA','StandaloneiOSQA']:
+        if any(r['text'].replace(' ','')==value for r in rows):
+            tap_ocr(value,label+'-field',exact=True);return
+    raise AssertionError({'nickname_field_not_found':[r['text'] for r in rows]})
 def page_state():
     webview()
     return execute('const s=document.getElementById("status");return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!s && !s.hidden && getComputedStyle(s).display!=="none" && getComputedStyle(s).visibility!=="hidden",engine:typeof Engine,standalone:navigator.standalone};')
@@ -75,8 +86,8 @@ def close_room():
     except Exception:pass
     try:
         tap_ocr('離開','cleanup-leave')
-        tap_ocr('關閉房間','cleanup-close')
-        tap_ocr('確認關閉房間','cleanup-confirm')
+        tap_ocr('關閉房間…','cleanup-close',exact=True)
+        tap_ocr('確認關閉房間','cleanup-confirm',exact=True)
         capture('room-cleaned',True);code=None
     except Exception as e:report['cleanup_error']=str(e);save()
 try:
@@ -103,7 +114,7 @@ try:
     report['phase']='game-ready';save();capture('safari-game-ready',True)
     tap_ocr('以訪客身分登入','guest-choice')
     tap_ocr('開始遊戲','menu-start')
-    tap_ocr('你的暱稱','nickname-focus',exact=True,lowest=True)
+    focus_nickname('nickname-focus')
     keyboard=execute('mobile: isKeyboardShown')
     check('real iOS software keyboard shown',keyboard)
     capture('ios-keyboard-before-input')
@@ -125,6 +136,13 @@ try:
         time.sleep(1)
     check('native keyboard nickname reaches real WSS room',code is not None,code)
     capture('actual-room-created',True)
+    try:
+        tap_ocr('複製連結','native-copy-invite',exact=True)
+        copied=base64.b64decode(execute('mobile: getClipboard',[{'contentType':'plaintext'}])).decode('utf-8')
+        record('actual iOS pasteboard contains own copied invitation',copied==root+'?room='+code,{'matches_expected':copied==root+'?room='+code})
+    except Exception:
+        record('actual iOS pasteboard contains own copied invitation',False,traceback.format_exc())
+        capture('native-clipboard-failure')
     # The app's chat drawer has a visible text toggle; find it from actual pixels.
     tap_ocr('<<','chat-open')
     tap_ocr('輸入訊息','chat-input-focus')
@@ -199,12 +217,14 @@ try:
     rows=capture('standalone-entry',True)
     if any('以訪客身分登入' in r['text'].replace(' ','') for r in rows):tap_ocr('以訪客身分登入','standalone-guest')
     tap_ocr('開始遊戲','standalone-start')
-    tap_ocr('你的暱稱','standalone-nickname',exact=True,lowest=True)
+    focus_nickname('standalone-nickname')
     check('standalone native keyboard visible',execute('mobile: isKeyboardShown'))
-    active=cmd('GET','/element/active');cmd('POST','/element/'+eid(active)+'/value',{'text':'StandaloneiOSQA'})
+    active=cmd('GET','/element/active');cmd('POST','/element/'+eid(active)+'/clear',{});cmd('POST','/element/'+eid(active)+'/value',{'text':'StandaloneiOSQA'})
     capture('standalone-native-input',True)
     native();execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2);check('installed app relaunch',click_native('1A2B',True));time.sleep(3);capture('installed-relaunched')
-    report['phase']='complete';report['passed']=True;save();print('IOS26_FUNCTIONAL_ACCEPTANCE_PASSED',flush=True)
+    report['phase']='complete';report['passed']=all(c['passed'] for c in report['checks']);save()
+    assert report['passed'],'One or more independent checks failed; retained results are not an overall pass'
+    print('IOS26_FUNCTIONAL_ACCEPTANCE_PASSED',flush=True)
 except Exception:
     report['error']=traceback.format_exc();report['passed']=False;save()
     if session:

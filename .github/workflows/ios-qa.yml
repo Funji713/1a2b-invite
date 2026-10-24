@@ -57,9 +57,16 @@ jobs:
           with open(out/'boot.log','a') as log:
               log.write('GUI launch requested for selected UDID '+udid+'\\n');log.flush()
               subprocess.Popen(['open','-a','Simulator','--args','-CurrentDeviceUDID',udid],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
-          run(['xcrun','simctl','list','devices','booted'],20)
           time.sleep(10)
-          run(['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')],30)
+          diagnostics=[['xcrun','simctl','list','devices','booted'],['xcrun','simctl','io',udid,'screenshot',str(out/'pre-appium.png')]]
+          warnings=[]
+          for args in diagnostics:
+              try:
+                  run(args,30)
+              except (subprocess.TimeoutExpired,subprocess.CalledProcessError) as e:
+                  warnings.append({'command':args,'result':str(e)})
+                  print('DIAGNOSTIC_WARNING',args,str(e),flush=True)
+          out.joinpath('diagnostic-warnings.json').write_text(json.dumps(warnings,indent=2))
           PY
       - name: Bind actual test to final publicly shipped pack
         timeout-minutes: 2
