@@ -1,6 +1,6 @@
 import os,json,time,urllib.request,urllib.error,base64,traceback,subprocess,re
 from pathlib import Path
-out=Path('qa-ios-evidence');out.mkdir(exist_ok=True)
+out=Path('qa-ios-evidence/pwa');out.mkdir(parents=True,exist_ok=True)
 base='http://127.0.0.1:4723';session=None;web=None;code=None;want_standalone=False
 root='https://funji713.github.io/1a2b-invite/'
 report={'started':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'run':os.getenv('GITHUB_RUN_ID'),'checks':[],'phase':'startup'}

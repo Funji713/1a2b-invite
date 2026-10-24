@@ -14,7 +14,7 @@ jobs:
     env:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
       IOS_VERSION: '26.0'
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Start a fresh evidence set (prior commits retained)
@@ -31,7 +31,8 @@ jobs:
           python3 -c "from pathlib import Path; p=next(Path('qa-wda').rglob('*.app')); Path('qa-ios-evidence/wda-path.txt').write_text(str(p.resolve()))"
           swiftc qa-ios/ocr.swift -o qa-ios/ocr
       - name: Boot one actual iOS Simulator with bounded diagnostics
-        timeout-minutes: 9
+        id: boot
+        timeout-minutes: 12
         run: |
           mkdir -p qa-ios-evidence
           python3 - <<'PY'
@@ -56,7 +57,7 @@ jobs:
           chosen=next(dev for rt,devices in sorted(d['devices'].items(),reverse=True) if rt.endswith('iOS-26-0') for dev in devices if dev.get('isAvailable') and 'iPhone' in dev['name'])
           udid=chosen['udid'];out.joinpath('udid.txt').write_text(udid)
           run(['xcrun','simctl','boot',udid],60)
-          run(['xcrun','simctl','bootstatus',udid,'-b'],240)
+          run(['xcrun','simctl','bootstatus',udid,'-b'],480)
           with open(out/'boot.log','a') as log:
               log.write('GUI launch requested for selected UDID '+udid+'\\n');log.flush()
               subprocess.Popen(['open','-a','Simulator','--args','-CurrentDeviceUDID',udid],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
@@ -64,6 +65,7 @@ jobs:
           out.joinpath('diagnostic-warnings.json').write_text(json.dumps([{'note':'Booted inventory and preview screenshot omitted after repeated cold diagnostic delays; WDA screenshots are required by functional acceptance.'}],indent=2))
           PY
       - name: Bind actual test to final publicly shipped pack
+        id: pack
         timeout-minutes: 2
         run: |
           python3 - <<'PY'
@@ -78,12 +80,42 @@ jobs:
           assert digest=='063548ccc315df21cb7559386f030e1d5e0c376cd81ca0ecf1d1315f03ef7cb3',digest
           print('FINAL_PUBLIC_PACK_VERIFIED',digest)
           PY
-      - name: Actual independent iOS Home Screen installation
-        timeout-minutes: 18
+      - name: Start owned Appium server
+        id: appium
+        timeout-minutes: 2
         run: |
           appium --log qa-ios-evidence/appium.log --log-level info > qa-ios-evidence/appium-stdout.log 2>&1 &
           for i in $(seq 1 30); do curl --max-time 2 -sf http://127.0.0.1:4723/status && break; sleep 1; done
-          python3 qa-ios/pwa-os.py
+          curl --max-time 2 -sf http://127.0.0.1:4723/status
+      - name: Actual independent iOS Home Screen installation
+        if: ${{ always() && steps.boot.outcome == 'success' && steps.pack.outcome == 'success' && steps.appium.outcome == 'success' }}
+        timeout-minutes: 18
+        run: python3 qa-ios/pwa-os.py
+      - name: Prepare isolated minimal engine trace
+        id: traceprep
+        if: ${{ always() && steps.boot.outcome == 'success' && steps.pack.outcome == 'success' && steps.appium.outcome == 'success' }}
+        timeout-minutes: 3
+        run: |
+          cp qa-ios/minimal-no-msdf.pck qa-ios/godot-trace.html qa-ios-fixture/
+          python3 - <<'PY'
+          import urllib.request,hashlib,json
+          from pathlib import Path
+          expected={'index.js':'33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba','index.wasm':'fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0','index.audio.worklet.js':'5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3','index.audio.position.worklet.js':'be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8'}
+          result={}
+          for name,digest in expected.items():
+              data=urllib.request.urlopen('https://140-120-53-5.sslip.io/'+name,timeout=60).read()
+              observed=hashlib.sha256(data).hexdigest()
+              assert observed==digest,(name,observed)
+              Path('qa-ios-fixture',name).write_bytes(data)
+              result[name]={'sha256':observed,'bytes':len(data)}
+          Path('qa-ios-evidence/trace-fixture-assets.json').write_text(json.dumps(result,indent=2))
+          PY
+      - name: Collect independent low-interference minimal engine trace
+        if: ${{ always() && steps.boot.outcome == 'success' && steps.pack.outcome == 'success' && steps.appium.outcome == 'success' && steps.traceprep.outcome == 'success' }}
+        timeout-minutes: 8
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory qa-ios-fixture > qa-ios-evidence/trace-http.log 2>&1 &
+          python3 qa-ios/trace.py
       - name: Preserve non-sensitive simulator evidence on QA branch
         if: always()
         timeout-minutes: 2

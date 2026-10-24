@@ -1,0 +1,54 @@
+<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minimal Godot trace</title>
+<style>html,body{margin:0;background:#203040}canvas{display:block;width:100vw;height:100vh}</style><canvas id="canvas"></canvas><script>
+window.gdtrace={contexts:[],events:[],shaderEvents:[],shaderEventTail:[],shaderEventCount:0,shaderEventsDropped:0,milestones:[],counts:{},firstObservedGlError:null,observerFrames:0,heapSizes:[],resolved:false,logs:[],errorObservation:'Only natural engine getError calls are observed; no added reads consume the GL error queue.'};
+const contextIds=new WeakMap(),canvasIds=new WeakMap(),objectIds=new WeakMap(),listened=new WeakSet();
+let nextContext=1,nextCanvas=1,nextObject=1,sequence=0;
+const ring=Array.from({length:32},()=>({sequence:0,context:0,method:''}));
+function objectId(value){if(!value||typeof value!=='object')return 0;if(!objectIds.has(value))objectIds.set(value,nextObject++);return objectIds.get(value);}
+function heapSize(){const size=window.traceEngine?.rtenv?.HEAPU8?.buffer?.byteLength;if(Number.isFinite(size)&&gdtrace.heapSizes.at(-1)?.bytes!==size&&gdtrace.heapSizes.length<20)gdtrace.heapSizes.push({at:performance.now(),bytes:size});return size??null;}
+function history(){return ring.filter(r=>r.sequence).map(r=>({...r})).sort((a,b)=>a.sequence-b.sequence);}
+function bounded(list,value){if(list.length<200)list.push(value);}
+function shaderEvent(value){gdtrace.shaderEventCount++;bounded(gdtrace.shaderEvents,value);gdtrace.shaderEventTail.push(value);if(gdtrace.shaderEventTail.length>64)gdtrace.shaderEventTail.shift();gdtrace.shaderEventsDropped=Math.max(0,gdtrace.shaderEventCount-200);}
+const originals=new Map();
+for(let proto=WebGL2RenderingContext.prototype;proto&&proto!==Object.prototype;proto=Object.getPrototypeOf(proto)){
+ for(const name of Object.getOwnPropertyNames(proto)){
+  const descriptor=Object.getOwnPropertyDescriptor(proto,name);
+  if(name==='constructor'||typeof descriptor?.value!=='function'||originals.has(name))continue;
+  const original=descriptor.value;originals.set(name,original);
+  Object.defineProperty(proto,name,{...descriptor,value:function(...args){
+   const context=contextIds.get(this)||0,key=context+':'+name;
+   gdtrace.counts[key]=(gdtrace.counts[key]||0)+1;
+   const item=ring[sequence%32];item.sequence=++sequence;item.context=context;item.method=name;
+   if(gdtrace.counts[key]===1)bounded(gdtrace.milestones,{context,method:name,sequence,at:performance.now(),heapBytes:heapSize()});
+   const submitted=name==='compileShader'||name==='linkProgram';
+   if(submitted)shaderEvent({context,method:name,stage:'submit-start',object:objectId(args[0]),at:performance.now()});
+   let value;
+   try{value=original.apply(this,args);}finally{if(submitted)shaderEvent({context,method:name,stage:'submit-return',object:objectId(args[0]),at:performance.now()});}
+   if((name==='getShaderParameter'&&args[1]===35713)||(name==='getProgramParameter'&&args[1]===35714))shaderEvent({context,method:name,stage:'engine-status-query',object:objectId(args[0]),status:value,at:performance.now()});
+   if(name==='getError'&&value!==0&&gdtrace.firstObservedGlError===null)gdtrace.firstObservedGlError={context,value,sequence,at:performance.now(),history:history()};
+   return value;
+  }});
+ }
+}
+const originalGetContext=HTMLCanvasElement.prototype.getContext;
+HTMLCanvasElement.prototype.getContext=function(kind,...args){
+ const gl=originalGetContext.call(this,kind,...args);
+ if(gl&&kind.includes('webgl')){
+  if(!canvasIds.has(this))canvasIds.set(this,nextCanvas++);
+  if(!contextIds.has(gl)){const id=nextContext++;contextIds.set(gl,id);gdtrace.contexts.push({id,canvas:canvasIds.get(this),width:this.width,height:this.height,kind,requested:args});}
+  if(!listened.has(this)){
+   listened.add(this);const context=contextIds.get(gl),canvas=canvasIds.get(this);
+   this.addEventListener('webglcontextlost',e=>gdtrace.events.push({type:e.type,context,canvas,at:performance.now(),sequence,history:history(),heapBytes:heapSize(),observerFrames:gdtrace.observerFrames}));
+   this.addEventListener('webglcontextrestored',e=>gdtrace.events.push({type:e.type,context,canvas,at:performance.now()}));
+  }
+ }
+ return gl;
+};
+const canvas=document.querySelector('canvas');canvas.width=Math.round(innerWidth*devicePixelRatio);canvas.height=Math.round(innerHeight*devicePixelRatio);
+window.alert=message=>bounded(gdtrace.logs,'native-alert-equivalent: '+String(message));
+function observeFrame(){gdtrace.observerFrames++;heapSize();if(gdtrace.observerFrames<3600)requestAnimationFrame(observeFrame);}requestAnimationFrame(observeFrame);
+</script><script src="index.js"></script><script>
+window.traceEngine=new Engine({executable:'index',mainPack:'minimal-no-msdf.pck',canvas,canvasResizePolicy:0,args:[],onPrint:(...args)=>bounded(gdtrace.logs,args.join(' ')),onPrintError:(...args)=>bounded(gdtrace.logs,'stderr: '+args.join(' '))});
+traceEngine.startGame().then(()=>{gdtrace.resolved=true;heapSize();}).catch(e=>gdtrace.failure=String(e));
+</script>
+
