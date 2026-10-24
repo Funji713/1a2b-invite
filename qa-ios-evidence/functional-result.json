@@ -1,0 +1,17 @@
+{
+  "started": "2026-10-24T16:51:20Z",
+  "run": "40112636285",
+  "checks": [],
+  "phase": "native-ready",
+  "active_app": {
+    "processArguments": {
+      "env": {},
+      "args": []
+    },
+    "name": "",
+    "pid": 55552,
+    "bundleId": "com.apple.mobilesafari"
+  },
+  "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 86, in <module>\n    state=page_state()\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 61, in page_state\n    webview()\n    ~~~~~~~^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/functional.py\", line 33, in webview\n    raise AssertionError('No actual Safari web context')\nAssertionError: No actual Safari web context\n",
+  "passed": false
+}

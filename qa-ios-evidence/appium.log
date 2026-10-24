@@ -1,0 +1,239 @@
+2026-10-24 16:50:47:248 [Appium] Welcome to Appium v3.8.0
+2026-10-24 16:50:47:260 [Appium] Non-default server args:
+2026-10-24 16:50:47:261 [Appium] { loglevel: 'info' }
+2026-10-24 16:50:47:267 [Appium] Attempting to load driver xcuitest...
+2026-10-24 16:50:53:777 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2026-10-24 16:50:53:778 [Appium] You can provide the following URLs in your client code to connect to this server:
+	http://127.0.0.1:4723/ (only accessible from the same host)
+	http://192.168.64.2:4723/
+2026-10-24 16:50:53:779 [Appium] Available drivers:
+2026-10-24 16:50:53:779 [Appium]   - xcuitest@12.20.0 (automationName 'XCUITest')
+2026-10-24 16:50:53:779 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2026-10-24 16:51:17:855 [HTTP] --> GET /status 
+2026-10-24 16:51:17:864 [HTTP] <-- GET /status 200 6 ms - 110
+2026-10-24 16:51:20:618 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","appium:platformVersion":"26.5","appium:automationName":"XCUITest","appium:udid":"12FCFD0F-7FCF-463F-A605-132A7E18B5D5","appium:bundleId":"com.apple.mobilesafari","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":true}}}
+2026-10-24 16:51:20:623 [Appium] Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
+2026-10-24 16:51:20:623 [Appium] The 'xcuitest' driver was installed and matched caps.
+2026-10-24 16:51:20:623 [Appium] Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
+2026-10-24 16:51:20:655 [AppiumDriver@4551] Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
+2026-10-24 16:51:20:655 [AppiumDriver@4551] Checking BaseDriver versions for Appium and XCUITestDriver
+2026-10-24 16:51:20:655 [AppiumDriver@4551] Appium's BaseDriver version is 10.8.1
+2026-10-24 16:51:20:655 [AppiumDriver@4551] XCUITestDriver's BaseDriver version is 10.8.1
+2026-10-24 16:51:20:674 [ffa84fb5][XCUITestDriver@178b] Session created with session id: ffa84fb5-6fb6-43aa-8e0f-c776513922d0
+2026-10-24 16:51:21:883 [ffa84fb5][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+2026-10-24 16:51:35:973 [ffa84fb5][XCUITestDriver@178b] Constructing iOS simulator for Xcode version 26.6 with udid '12FCFD0F-7FCF-463F-A605-132A7E18B5D5'
+2026-10-24 16:51:35:974 [ffa84fb5][XCUITestDriver@178b] Determining device to run tests on: udid: '12FCFD0F-7FCF-463F-A605-132A7E18B5D5', real device: false
+2026-10-24 16:51:35:977 [ffa84fb5][BaseDriver] Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 16:51:36:022 [ffa84fb5][BaseDriver] Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidContended'
+2026-10-24 16:51:36:023 [ffa84fb5][BaseDriver] Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidReleased'
+2026-10-24 16:51:36:067 [ffa84fb5][BaseDriver] Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidContended'
+2026-10-24 16:51:36:067 [ffa84fb5][BaseDriver] Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidReleased'
+2026-10-24 16:51:36:130 [ffa84fb5][XCUITestDriver@178b] Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+2026-10-24 16:51:36:131 [ffa84fb5][XCUITestDriver@178b] Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+2026-10-24 16:51:46:696 [ffa84fb5][XCUITestDriver@178b] Setting up simulator
+2026-10-24 16:51:49:424 [ffa84fb5][XCUITestDriver@178b] Both Simulator with UDID '12FCFD0F-7FCF-463F-A605-132A7E18B5D5' and the UI client are currently running
+2026-10-24 16:51:50:339 [ffa84fb5][XCUITestDriver@178b] Requesting connection for device 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 on local port 8100
+2026-10-24 16:51:50:340 [ffa84fb5][XCUITestDriver@178b] Successfully requested the connection for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5:8100
+2026-10-24 16:51:50:391 [ffa84fb5][XCUITestDriver@178b] Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
+2026-10-24 16:52:11:967 [ffa84fb5][XCUITestDriver@178b] The app has been successfully installed in 18320ms
+2026-10-24 16:52:11:968 [ffa84fb5][XCUITestDriver@178b] Selected 'simulator' WebDriverAgent startup strategy
+2026-10-24 16:52:11:969 [ffa84fb5][XCUITestDriver@178b] Launching WebDriverAgent on the device without xcodebuild
+2026-10-24 16:52:13:702 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:14:127 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:14:523 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:14:830 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:15:146 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:15:488 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:15:799 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:16:720 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:17:376 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:17:811 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:18:246 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:18:630 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:18:993 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:19:386 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:19:767 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:20:073 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:20:413 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:20:786 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:21:088 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:21:389 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:21:765 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:22:066 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:22:383 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:22:691 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:22:993 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:23:320 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:23:622 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:23:925 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:24:397 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:24:699 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:25:001 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:25:330 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:25:632 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:25:934 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:26:235 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:26:538 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:26:841 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:27:142 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:27:512 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:27:815 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:28:118 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:28:421 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:28:728 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:29:030 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:29:333 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:29:651 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:29:953 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:30:255 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:30:562 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:30:865 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:31:168 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:31:470 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:31:772 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:32:073 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:32:376 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:32:679 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:32:983 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:33:313 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:33:617 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:33:919 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:34:264 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:34:567 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:34:870 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:35:217 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:35:559 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:35:863 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:36:165 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:36:468 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:36:772 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:37:091 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:37:395 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:37:709 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:38:042 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:38:345 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:38:650 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:38:964 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:39:267 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:39:570 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:39:873 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:40:219 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:40:522 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:40:838 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:41:149 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:41:458 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:41:762 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:42:065 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:42:393 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:42:696 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:42:999 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:43:300 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:43:603 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:43:906 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:44:210 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:44:513 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:44:816 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:45:118 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:45:425 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:45:728 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:46:030 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:46:334 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:46:647 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:47:092 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:47:400 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:47:713 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:48:017 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:48:319 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:48:622 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:48:990 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:49:295 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:49:597 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:50:775 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:52:51:114 [ffa84fb5][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 16:53:04:078 [ffa84fb5][XCUITestDriver@178b] Determined the downstream protocol as 'W3C'
+2026-10-24 16:53:04:079 [ffa84fb5][XCUITestDriver@178b] WDA session startup took 12545ms
+2026-10-24 16:53:04:091 [ffa84fb5][XCUITestDriver@178b] WebDriverAgent version: '16.17.1'
+2026-10-24 16:53:04:109 [ffa84fb5][XCUITestDriver@178b] Requesting connection for device 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 on local port 9100, device port 9100
+2026-10-24 16:53:04:110 [ffa84fb5][XCUITestDriver@178b] Successfully requested the connection for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5:9100
+2026-10-24 16:53:04:110 [ffa84fb5][BaseDriver] Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 16:53:04:111 [ffa84fb5][BaseDriver] Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 16:53:04:121 [ffa84fb5][AppiumDriver@4551] New XCUITestDriver session created successfully, session ffa84fb5-6fb6-43aa-8e0f-c776513922d0 added to master session list
+2026-10-24 16:53:04:127 [HTTP] <-- POST /session 200 103506 ms - 753
+2026-10-24 16:53:04:552 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:04:560 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 11 ms - 14
+2026-10-24 16:53:04:562 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+2026-10-24 16:53:05:212 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 635 ms - 485792
+2026-10-24 16:53:05:505 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+2026-10-24 16:53:10:345 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 4839 ms - 31641
+2026-10-24 16:53:10:350 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync {"script":"mobile: activeAppInfo","args":[]}
+2026-10-24 16:53:10:361 [ffa84fb5][XCUITestDriver@178b] Proxying to WDA with an unknown route: GET /wda/activeAppInfo
+2026-10-24 16:53:10:667 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync 200 315 ms - 109
+2026-10-24 16:53:10:711 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:10:715 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+2026-10-24 16:53:10:717 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Continue\" OR name == \"Continue\""}
+2026-10-24 16:53:11:074 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 350 ms - 12
+2026-10-24 16:53:11:122 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:11:132 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 4 ms - 14
+2026-10-24 16:53:11:135 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Start Browsing\" OR name == \"Start Browsing\""}
+2026-10-24 16:53:11:400 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 263 ms - 12
+2026-10-24 16:53:11:402 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:11:407 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 4 ms - 14
+2026-10-24 16:53:11:457 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Not Now\" OR name == \"Not Now\""}
+2026-10-24 16:53:11:720 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 263 ms - 12
+2026-10-24 16:53:11:722 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync {"script":"mobile: deepLink","args":[{"url":"https://funji713.github.io/1a2b-invite/","bundleId":"com.apple.mobilesafari"}]}
+2026-10-24 16:53:12:104 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync 200 374 ms - 14
+2026-10-24 16:53:32:312 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:32:314 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1535 ms - 14
+2026-10-24 16:53:32:324 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+2026-10-24 16:53:32:928 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 574 ms - 280112
+2026-10-24 16:53:33:052 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+2026-10-24 16:53:45:779 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 12722 ms - 25935
+2026-10-24 16:53:45:783 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:53:49:168 [ffa84fb5][RemoteDebugger] Remote Debugger version 17.7.6
+2026-10-24 16:53:54:302 [ffa84fb5][XCUITestDriver@178b] The remote debugger did not report any active web applications within 5000ms timeout. Consider increasing the value of 'webviewConnectTimeout' capability to wait longer on slower devices.
+2026-10-24 16:53:54:324 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 8528 ms - 24
+2026-10-24 16:53:54:342 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:54:343 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:53:58:483 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:53:58:485 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+2026-10-24 16:53:58:487 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:53:58:489 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:54:02:646 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:02:785 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 149 ms - 24
+2026-10-24 16:54:02:790 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:02:792 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+2026-10-24 16:54:06:866 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:06:892 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+2026-10-24 16:54:06:893 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:06:894 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:54:11:042 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:11:045 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 3 ms - 24
+2026-10-24 16:54:11:048 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:11:050 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+2026-10-24 16:54:15:133 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:15:135 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 1 ms - 24
+2026-10-24 16:54:15:136 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:15:137 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:54:19:286 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:19:289 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+2026-10-24 16:54:19:291 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:19:292 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:54:23:403 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+2026-10-24 16:54:23:408 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 3 ms - 24
+2026-10-24 16:54:23:411 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:23:413 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+2026-10-24 16:54:27:641 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:27:642 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+2026-10-24 16:54:27:644 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+2026-10-24 16:54:28:769 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 1124 ms - 292784
+2026-10-24 16:54:28:794 [ffa84fb5][HTTP] --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+2026-10-24 16:54:33:412 [HTTP] <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 4617 ms - 29607
+2026-10-24 16:54:50:658 [ffa84fb5][HTTP] --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+2026-10-24 16:54:50:660 [HTTP] <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+2026-10-24 16:54:50:662 [ffa84fb5][HTTP] --> DELETE /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0 
+2026-10-24 16:54:50:663 [ffa84fb5][BaseDriver] Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 16:54:50:671 [ffa84fb5][XCUITestDriver@178b] Stopping the XCTest session
+2026-10-24 16:54:50:866 [ffa84fb5][XCUITestDriver@178b] Releasing connections for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 device on any port number
+2026-10-24 16:54:50:867 [ffa84fb5][XCUITestDriver@178b] Found cached connections to release: ["12FCFD0F-7FCF-463F-A605-132A7E18B5D5:8100","12FCFD0F-7FCF-463F-A605-132A7E18B5D5:9100"]
+2026-10-24 16:54:50:963 [ffa84fb5][AppiumDriver@4551] Removing session ffa84fb5-6fb6-43aa-8e0f-c776513922d0 from our master session list
+2026-10-24 16:54:50:965 [HTTP] <-- DELETE /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0 200 303 ms - 14

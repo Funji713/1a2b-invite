@@ -1,0 +1,239 @@
+[38;5;112m[Appium][0m Welcome to Appium v3.8.0
+[38;5;112m[Appium][0m Non-default server args:
+[38;5;112m[Appium][0m { loglevel: [32m'info'[39m }
+[38;5;112m[Appium][0m Attempting to load driver xcuitest...
+[38;5;112m[Appium][0m Appium REST http interface listener started on http://0.0.0.0:4723
+[38;5;112m[Appium][0m You can provide the following URLs in your client code to connect to this server:
+	http://127.0.0.1:4723/ (only accessible from the same host)
+	http://192.168.64.2:4723/
+[38;5;112m[Appium][0m Available drivers:
+[38;5;112m[Appium][0m   - xcuitest@12.20.0 (automationName 'XCUITest')
+[38;5;112m[Appium][0m No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+[38;5;86m[HTTP][0m --> GET /status 
+[38;5;86m[HTTP][0m <-- GET /status 200 6 ms - 110
+[38;5;86m[HTTP][0m --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","appium:platformVersion":"26.5","appium:automationName":"XCUITest","appium:udid":"12FCFD0F-7FCF-463F-A605-132A7E18B5D5","appium:bundleId":"com.apple.mobilesafari","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":true}}}
+[38;5;112m[Appium][0m Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
+[38;5;112m[Appium][0m The 'xcuitest' driver was installed and matched caps.
+[38;5;112m[Appium][0m Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
+[38;5;143m[AppiumDriver@4551][0m Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
+[38;5;143m[AppiumDriver@4551][0m Checking BaseDriver versions for Appium and XCUITestDriver
+[38;5;143m[AppiumDriver@4551][0m Appium's BaseDriver version is 10.8.1
+[38;5;143m[AppiumDriver@4551][0m XCUITestDriver's BaseDriver version is 10.8.1
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Session created with session id: ffa84fb5-6fb6-43aa-8e0f-c776513922d0
+[38;5;146m[ffa84fb5][0m[38;5;135m[XCUITest][0m RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Constructing iOS simulator for Xcode version 26.6 with udid '12FCFD0F-7FCF-463F-A605-132A7E18B5D5'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Determining device to run tests on: udid: '12FCFD0F-7FCF-463F-A605-132A7E18B5D5', real device: false
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidClaimed'
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidContended'
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidReleased'
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidContended'
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidReleased'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Setting up simulator
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Both Simulator with UDID '12FCFD0F-7FCF-463F-A605-132A7E18B5D5' and the UI client are currently running
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Requesting connection for device 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 on local port 8100
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Successfully requested the connection for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5:8100
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m The app has been successfully installed in 18320ms
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Selected 'simulator' WebDriverAgent startup strategy
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Launching WebDriverAgent on the device without xcodebuild
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;151m[WD Proxy][0m connect ECONNREFUSED 127.0.0.1:8100
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Determined the downstream protocol as 'W3C'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m WDA session startup took 12545ms
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m WebDriverAgent version: '16.17.1'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Requesting connection for device 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 on local port 9100, device port 9100
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Successfully requested the connection for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5:9100
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidClaimed'
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Subscribing 178b7d71-b210-484c-9f76-e229f578526e to topic 'xcuitest:sessionUdidClaimed'
+[38;5;146m[ffa84fb5][0m[38;5;143m[AppiumDriver@4551][0m New XCUITestDriver session created successfully, session ffa84fb5-6fb6-43aa-8e0f-c776513922d0 added to master session list
+[38;5;86m[HTTP][0m <-- POST /session 200 103506 ms - 753
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 11 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 635 ms - 485792
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 4839 ms - 31641
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync {"script":"mobile: activeAppInfo","args":[]}
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Proxying to WDA with an unknown route: GET /wda/activeAppInfo
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync 200 315 ms - 109
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Continue\" OR name == \"Continue\""}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 350 ms - 12
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 4 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Start Browsing\" OR name == \"Start Browsing\""}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 263 ms - 12
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 4 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements {"using":"-ios predicate string","value":"label == \"Not Now\" OR name == \"Not Now\""}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/elements 200 263 ms - 12
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync {"script":"mobile: deepLink","args":[{"url":"https://funji713.github.io/1a2b-invite/","bundleId":"com.apple.mobilesafari"}]}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/execute/sync 200 374 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1535 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 574 ms - 280112
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 12722 ms - 25935
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;146m[ffa84fb5][0m[38;5;87m[RemoteDebugger][0m Remote Debugger version 17.7.6
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m The remote debugger did not report any active web applications within 5000ms timeout. Consider increasing the value of 'webviewConnectTimeout' capability to wait longer on slower devices.
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 8528 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 149 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 3 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 1 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 2 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/contexts 200 3 ms - 24
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 1 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/screenshot 200 1124 ms - 292784
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 
+[38;5;86m[HTTP][0m <-- GET /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/source 200 4617 ms - 29607
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context {"name":"NATIVE_APP"}
+[38;5;86m[HTTP][0m <-- POST /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0/context 200 2 ms - 14
+[38;5;146m[ffa84fb5][0m[38;5;86m[HTTP][0m --> DELETE /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0 
+[38;5;146m[ffa84fb5][0m[38;5;123m[BaseDriver][0m Unsubscribing 178b7d71-b210-484c-9f76-e229f578526e from topic 'xcuitest:sessionUdidClaimed'
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Stopping the XCTest session
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Releasing connections for 12FCFD0F-7FCF-463F-A605-132A7E18B5D5 device on any port number
+[38;5;146m[ffa84fb5][0m[38;5;141m[XCUITestDriver@178b][0m Found cached connections to release: ["12FCFD0F-7FCF-463F-A605-132A7E18B5D5:8100","12FCFD0F-7FCF-463F-A605-132A7E18B5D5:9100"]
+[38;5;146m[ffa84fb5][0m[38;5;143m[AppiumDriver@4551][0m Removing session ffa84fb5-6fb6-43aa-8e0f-c776513922d0 from our master session list
+[38;5;86m[HTTP][0m <-- DELETE /session/ffa84fb5-6fb6-43aa-8e0f-c776513922d0 200 303 ms - 14
