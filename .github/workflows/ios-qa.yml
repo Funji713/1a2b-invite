@@ -28,7 +28,7 @@ jobs:
           python3 -c "from pathlib import Path; p=next(Path('qa-wda').rglob('*.app')); Path('qa-ios-evidence/wda-path.txt').write_text(str(p.resolve()))"
           swiftc qa-ios/ocr.swift -o qa-ios/ocr
       - name: Boot one actual iOS Simulator with bounded diagnostics
-        timeout-minutes: 7
+        timeout-minutes: 9
         run: |
           mkdir -p qa-ios-evidence
           python3 - <<'PY'
@@ -47,7 +47,7 @@ jobs:
                       log.write('ELAPSED '+str(elapsed)+'\n')
                       print('ELAPSED',elapsed,flush=True)
           run(['xcodebuild','-version'])
-          data=subprocess.check_output(['xcrun','simctl','list','-j'],timeout=30)
+          data=subprocess.check_output(['xcrun','simctl','list','-j'],timeout=120)
           out.joinpath('simctl.json').write_bytes(data)
           d=json.loads(data)
           chosen=next(dev for rt,devices in sorted(d['devices'].items(),reverse=True) if 'iOS' in rt for dev in devices if dev.get('isAvailable') and 'iPhone' in dev['name'])
