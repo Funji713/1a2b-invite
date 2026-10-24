@@ -117,7 +117,17 @@ try:
     check('plain WebGL2 positive control on actual simulator',control.get('supported') and not control.get('lost') and control.get('pixel')==[0,255,0,255],control)
     root='http://127.0.0.1:8765/'
     report['diagnostics']=[];save()
-    for pack,size in [('minimal','full'),('minimal-no-msdf','full'),('production','full'),('production','small')]:
+    for preserve in [1,0]:
+        label='shader-fbo-preserve-'+str(preserve)
+        native();execute('mobile: terminateApp',[{'bundleId':'com.apple.mobilesafari'}]);time.sleep(3)
+        execute('mobile: deepLink',[{'url':root+'gl-control.html?preserve='+str(preserve),'bundleId':'com.apple.mobilesafari'}]);web=None
+        time.sleep(5);capture(label+'-early',True)
+        time.sleep(35);capture(label+'-final',True)
+        webview();state=execute('return {result:window.glqa||null,ua:navigator.userAgent,url:location.href};')
+        result=state.get('result') or {}
+        report['diagnostics'].append({'case':label,'state':state});save()
+        record(label+' actual shader/FBO/draw/blit/multiframe rendering',result.get('linked') and result.get('complete') and result.get('frames',0)>=30 and not result.get('events') and not result.get('glErrors') and result.get('pixelFailures')==0,state)
+    for pack,size in [('minimal-no-msdf','full')]:
         label=pack+'-'+size
         try:
             print('IOS_DIAGNOSTIC_START',label,flush=True)

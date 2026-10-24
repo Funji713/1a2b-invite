@@ -82,7 +82,7 @@ jobs:
         timeout-minutes: 3
         run: |
           cp qa-ios/minimal*.pck qa-ios-fixture/
-          cp qa-ios/diagnostic.html qa-ios-fixture/
+          cp qa-ios/diagnostic.html qa-ios/gl-control.html qa-ios-fixture/
           python3 - <<'PY'
           import urllib.request,hashlib,json
           from pathlib import Path
