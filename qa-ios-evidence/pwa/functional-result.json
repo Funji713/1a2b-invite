@@ -1,0 +1,37 @@
+{
+  "started": "2026-10-24T19:04:18Z",
+  "run": "40123141785",
+  "checks": [
+    {
+      "name": "formal-safari-rendering-status native alert dismissed for OS navigation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Safari page menu opens",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "phase": "native-ready",
+  "last_capture": "pwa-os-failure",
+  "active_app": {
+    "processArguments": {
+      "env": {},
+      "args": []
+    },
+    "name": "",
+    "pid": 7882,
+    "bundleId": "com.apple.mobilesafari"
+  },
+  "purpose": "Independent OS Home Screen installation, separate from blocked Godot rendering",
+  "engine_alert_observations": [
+    {
+      "label": "formal-safari-rendering-status",
+      "observed": true
+    }
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/pwa-os.py\", line 143, in <module>\n    capture('formal-safari-page-menu',True)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/1a2b-invite/1a2b-invite/qa-ios/pwa-os.py\", line 48, in capture\n    rows=json.loads(subprocess.check_output(['./qa-ios/ocr',str(path)],timeout=40))\n                    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 473, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n               **kwargs).stdout\n               ^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 557, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 1221, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 2154, in _communicate\n    self._check_timeout(endtime, orig_timeout, stdout, stderr)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 1268, in _check_timeout\n    raise TimeoutExpired(\n    ...<2 lines>...\n            stderr=b''.join(stderr_seq) if stderr_seq else None)\nsubprocess.TimeoutExpired: Command '['./qa-ios/ocr', 'qa-ios-evidence/pwa/formal-safari-page-menu.png']' timed out after 40 seconds\n",
+  "pwa_os_passed": false,
+  "game_ready": false
+}
