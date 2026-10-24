@@ -1,75 +1,160 @@
-2026-10-24 17:42:52:818 [Appium] Welcome to Appium v3.8.0 (REV 8f10429b56be28a25032b87463fffc95e556b5bc)
-2026-10-24 17:42:52:819 [Appium] Non-default server args:
-2026-10-24 17:42:52:820 [Appium] { loglevel: 'info' }
-2026-10-24 17:42:52:830 [Appium] Attempting to load driver xcuitest...
-2026-10-24 17:42:56:045 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
-2026-10-24 17:42:56:046 [Appium] You can provide the following URLs in your client code to connect to this server:
+2026-10-24 17:54:38:795 [Appium] Welcome to Appium v3.8.0 (REV 8f10429b56be28a25032b87463fffc95e556b5bc)
+2026-10-24 17:54:38:797 [Appium] Non-default server args:
+2026-10-24 17:54:38:797 [Appium] { loglevel: 'info' }
+2026-10-24 17:54:38:809 [Appium] Attempting to load driver xcuitest...
+2026-10-24 17:54:41:610 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2026-10-24 17:54:41:611 [Appium] You can provide the following URLs in your client code to connect to this server:
 	http://127.0.0.1:4723/ (only accessible from the same host)
-	http://192.168.64.8:4723/
-2026-10-24 17:42:56:047 [Appium] Available drivers:
-2026-10-24 17:42:56:048 [Appium]   - xcuitest@12.20.0 (automationName 'XCUITest')
-2026-10-24 17:42:56:048 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2026-10-24 17:42:56:911 [HTTP] --> GET /status 
-2026-10-24 17:42:56:923 [HTTP] <-- GET /status 200 8 ms - 199
-2026-10-24 17:42:57:444 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","browserName":"Safari","appium:platformVersion":"26.5","appium:safariInitialUrl":"about:blank","appium:webviewConnectTimeout":20000,"appium:automationName":"XCUITest","appium:udid":"77AA4492-C787-4EEE-A772-05D4B3E9ECCD","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:additionalWebviewBundleIds":["*"],"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":false}}}
-2026-10-24 17:42:57:449 [Appium] Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
-2026-10-24 17:42:57:449 [Appium] The 'xcuitest' driver was installed and matched caps.
-2026-10-24 17:42:57:449 [Appium] Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
-2026-10-24 17:42:57:453 [AppiumDriver@7246] Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
-2026-10-24 17:42:57:453 [AppiumDriver@7246] Checking BaseDriver versions for Appium and XCUITestDriver
-2026-10-24 17:42:57:453 [AppiumDriver@7246] Appium's BaseDriver version is 10.8.1
-2026-10-24 17:42:57:453 [AppiumDriver@7246] XCUITestDriver's BaseDriver version is 10.8.1
-2026-10-24 17:42:57:463 [ed2ced96][XCUITestDriver@ada2] Session created with session id: ed2ced96-bcef-434e-974e-34da2938eb59
-2026-10-24 17:42:58:196 [ed2ced96][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
-2026-10-24 17:43:01:075 [ed2ced96][XCUITestDriver@ada2] Constructing iOS simulator for Xcode version 26.6 with udid '77AA4492-C787-4EEE-A772-05D4B3E9ECCD'
-2026-10-24 17:43:01:076 [ed2ced96][XCUITestDriver@ada2] Determining device to run tests on: udid: '77AA4492-C787-4EEE-A772-05D4B3E9ECCD', real device: false
-2026-10-24 17:43:01:079 [ed2ced96][BaseDriver] Subscribing ada28c89-a2e9-4ec6-824c-83f552fc383a to topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:43:01:080 [ed2ced96][BaseDriver] Subscribing ada28c89-a2e9-4ec6-824c-83f552fc383a to topic 'xcuitest:sessionUdidContended'
-2026-10-24 17:43:01:081 [ed2ced96][BaseDriver] Subscribing ada28c89-a2e9-4ec6-824c-83f552fc383a to topic 'xcuitest:sessionUdidReleased'
-2026-10-24 17:43:01:103 [ed2ced96][BaseDriver] Unsubscribing ada28c89-a2e9-4ec6-824c-83f552fc383a from topic 'xcuitest:sessionUdidContended'
-2026-10-24 17:43:01:103 [ed2ced96][BaseDriver] Unsubscribing ada28c89-a2e9-4ec6-824c-83f552fc383a from topic 'xcuitest:sessionUdidReleased'
-2026-10-24 17:43:01:105 [ed2ced96][XCUITestDriver@ada2] Safari test requested
-2026-10-24 17:43:01:189 [ed2ced96][XCUITestDriver@ada2] Reset: failed to terminate Simulator application with id "com.apple.mobilesafari"
-2026-10-24 17:43:01:247 [ed2ced96][XCUITestDriver@ada2] Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
-2026-10-24 17:43:01:248 [ed2ced96][XCUITestDriver@ada2] Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
-2026-10-24 17:43:02:875 [ed2ced96][XCUITestDriver@ada2] Setting up simulator
-2026-10-24 17:43:03:931 [ed2ced96][XCUITestDriver@ada2] Both Simulator with UDID '77AA4492-C787-4EEE-A772-05D4B3E9ECCD' and the UI client are currently running
-2026-10-24 17:43:04:483 [ed2ced96][XCUITestDriver@ada2] Requesting connection for device 77AA4492-C787-4EEE-A772-05D4B3E9ECCD on local port 8100
-2026-10-24 17:43:04:484 [ed2ced96][XCUITestDriver@ada2] Successfully requested the connection for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100
-2026-10-24 17:43:04:538 [ed2ced96][XCUITestDriver@ada2] Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
-2026-10-24 17:43:28:972 [ed2ced96][XCUITestDriver@ada2] The app has been successfully installed in 16850ms
-2026-10-24 17:43:29:106 [ed2ced96][XCUITestDriver@ada2] Selected 'simulator' WebDriverAgent startup strategy
-2026-10-24 17:43:29:107 [ed2ced96][XCUITestDriver@ada2] Launching WebDriverAgent on the device without xcodebuild
-2026-10-24 17:43:33:283 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:33:858 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:35:915 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:39:453 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:40:322 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:41:048 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:41:598 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:42:461 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:43:018 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:43:582 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:43:45:769 [ed2ced96][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
-2026-10-24 17:44:08:886 [ed2ced96][XCUITestDriver@ada2] Determined the downstream protocol as 'W3C'
-2026-10-24 17:44:08:888 [ed2ced96][XCUITestDriver@ada2] WDA session startup took 21153ms
-2026-10-24 17:44:08:891 [ed2ced96][XCUITestDriver@ada2] WebDriverAgent version: '16.17.1'
-2026-10-24 17:44:09:404 [ed2ced96][RemoteDebugger] Remote Debugger version 17.7.6
-2026-10-24 17:44:30:675 [ed2ced96][XCUITestDriver@ada2] The remote debugger did not report any active web applications within 20000ms timeout. Consider increasing the value of 'webviewConnectTimeout' capability to wait longer on slower devices.
-2026-10-24 17:44:30:750 [ed2ced96][XCUITestDriver@ada2] Error: The remote debugger did not return any connected web applications after 21760ms. Make sure your web application is debuggable and could be inspected in Safari Web Inspector. You may try to change the 'webviewConnectTimeout' capability value to customize the retrieval timeout.
-    at XCUITestDriver.activateRecentWebview (file:///Users/runner/.appium/node_modules/appium-xcuitest-driver/build/lib/commands/context.js:47:15)
-    at async XCUITestDriver.finalizeSessionStartup (file:///Users/runner/.appium/node_modules/appium-xcuitest-driver/build/lib/driver.js:1193:13)
-    at async XCUITestDriver.start (file:///Users/runner/.appium/node_modules/appium-xcuitest-driver/build/lib/driver.js:1049:9)
-    at async XCUITestDriver.createSession (file:///Users/runner/.appium/node_modules/appium-xcuitest-driver/build/lib/driver.js:758:13)
-    at async AppiumDriver.createSession (/opt/homebrew/lib/node_modules/appium/build/lib/appium.js:266:44)
-    at async runCommandPromise (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/driver.js:119:24)
-    at async AppiumDriver.executeCommand (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/basedriver/driver.js:160:15)
-    at async defaultBehavior (/opt/homebrew/lib/node_modules/appium/build/lib/appium.js:575:24)
-    at async AppiumDriver.executeWrappedCommand (/opt/homebrew/lib/node_modules/appium/build/lib/appium.js:683:22)
-    at async AppiumDriver.executeCommand (/opt/homebrew/lib/node_modules/appium/build/lib/appium.js:591:21)
-    at async asyncHandler (/opt/homebrew/lib/node_modules/appium/node_modules/@appium/base-driver/build/lib/protocol/protocol.js:393:25)
-2026-10-24 17:44:30:752 [ed2ced96][BaseDriver] Unsubscribing ada28c89-a2e9-4ec6-824c-83f552fc383a from topic 'xcuitest:sessionUdidClaimed'
-2026-10-24 17:44:33:449 [ed2ced96][XCUITestDriver@ada2] Stopping the XCTest session
-2026-10-24 17:44:33:882 [ed2ced96][XCUITestDriver@ada2] Releasing connections for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD device on any port number
-2026-10-24 17:44:33:884 [ed2ced96][XCUITestDriver@ada2] Found cached connections to release: ["77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100"]
-2026-10-24 17:44:34:051 [HTTP] <-- POST /session 500 96603 ms - 2642
+	http://192.168.64.9:4723/
+2026-10-24 17:54:41:611 [Appium] Available drivers:
+2026-10-24 17:54:41:611 [Appium]   - xcuitest@12.20.0 (automationName 'XCUITest')
+2026-10-24 17:54:41:611 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2026-10-24 17:54:42:350 [HTTP] --> GET /status 
+2026-10-24 17:54:42:359 [HTTP] <-- GET /status 200 5 ms - 199
+2026-10-24 17:54:42:792 [HTTP] --> POST /session {"capabilities":{"alwaysMatch":{"platformName":"iOS","browserName":"Safari","appium:platformVersion":"26.5","appium:safariInitialUrl":"about:blank","appium:webviewConnectTimeout":60000,"appium:automationName":"XCUITest","appium:udid":"77AA4492-C787-4EEE-A772-05D4B3E9ECCD","appium:showXcodeLog":true,"appium:includeSafariInWebviews":true,"appium:additionalWebviewBundleIds":["*"],"appium:connectHardwareKeyboard":false,"appium:forceSimulatorSoftwareKeyboardPresence":true,"appium:newCommandTimeout":180,"appium:wdaLaunchTimeout":120000,"appium:usePreinstalledWDA":true,"appium:prebuiltWDAPath":"/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app","appium:noReset":false}}}
+2026-10-24 17:54:42:815 [Appium] Attempting to find matching driver for automationName 'XCUITest' and platformName 'iOS'
+2026-10-24 17:54:42:815 [Appium] The 'xcuitest' driver was installed and matched caps.
+2026-10-24 17:54:42:816 [Appium] Will require it at /Users/runner/.appium/node_modules/appium-xcuitest-driver
+2026-10-24 17:54:42:817 [AppiumDriver@2959] Appium v3.8.0 creating new XCUITestDriver (v12.20.0) session
+2026-10-24 17:54:42:817 [AppiumDriver@2959] Checking BaseDriver versions for Appium and XCUITestDriver
+2026-10-24 17:54:42:818 [AppiumDriver@2959] Appium's BaseDriver version is 10.8.1
+2026-10-24 17:54:42:818 [AppiumDriver@2959] XCUITestDriver's BaseDriver version is 10.8.1
+2026-10-24 17:54:42:831 [4e7590f3][XCUITestDriver@6a6a] Session created with session id: 4e7590f3-88df-4596-a4f3-c8ee88abc649
+2026-10-24 17:54:43:261 [4e7590f3][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+2026-10-24 17:54:49:849 [4e7590f3][XCUITestDriver@6a6a] Constructing iOS simulator for Xcode version 26.6 with udid '77AA4492-C787-4EEE-A772-05D4B3E9ECCD'
+2026-10-24 17:54:49:856 [4e7590f3][XCUITestDriver@6a6a] Determining device to run tests on: udid: '77AA4492-C787-4EEE-A772-05D4B3E9ECCD', real device: false
+2026-10-24 17:54:49:860 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 17:54:49:864 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidContended'
+2026-10-24 17:54:49:865 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidReleased'
+2026-10-24 17:54:49:881 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidContended'
+2026-10-24 17:54:49:883 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidReleased'
+2026-10-24 17:54:49:884 [4e7590f3][XCUITestDriver@6a6a] Safari test requested
+2026-10-24 17:54:50:128 [4e7590f3][XCUITestDriver@6a6a] Reset: failed to terminate Simulator application with id "com.apple.mobilesafari"
+2026-10-24 17:54:50:344 [4e7590f3][XCUITestDriver@6a6a] Using WDA path: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent'
+2026-10-24 17:54:50:371 [4e7590f3][XCUITestDriver@6a6a] Using WDA agent: '/Users/runner/.appium/node_modules/appium-xcuitest-driver/node_modules/appium-webdriveragent/WebDriverAgent.xcodeproj'
+2026-10-24 17:54:52:069 [4e7590f3][XCUITestDriver@6a6a] Setting up simulator
+2026-10-24 17:54:57:805 [4e7590f3][XCUITestDriver@6a6a] Both Simulator with UDID '77AA4492-C787-4EEE-A772-05D4B3E9ECCD' and the UI client are currently running
+2026-10-24 17:54:59:259 [4e7590f3][XCUITestDriver@6a6a] Requesting connection for device 77AA4492-C787-4EEE-A772-05D4B3E9ECCD on local port 8100
+2026-10-24 17:54:59:262 [4e7590f3][XCUITestDriver@6a6a] Successfully requested the connection for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100
+2026-10-24 17:54:59:714 [4e7590f3][XCUITestDriver@6a6a] Installing prebuilt WDA at '/Users/runner/work/1a2b-invite/1a2b-invite/qa-wda/WebDriverAgentRunner-Runner.app'. Bundle identifier: com.facebook.WebDriverAgentRunner.xctrunner.
+2026-10-24 17:55:22:341 [4e7590f3][XCUITestDriver@6a6a] The app has been successfully installed in 15571ms
+2026-10-24 17:55:22:665 [4e7590f3][XCUITestDriver@6a6a] Selected 'simulator' WebDriverAgent startup strategy
+2026-10-24 17:55:22:666 [4e7590f3][XCUITestDriver@6a6a] Launching WebDriverAgent on the device without xcodebuild
+2026-10-24 17:55:26:388 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:26:772 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:27:484 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:27:822 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:28:279 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:29:334 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:30:230 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:30:719 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:31:324 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:31:756 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:32:390 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:33:022 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:33:452 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:33:807 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:34:484 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:34:891 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:35:269 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:35:696 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:37:001 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:37:539 [4e7590f3][WD Proxy] connect ECONNREFUSED 127.0.0.1:8100
+2026-10-24 17:55:48:480 [4e7590f3][XCUITestDriver@6a6a] Determined the downstream protocol as 'W3C'
+2026-10-24 17:55:48:481 [4e7590f3][XCUITestDriver@6a6a] WDA session startup took 10365ms
+2026-10-24 17:55:48:580 [4e7590f3][XCUITestDriver@6a6a] WebDriverAgent version: '16.17.1'
+2026-10-24 17:55:52:100 [4e7590f3][RemoteDebugger] Remote Debugger version 17.7.6
+2026-10-24 17:56:16:478 [4e7590f3][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 17:56:16:620 [4e7590f3][XCUITestDriver@6a6a] Picking webview 'WEBVIEW_7726.1' after 27120ms
+2026-10-24 17:56:16:911 [4e7590f3][RemoteDebugger] Skipping 'Target.targetCreated' event with type 'frame' for app 'PID:7726': {"targetId":"frame-8589934593","type":"frame"}
+2026-10-24 17:56:17:149 [4e7590f3][RemoteDebugger] Page '1' for app 'PID:7726' is ready after 41.139667ms
+2026-10-24 17:56:17:151 [4e7590f3][XCUITestDriver@6a6a] About to set the initial Safari URL to 'about:blank'
+2026-10-24 17:56:22:033 [4e7590f3][XCUITestDriver@6a6a] Requesting connection for device 77AA4492-C787-4EEE-A772-05D4B3E9ECCD on local port 9100, device port 9100
+2026-10-24 17:56:22:034 [4e7590f3][XCUITestDriver@6a6a] Successfully requested the connection for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD:9100
+2026-10-24 17:56:22:037 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 17:56:22:037 [4e7590f3][BaseDriver] Subscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 to topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 17:56:22:041 [4e7590f3][AppiumDriver@2959] New XCUITestDriver session created successfully, session 4e7590f3-88df-4596-a4f3-c8ee88abc649 added to master session list
+2026-10-24 17:56:22:067 [HTTP] <-- POST /session 200 99269 ms - 822
+2026-10-24 17:56:23:061 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:23:096 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 37 ms - 14
+2026-10-24 17:56:23:156 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:56:23:588 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 431 ms - 259732
+2026-10-24 17:56:23:707 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"mobile: activeAppInfo","args":[]}
+2026-10-24 17:56:23:715 [4e7590f3][XCUITestDriver@6a6a] Proxying to WDA with an unknown route: GET /wda/activeAppInfo
+2026-10-24 17:56:23:981 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 274 ms - 108
+2026-10-24 17:56:23:987 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:23:990 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
+2026-10-24 17:56:23:991 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Continue\" OR name == \"Continue\""}
+2026-10-24 17:56:24:150 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 159 ms - 12
+2026-10-24 17:56:24:152 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:24:153 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
+2026-10-24 17:56:24:159 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Start Browsing\" OR name == \"Start Browsing\""}
+2026-10-24 17:56:24:325 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 164 ms - 12
+2026-10-24 17:56:24:337 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:24:516 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
+2026-10-24 17:56:24:530 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"Not Now\" OR name == \"Not Now\""}
+2026-10-24 17:56:24:717 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 158 ms - 12
+2026-10-24 17:56:24:723 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:24:726 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 2 ms - 14
+2026-10-24 17:56:24:730 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"xmark.circle.fill\" OR name == \"xmark.circle.fill\""}
+2026-10-24 17:56:24:960 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 231 ms - 139
+2026-10-24 17:56:24:962 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/element/28000000-0000-0000-2E1E-000000000000/click {}
+2026-10-24 17:56:24:963 [4e7590f3][XCUITestDriver@6a6a] Driver proxy active, passing request on via HTTP proxy
+2026-10-24 17:56:26:333 [4e7590f3][XCUITestDriver@6a6a] Replacing sessionId 0217A567-A924-404C-9FF7-63A315AB3E60 with 4e7590f3-88df-4596-a4f3-c8ee88abc649
+2026-10-24 17:56:26:336 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/element/28000000-0000-0000-2E1E-000000000000/click 200 1373 ms - 14
+2026-10-24 17:56:27:498 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/contexts 
+2026-10-24 17:56:27:502 [4e7590f3][RemoteDebugger] Returning all apps because the list of matching bundle identifiers includes a wildcard
+2026-10-24 17:56:27:519 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/contexts 200 22 ms - 41
+2026-10-24 17:56:27:521 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"WEBVIEW_7726.1"}
+2026-10-24 17:56:27:523 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
+2026-10-24 17:56:27:525 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"return location.href","args":[]}
+2026-10-24 17:56:27:559 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 34 ms - 23
+2026-10-24 17:56:27:560 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync {"script":"const c=document.createElement(\"canvas\");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext(\"webgl2\");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),glError:gl.getError()};","args":[]}
+2026-10-24 17:56:27:801 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/execute/sync 200 241 ms - 101
+2026-10-24 17:56:27:844 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:27:846 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1 ms - 14
+2026-10-24 17:56:27:847 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:56:29:021 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 1173 ms - 113032
+2026-10-24 17:56:37:892 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"WEBVIEW_7726.1"}
+2026-10-24 17:56:37:898 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 22 ms - 14
+2026-10-24 17:56:37:904 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/url {"url":"https://funji713.github.io/1a2b-invite/"}
+2026-10-24 17:56:45:391 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/url 200 7283 ms - 14
+2026-10-24 17:56:46:656 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:46:666 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 5 ms - 14
+2026-10-24 17:56:46:968 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:56:46:979 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 3 ms - 14
+2026-10-24 17:56:47:284 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements {"using":"-ios predicate string","value":"label == \"xmark.circle.fill\" OR name == \"xmark.circle.fill\""}
+2026-10-24 17:56:53:376 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/elements 200 5778 ms - 12
+2026-10-24 17:57:01:547 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:57:01:560 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 205 ms - 14
+2026-10-24 17:57:01:567 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:57:02:120 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 552 ms - 151884
+2026-10-24 17:57:02:708 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:57:02:712 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 5 ms - 14
+2026-10-24 17:57:02:714 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:57:02:954 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 239 ms - 151884
+2026-10-24 17:57:33:776 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:57:34:194 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 1543 ms - 14
+2026-10-24 17:57:34:316 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:57:35:005 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 429 ms - 169560
+2026-10-24 17:58:07:757 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:58:07:931 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 151 ms - 14
+2026-10-24 17:58:08:633 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:58:09:298 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 360 ms - 170500
+2026-10-24 17:58:39:696 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:58:39:720 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 34 ms - 14
+2026-10-24 17:58:39:724 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:59:14:750 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot - - ms - -
+2026-10-24 17:59:14:832 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:59:40:242 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 24700 ms - 14
+2026-10-24 17:59:40:662 [4e7590f3][HTTP] --> GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 
+2026-10-24 17:59:41:181 [HTTP] <-- GET /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/screenshot 200 501 ms - 170352
+2026-10-24 17:59:54:548 [4e7590f3][HTTP] --> POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context {"name":"NATIVE_APP"}
+2026-10-24 17:59:54:555 [HTTP] <-- POST /session/4e7590f3-88df-4596-a4f3-c8ee88abc649/context 200 12 ms - 14
+2026-10-24 17:59:54:558 [4e7590f3][HTTP] --> DELETE /session/4e7590f3-88df-4596-a4f3-c8ee88abc649 
+2026-10-24 17:59:54:567 [4e7590f3][BaseDriver] Unsubscribing 6a6a9a99-e6a6-471a-bd7d-59c3166ca233 from topic 'xcuitest:sessionUdidClaimed'
+2026-10-24 17:59:57:136 [4e7590f3][XCUITestDriver@6a6a] Stopping the XCTest session
+2026-10-24 17:59:57:872 [4e7590f3][XCUITestDriver@6a6a] Releasing connections for 77AA4492-C787-4EEE-A772-05D4B3E9ECCD device on any port number
+2026-10-24 17:59:57:873 [4e7590f3][XCUITestDriver@6a6a] Found cached connections to release: ["77AA4492-C787-4EEE-A772-05D4B3E9ECCD:8100","77AA4492-C787-4EEE-A772-05D4B3E9ECCD:9100"]
+2026-10-24 17:59:58:010 [4e7590f3][AppiumDriver@2959] Removing session 4e7590f3-88df-4596-a4f3-c8ee88abc649 from our master session list
+2026-10-24 17:59:58:015 [HTTP] <-- DELETE /session/4e7590f3-88df-4596-a4f3-c8ee88abc649 200 3456 ms - 14
