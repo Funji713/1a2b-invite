@@ -3254,110 +3254,110 @@
   "devices" : {
     "com.apple.CoreSimulator.SimRuntime.iOS-26-4" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/58FBEAC1-8EC6-4E83-B597-D6801A423A50\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/0183276C-C5F7-4A53-B0AF-C3D9117595F6\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/58FBEAC1-8EC6-4E83-B597-D6801A423A50",
-        "udid" : "58FBEAC1-8EC6-4E83-B597-D6801A423A50",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/0183276C-C5F7-4A53-B0AF-C3D9117595F6",
+        "udid" : "0183276C-C5F7-4A53-B0AF-C3D9117595F6",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/ADA5D392-69F1-433A-A39A-74D624E79F7C\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E52F2A8A-51B6-409C-9C7B-9043B7E4A789\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/ADA5D392-69F1-433A-A39A-74D624E79F7C",
-        "udid" : "ADA5D392-69F1-433A-A39A-74D624E79F7C",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E52F2A8A-51B6-409C-9C7B-9043B7E4A789",
+        "udid" : "E52F2A8A-51B6-409C-9C7B-9043B7E4A789",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro Max"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/B6064BED-00EB-4225-A771-C47E56E1AE52\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/49A10376-191D-4B27-82E7-4EC71948B0BB\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/B6064BED-00EB-4225-A771-C47E56E1AE52",
-        "udid" : "B6064BED-00EB-4225-A771-C47E56E1AE52",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/49A10376-191D-4B27-82E7-4EC71948B0BB",
+        "udid" : "49A10376-191D-4B27-82E7-4EC71948B0BB",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
         "state" : "Shutdown",
         "name" : "iPhone 17e"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/04B81904-66B9-4BE3-9C01-83C52C122685\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CB002ABF-49C1-4BBD-97EC-D3363B14BC06\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/04B81904-66B9-4BE3-9C01-83C52C122685",
-        "udid" : "04B81904-66B9-4BE3-9C01-83C52C122685",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CB002ABF-49C1-4BBD-97EC-D3363B14BC06",
+        "udid" : "CB002ABF-49C1-4BBD-97EC-D3363B14BC06",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
         "state" : "Shutdown",
         "name" : "iPhone Air"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/420363C1-8FA8-4D3E-B731-CD3EDE262E4F\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/6B80BA67-C6C4-428C-B622-38D6EED67050\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/420363C1-8FA8-4D3E-B731-CD3EDE262E4F",
-        "udid" : "420363C1-8FA8-4D3E-B731-CD3EDE262E4F",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/6B80BA67-C6C4-428C-B622-38D6EED67050",
+        "udid" : "6B80BA67-C6C4-428C-B622-38D6EED67050",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
         "state" : "Shutdown",
         "name" : "iPhone 17"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1812E91B-A366-406E-B714-BC3D488891B9\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/321980FC-BAC0-484D-B0AC-0C1D57FFC739\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1812E91B-A366-406E-B714-BC3D488891B9",
-        "udid" : "1812E91B-A366-406E-B714-BC3D488891B9",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/321980FC-BAC0-484D-B0AC-0C1D57FFC739",
+        "udid" : "321980FC-BAC0-484D-B0AC-0C1D57FFC739",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 13-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4A3215D3-F403-4E39-A3EE-44EA4F92F00B\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/8158498C-35D9-4CDD-A900-C765DCBF0935\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4A3215D3-F403-4E39-A3EE-44EA4F92F00B",
-        "udid" : "4A3215D3-F403-4E39-A3EE-44EA4F92F00B",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/8158498C-35D9-4CDD-A900-C765DCBF0935",
+        "udid" : "8158498C-35D9-4CDD-A900-C765DCBF0935",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 11-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/DA68FF45-6141-4785-ACD6-DDF0A77EE8D0\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1A931556-7569-452B-9276-C82E5224F9D5\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/DA68FF45-6141-4785-ACD6-DDF0A77EE8D0",
-        "udid" : "DA68FF45-6141-4785-ACD6-DDF0A77EE8D0",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1A931556-7569-452B-9276-C82E5224F9D5",
+        "udid" : "1A931556-7569-452B-9276-C82E5224F9D5",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
         "state" : "Shutdown",
         "name" : "iPad mini (A17 Pro)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/82440E24-692F-40A0-8892-C2CAB325DBA1\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E9816C3D-670A-4099-A45C-A87E27AB0121\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/82440E24-692F-40A0-8892-C2CAB325DBA1",
-        "udid" : "82440E24-692F-40A0-8892-C2CAB325DBA1",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E9816C3D-670A-4099-A45C-A87E27AB0121",
+        "udid" : "E9816C3D-670A-4099-A45C-A87E27AB0121",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M4",
         "state" : "Shutdown",
         "name" : "iPad Air 13-inch (M4)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/556B1354-B29F-4DFE-997B-F17886ECD500\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/8CF4EA9B-CFB4-4047-9579-50AE4D9C4C39\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/556B1354-B29F-4DFE-997B-F17886ECD500",
-        "udid" : "556B1354-B29F-4DFE-997B-F17886ECD500",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/8CF4EA9B-CFB4-4047-9579-50AE4D9C4C39",
+        "udid" : "8CF4EA9B-CFB4-4047-9579-50AE4D9C4C39",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M4",
         "state" : "Shutdown",
         "name" : "iPad Air 11-inch (M4)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/B1AB0871-05ED-44E0-8640-DD5179F4A3C4\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/8140C7D4-B6A0-4208-AA08-0AE7E36A2ED7\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/B1AB0871-05ED-44E0-8640-DD5179F4A3C4",
-        "udid" : "B1AB0871-05ED-44E0-8640-DD5179F4A3C4",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/8140C7D4-B6A0-4208-AA08-0AE7E36A2ED7",
+        "udid" : "8140C7D4-B6A0-4208-AA08-0AE7E36A2ED7",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
         "state" : "Shutdown",
@@ -3366,30 +3366,30 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.tvOS-26-5" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D974C856-C500-48B8-A908-AEFB26510880\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/A73938DD-92B1-4621-ADC6-86339AB00A3C\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D974C856-C500-48B8-A908-AEFB26510880",
-        "udid" : "D974C856-C500-48B8-A908-AEFB26510880",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/A73938DD-92B1-4621-ADC6-86339AB00A3C",
+        "udid" : "A73938DD-92B1-4621-ADC6-86339AB00A3C",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4BAEB347-DC4B-48EB-A0CC-13EE505AC279\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4E4E512E-6E94-4542-9DB3-7C3D854E6B58\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4BAEB347-DC4B-48EB-A0CC-13EE505AC279",
-        "udid" : "4BAEB347-DC4B-48EB-A0CC-13EE505AC279",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4E4E512E-6E94-4542-9DB3-7C3D854E6B58",
+        "udid" : "4E4E512E-6E94-4542-9DB3-7C3D854E6B58",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation) (at 1080p)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/67D4249A-10D3-40F4-922A-C440CE53D3D2\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/A067A3AF-D17C-4B11-BD9F-1C51049E0319\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/67D4249A-10D3-40F4-922A-C440CE53D3D2",
-        "udid" : "67D4249A-10D3-40F4-922A-C440CE53D3D2",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/A067A3AF-D17C-4B11-BD9F-1C51049E0319",
+        "udid" : "A067A3AF-D17C-4B11-BD9F-1C51049E0319",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p",
         "state" : "Shutdown",
@@ -3398,10 +3398,10 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.xrOS-26-5" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/95F44328-80F6-4961-9A59-AF27DB129AE8\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/2B46279C-932E-4A83-B6D6-3E0D08FEF9E3\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/95F44328-80F6-4961-9A59-AF27DB129AE8",
-        "udid" : "95F44328-80F6-4961-9A59-AF27DB129AE8",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/2B46279C-932E-4A83-B6D6-3E0D08FEF9E3",
+        "udid" : "2B46279C-932E-4A83-B6D6-3E0D08FEF9E3",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Vision-Pro-4K",
         "state" : "Shutdown",
@@ -3410,50 +3410,50 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.watchOS-26-4" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/A9AD10C4-A99C-4258-8A6A-36B7A36DBED4\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E744C2EA-0595-4E48-92A5-B6B61D097372\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/A9AD10C4-A99C-4258-8A6A-36B7A36DBED4",
-        "udid" : "A9AD10C4-A99C-4258-8A6A-36B7A36DBED4",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E744C2EA-0595-4E48-92A5-B6B61D097372",
+        "udid" : "E744C2EA-0595-4E48-92A5-B6B61D097372",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-46mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (46mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/7EB3046C-4AA0-4D9C-BDE5-E9833760EBA2\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/3BE84501-0C3D-4E4A-BE20-2A1C6FEF832F\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/7EB3046C-4AA0-4D9C-BDE5-E9833760EBA2",
-        "udid" : "7EB3046C-4AA0-4D9C-BDE5-E9833760EBA2",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/3BE84501-0C3D-4E4A-BE20-2A1C6FEF832F",
+        "udid" : "3BE84501-0C3D-4E4A-BE20-2A1C6FEF832F",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-42mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (42mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/2D846D25-B495-4479-B54D-9E8927AF47F5\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/FF051F5D-E321-4899-A6F4-E73A9F4F2440\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/2D846D25-B495-4479-B54D-9E8927AF47F5",
-        "udid" : "2D846D25-B495-4479-B54D-9E8927AF47F5",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/FF051F5D-E321-4899-A6F4-E73A9F4F2440",
+        "udid" : "FF051F5D-E321-4899-A6F4-E73A9F4F2440",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-3-49mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Ultra 3 (49mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CE33676A-E763-4E3C-BA93-CB6C77AA697A\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/F64EFC32-7BE4-4BCF-8950-4B97D7E46009\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CE33676A-E763-4E3C-BA93-CB6C77AA697A",
-        "udid" : "CE33676A-E763-4E3C-BA93-CB6C77AA697A",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/F64EFC32-7BE4-4BCF-8950-4B97D7E46009",
+        "udid" : "F64EFC32-7BE4-4BCF-8950-4B97D7E46009",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm",
         "state" : "Shutdown",
         "name" : "Apple Watch SE 3 (44mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/674E0F2B-656B-4220-9604-ADF81FD76E33\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1CAD508E-CAB2-4FBC-8F1D-878E18C35A52\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/674E0F2B-656B-4220-9604-ADF81FD76E33",
-        "udid" : "674E0F2B-656B-4220-9604-ADF81FD76E33",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1CAD508E-CAB2-4FBC-8F1D-878E18C35A52",
+        "udid" : "1CAD508E-CAB2-4FBC-8F1D-878E18C35A52",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm",
         "state" : "Shutdown",
@@ -3462,110 +3462,110 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.iOS-26-5" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/77AA4492-C787-4EEE-A772-05D4B3E9ECCD\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E839A11B-51B4-4AD3-ACF4-A53B95B7C957\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
-        "udid" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "udid" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/36E2B8D9-F7DC-43ED-8383-C3824D1485A8\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/6EEDD2B9-6E06-4333-91B6-8661FDCCBA47\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/36E2B8D9-F7DC-43ED-8383-C3824D1485A8",
-        "udid" : "36E2B8D9-F7DC-43ED-8383-C3824D1485A8",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/6EEDD2B9-6E06-4333-91B6-8661FDCCBA47",
+        "udid" : "6EEDD2B9-6E06-4333-91B6-8661FDCCBA47",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro Max"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D47C0C27-5FB8-4721-B865-C68B6AB925CC\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/B645778B-2C95-4189-A74E-C79B9A17E245\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D47C0C27-5FB8-4721-B865-C68B6AB925CC",
-        "udid" : "D47C0C27-5FB8-4721-B865-C68B6AB925CC",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/B645778B-2C95-4189-A74E-C79B9A17E245",
+        "udid" : "B645778B-2C95-4189-A74E-C79B9A17E245",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
         "state" : "Shutdown",
         "name" : "iPhone 17e"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D8AAABAD-F0D0-4A6C-8B1B-8249EADEEEDE\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/726D52AF-426A-408A-974D-CA8B9BE8A479\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D8AAABAD-F0D0-4A6C-8B1B-8249EADEEEDE",
-        "udid" : "D8AAABAD-F0D0-4A6C-8B1B-8249EADEEEDE",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/726D52AF-426A-408A-974D-CA8B9BE8A479",
+        "udid" : "726D52AF-426A-408A-974D-CA8B9BE8A479",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
         "state" : "Shutdown",
         "name" : "iPhone Air"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/F94FB7BA-C33C-4B3B-B505-F0FB478DB847\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/10B884BF-749F-4E8B-AFCD-26AB8F1DBD01\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/F94FB7BA-C33C-4B3B-B505-F0FB478DB847",
-        "udid" : "F94FB7BA-C33C-4B3B-B505-F0FB478DB847",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/10B884BF-749F-4E8B-AFCD-26AB8F1DBD01",
+        "udid" : "10B884BF-749F-4E8B-AFCD-26AB8F1DBD01",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
         "state" : "Shutdown",
         "name" : "iPhone 17"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/687AB7EE-DF9A-4A96-878E-7509AB01A80C\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/99DEE653-946C-406D-8E9E-238D1FCE93C9\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/687AB7EE-DF9A-4A96-878E-7509AB01A80C",
-        "udid" : "687AB7EE-DF9A-4A96-878E-7509AB01A80C",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/99DEE653-946C-406D-8E9E-238D1FCE93C9",
+        "udid" : "99DEE653-946C-406D-8E9E-238D1FCE93C9",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 13-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/7E28B4AB-81E4-41C6-BD7E-2F4EC285FB95\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/26F052CD-15B7-44B7-A129-B7135FDA1B92\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/7E28B4AB-81E4-41C6-BD7E-2F4EC285FB95",
-        "udid" : "7E28B4AB-81E4-41C6-BD7E-2F4EC285FB95",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/26F052CD-15B7-44B7-A129-B7135FDA1B92",
+        "udid" : "26F052CD-15B7-44B7-A129-B7135FDA1B92",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 11-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/C31127F4-83B8-4B9A-ACFE-3135F1C62B4E\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/7EFEE255-C426-436B-A27B-3EC09FA8C9C0\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/C31127F4-83B8-4B9A-ACFE-3135F1C62B4E",
-        "udid" : "C31127F4-83B8-4B9A-ACFE-3135F1C62B4E",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/7EFEE255-C426-436B-A27B-3EC09FA8C9C0",
+        "udid" : "7EFEE255-C426-436B-A27B-3EC09FA8C9C0",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
         "state" : "Shutdown",
         "name" : "iPad mini (A17 Pro)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/DC796EB6-167A-42A9-807C-DE486D5B0220\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/5D2DEDEA-FD0F-444B-A6B4-462286B870CD\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/DC796EB6-167A-42A9-807C-DE486D5B0220",
-        "udid" : "DC796EB6-167A-42A9-807C-DE486D5B0220",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/5D2DEDEA-FD0F-444B-A6B4-462286B870CD",
+        "udid" : "5D2DEDEA-FD0F-444B-A6B4-462286B870CD",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M4",
         "state" : "Shutdown",
         "name" : "iPad Air 13-inch (M4)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/359DF948-ECA4-4245-8BDF-B1AE300B058A\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E3F295A2-F82D-4062-BD9F-3AC2D25771D0\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/359DF948-ECA4-4245-8BDF-B1AE300B058A",
-        "udid" : "359DF948-ECA4-4245-8BDF-B1AE300B058A",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E3F295A2-F82D-4062-BD9F-3AC2D25771D0",
+        "udid" : "E3F295A2-F82D-4062-BD9F-3AC2D25771D0",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M4",
         "state" : "Shutdown",
         "name" : "iPad Air 11-inch (M4)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D798106A-0403-425E-8352-3E7056FA9F79\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1560A45E-C4D6-421A-B28D-D4CBB7AEB16E\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D798106A-0403-425E-8352-3E7056FA9F79",
-        "udid" : "D798106A-0403-425E-8352-3E7056FA9F79",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1560A45E-C4D6-421A-B28D-D4CBB7AEB16E",
+        "udid" : "1560A45E-C4D6-421A-B28D-D4CBB7AEB16E",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
         "state" : "Shutdown",
@@ -3574,50 +3574,50 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.watchOS-26-2" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/742C28D1-F312-4B24-8AA6-105CE73B04A3\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1686B7A7-548B-40D6-BF1A-E0A20F229E21\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/742C28D1-F312-4B24-8AA6-105CE73B04A3",
-        "udid" : "742C28D1-F312-4B24-8AA6-105CE73B04A3",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1686B7A7-548B-40D6-BF1A-E0A20F229E21",
+        "udid" : "1686B7A7-548B-40D6-BF1A-E0A20F229E21",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-46mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (46mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CFC2087B-B723-4A51-9BCD-FA26571CC5A8\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/3247AD54-0DF6-4C16-ACFA-731CEAE230A8\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CFC2087B-B723-4A51-9BCD-FA26571CC5A8",
-        "udid" : "CFC2087B-B723-4A51-9BCD-FA26571CC5A8",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/3247AD54-0DF6-4C16-ACFA-731CEAE230A8",
+        "udid" : "3247AD54-0DF6-4C16-ACFA-731CEAE230A8",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-42mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (42mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/5432DD47-4EE3-4C2B-ABF3-436F9B865E6B\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/29A1E363-85C3-4D88-B651-B5D5218C8FF4\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/5432DD47-4EE3-4C2B-ABF3-436F9B865E6B",
-        "udid" : "5432DD47-4EE3-4C2B-ABF3-436F9B865E6B",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/29A1E363-85C3-4D88-B651-B5D5218C8FF4",
+        "udid" : "29A1E363-85C3-4D88-B651-B5D5218C8FF4",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-3-49mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Ultra 3 (49mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/6C56CA71-BC9D-4DAF-A9C1-C6FA9F7B9940\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/92F0E03F-9BA9-4A18-9561-628632E864E4\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/6C56CA71-BC9D-4DAF-A9C1-C6FA9F7B9940",
-        "udid" : "6C56CA71-BC9D-4DAF-A9C1-C6FA9F7B9940",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/92F0E03F-9BA9-4A18-9561-628632E864E4",
+        "udid" : "92F0E03F-9BA9-4A18-9561-628632E864E4",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm",
         "state" : "Shutdown",
         "name" : "Apple Watch SE 3 (44mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/EA85E100-5C68-42EF-B039-2097F483D00C\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/FAB290DE-7721-4C57-8D1D-4CB39054A761\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/EA85E100-5C68-42EF-B039-2097F483D00C",
-        "udid" : "EA85E100-5C68-42EF-B039-2097F483D00C",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/FAB290DE-7721-4C57-8D1D-4CB39054A761",
+        "udid" : "FAB290DE-7721-4C57-8D1D-4CB39054A761",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm",
         "state" : "Shutdown",
@@ -3626,10 +3626,10 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.xrOS-26-2" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/9D68183F-545F-492D-ADBD-B4DBF3DF5977\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4950424B-607B-450B-B2C1-927AC1FE135F\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/9D68183F-545F-492D-ADBD-B4DBF3DF5977",
-        "udid" : "9D68183F-545F-492D-ADBD-B4DBF3DF5977",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4950424B-607B-450B-B2C1-927AC1FE135F",
+        "udid" : "4950424B-607B-450B-B2C1-927AC1FE135F",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Vision-Pro-4K",
         "state" : "Shutdown",
@@ -3638,30 +3638,30 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.tvOS-26-2" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/461F7CA7-2FDD-4E77-83E2-F48752996B5A\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D5618DF6-404A-4F88-9963-6D20E40FAF13\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/461F7CA7-2FDD-4E77-83E2-F48752996B5A",
-        "udid" : "461F7CA7-2FDD-4E77-83E2-F48752996B5A",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D5618DF6-404A-4F88-9963-6D20E40FAF13",
+        "udid" : "D5618DF6-404A-4F88-9963-6D20E40FAF13",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/48F7BDF3-5FDF-40DD-9D31-AE8108089008\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CACB951E-E677-4D14-BDB1-EC6D012A6C70\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/48F7BDF3-5FDF-40DD-9D31-AE8108089008",
-        "udid" : "48F7BDF3-5FDF-40DD-9D31-AE8108089008",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CACB951E-E677-4D14-BDB1-EC6D012A6C70",
+        "udid" : "CACB951E-E677-4D14-BDB1-EC6D012A6C70",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation) (at 1080p)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4AD244D1-1A2B-4855-8106-4A5E6C834A98\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/7D6E8870-DC41-4624-BD4A-9A1C83A52A32\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4AD244D1-1A2B-4855-8106-4A5E6C834A98",
-        "udid" : "4AD244D1-1A2B-4855-8106-4A5E6C834A98",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/7D6E8870-DC41-4624-BD4A-9A1C83A52A32",
+        "udid" : "7D6E8870-DC41-4624-BD4A-9A1C83A52A32",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p",
         "state" : "Shutdown",
@@ -3670,50 +3670,50 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.watchOS-26-5" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/5A942514-40AA-4931-B61F-969151943FC7\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/23BE74B1-E23D-4719-9F84-59B73767CF9A\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/5A942514-40AA-4931-B61F-969151943FC7",
-        "udid" : "5A942514-40AA-4931-B61F-969151943FC7",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/23BE74B1-E23D-4719-9F84-59B73767CF9A",
+        "udid" : "23BE74B1-E23D-4719-9F84-59B73767CF9A",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-46mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (46mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/4FA98031-3809-4E24-9F22-52C4551A1C15\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/1DB7B305-6CD2-4325-9772-B736740EB91E\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/4FA98031-3809-4E24-9F22-52C4551A1C15",
-        "udid" : "4FA98031-3809-4E24-9F22-52C4551A1C15",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/1DB7B305-6CD2-4325-9772-B736740EB91E",
+        "udid" : "1DB7B305-6CD2-4325-9772-B736740EB91E",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-11-42mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Series 11 (42mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/E1C880B0-741C-4D68-8547-8F50DB49405E\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D64CADF9-1B04-4FB8-8B5E-154EE8747596\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/E1C880B0-741C-4D68-8547-8F50DB49405E",
-        "udid" : "E1C880B0-741C-4D68-8547-8F50DB49405E",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D64CADF9-1B04-4FB8-8B5E-154EE8747596",
+        "udid" : "D64CADF9-1B04-4FB8-8B5E-154EE8747596",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-3-49mm",
         "state" : "Shutdown",
         "name" : "Apple Watch Ultra 3 (49mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/059D391B-7696-4CEE-9DB0-505AE01FDEEA\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/C2274C0C-37D2-40E4-9A80-E595EF673B98\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/059D391B-7696-4CEE-9DB0-505AE01FDEEA",
-        "udid" : "059D391B-7696-4CEE-9DB0-505AE01FDEEA",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/C2274C0C-37D2-40E4-9A80-E595EF673B98",
+        "udid" : "C2274C0C-37D2-40E4-9A80-E595EF673B98",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm",
         "state" : "Shutdown",
         "name" : "Apple Watch SE 3 (44mm)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/D4A9E89A-EBBD-4AF7-A3D1-BB59DD0EE75A\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/FCFAD5EA-0A6E-4DD7-8544-3F026DFDF14E\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/D4A9E89A-EBBD-4AF7-A3D1-BB59DD0EE75A",
-        "udid" : "D4A9E89A-EBBD-4AF7-A3D1-BB59DD0EE75A",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/FCFAD5EA-0A6E-4DD7-8544-3F026DFDF14E",
+        "udid" : "FCFAD5EA-0A6E-4DD7-8544-3F026DFDF14E",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm",
         "state" : "Shutdown",
@@ -3722,110 +3722,110 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.iOS-26-2" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/2263B19F-42E8-4C8B-8AF1-D79508216C90\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/B34C2F57-B98B-4C84-96E2-3170887BA2DB\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/2263B19F-42E8-4C8B-8AF1-D79508216C90",
-        "udid" : "2263B19F-42E8-4C8B-8AF1-D79508216C90",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/B34C2F57-B98B-4C84-96E2-3170887BA2DB",
+        "udid" : "B34C2F57-B98B-4C84-96E2-3170887BA2DB",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CDFBE5B7-49AC-41DA-BEF5-734F34972AEC\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/8B500E0C-CA36-4F12-853D-3B697FBEA084\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CDFBE5B7-49AC-41DA-BEF5-734F34972AEC",
-        "udid" : "CDFBE5B7-49AC-41DA-BEF5-734F34972AEC",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/8B500E0C-CA36-4F12-853D-3B697FBEA084",
+        "udid" : "8B500E0C-CA36-4F12-853D-3B697FBEA084",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
         "state" : "Shutdown",
         "name" : "iPhone 17 Pro Max"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/14818EE9-508F-4481-A5BB-B25046EE207C\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/3E8A6C6F-3253-4050-8CF7-715CB81ADF06\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/14818EE9-508F-4481-A5BB-B25046EE207C",
-        "udid" : "14818EE9-508F-4481-A5BB-B25046EE207C",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/3E8A6C6F-3253-4050-8CF7-715CB81ADF06",
+        "udid" : "3E8A6C6F-3253-4050-8CF7-715CB81ADF06",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
         "state" : "Shutdown",
         "name" : "iPhone Air"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/2FB8D9D0-0E7C-4DE0-9836-3F7CBA959484\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/24E049C8-1AEC-4A9D-95C6-C11145A59D62\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/2FB8D9D0-0E7C-4DE0-9836-3F7CBA959484",
-        "udid" : "2FB8D9D0-0E7C-4DE0-9836-3F7CBA959484",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/24E049C8-1AEC-4A9D-95C6-C11145A59D62",
+        "udid" : "24E049C8-1AEC-4A9D-95C6-C11145A59D62",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
         "state" : "Shutdown",
         "name" : "iPhone 17"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/582B068E-2ACA-440E-8D01-417AEDF26981\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/600A45A3-B3A0-4A39-8A9C-5D051F9FDA9C\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/582B068E-2ACA-440E-8D01-417AEDF26981",
-        "udid" : "582B068E-2ACA-440E-8D01-417AEDF26981",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/600A45A3-B3A0-4A39-8A9C-5D051F9FDA9C",
+        "udid" : "600A45A3-B3A0-4A39-8A9C-5D051F9FDA9C",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
         "state" : "Shutdown",
         "name" : "iPhone 16e"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/C5A0F722-3377-4D6E-8576-6C3E27DD9E63\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/3E32E66C-0037-43D0-BA3B-F54380A0040D\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/C5A0F722-3377-4D6E-8576-6C3E27DD9E63",
-        "udid" : "C5A0F722-3377-4D6E-8576-6C3E27DD9E63",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/3E32E66C-0037-43D0-BA3B-F54380A0040D",
+        "udid" : "3E32E66C-0037-43D0-BA3B-F54380A0040D",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 13-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/EAB7755E-CCCD-4EF7-8673-D78A18AF4083\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/0C63C559-5513-4340-B1F8-C0ECD40308AF\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/EAB7755E-CCCD-4EF7-8673-D78A18AF4083",
-        "udid" : "EAB7755E-CCCD-4EF7-8673-D78A18AF4083",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/0C63C559-5513-4340-B1F8-C0ECD40308AF",
+        "udid" : "0C63C559-5513-4340-B1F8-C0ECD40308AF",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
         "state" : "Shutdown",
         "name" : "iPad Pro 11-inch (M5)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/714853ED-4EB5-4118-B921-88521B41BCB4\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/033003D3-045C-4334-9068-E7B1C2D3D6C5\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/714853ED-4EB5-4118-B921-88521B41BCB4",
-        "udid" : "714853ED-4EB5-4118-B921-88521B41BCB4",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/033003D3-045C-4334-9068-E7B1C2D3D6C5",
+        "udid" : "033003D3-045C-4334-9068-E7B1C2D3D6C5",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
         "state" : "Shutdown",
         "name" : "iPad mini (A17 Pro)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CBFB76F3-C27E-4A9E-BB6D-FDC1E0CD8179\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/872D3D92-89FC-49E7-8010-623AE992BE53\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CBFB76F3-C27E-4A9E-BB6D-FDC1E0CD8179",
-        "udid" : "CBFB76F3-C27E-4A9E-BB6D-FDC1E0CD8179",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/872D3D92-89FC-49E7-8010-623AE992BE53",
+        "udid" : "872D3D92-89FC-49E7-8010-623AE992BE53",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
         "state" : "Shutdown",
         "name" : "iPad (A16)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/CE87FE46-0774-4422-A008-7737E703E55F\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/61FD1CA6-0A9C-433D-9062-2A1905073F7B\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/CE87FE46-0774-4422-A008-7737E703E55F",
-        "udid" : "CE87FE46-0774-4422-A008-7737E703E55F",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/61FD1CA6-0A9C-433D-9062-2A1905073F7B",
+        "udid" : "61FD1CA6-0A9C-433D-9062-2A1905073F7B",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3",
         "state" : "Shutdown",
         "name" : "iPad Air 13-inch (M3)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/99E3A897-7456-4E6F-9593-71D9D94C7BCA\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/2762FE5F-7BDC-4FF4-85F9-128791DA7D70\/data",
         "dataPathSize" : 18337792,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/99E3A897-7456-4E6F-9593-71D9D94C7BCA",
-        "udid" : "99E3A897-7456-4E6F-9593-71D9D94C7BCA",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/2762FE5F-7BDC-4FF4-85F9-128791DA7D70",
+        "udid" : "2762FE5F-7BDC-4FF4-85F9-128791DA7D70",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3",
         "state" : "Shutdown",
@@ -3834,30 +3834,30 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.tvOS-26-4" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/569FACC5-89AD-47DE-826A-CC89CACB8B47\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/6B3F1BD9-9953-451C-B035-880989472A7D\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/569FACC5-89AD-47DE-826A-CC89CACB8B47",
-        "udid" : "569FACC5-89AD-47DE-826A-CC89CACB8B47",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/6B3F1BD9-9953-451C-B035-880989472A7D",
+        "udid" : "6B3F1BD9-9953-451C-B035-880989472A7D",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/19A8EE54-A2A8-4EAA-861F-A3E366E5A451\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/5A77818D-B35D-4C02-8B9E-0DAE5BBB9549\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/19A8EE54-A2A8-4EAA-861F-A3E366E5A451",
-        "udid" : "19A8EE54-A2A8-4EAA-861F-A3E366E5A451",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/5A77818D-B35D-4C02-8B9E-0DAE5BBB9549",
+        "udid" : "5A77818D-B35D-4C02-8B9E-0DAE5BBB9549",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p",
         "state" : "Shutdown",
         "name" : "Apple TV 4K (3rd generation) (at 1080p)"
       },
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/04CF37CD-5F05-410F-832A-D724461F2B71\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/874C2533-639B-4AF0-802B-AEBF7930D0B7\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/04CF37CD-5F05-410F-832A-D724461F2B71",
-        "udid" : "04CF37CD-5F05-410F-832A-D724461F2B71",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/874C2533-639B-4AF0-802B-AEBF7930D0B7",
+        "udid" : "874C2533-639B-4AF0-802B-AEBF7930D0B7",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p",
         "state" : "Shutdown",
@@ -3866,10 +3866,10 @@
     ],
     "com.apple.CoreSimulator.SimRuntime.xrOS-26-4" : [
       {
-        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/93FCC14B-1F57-498B-AF71-37140CA6C6D0\/data",
+        "dataPath" : "\/Users\/runner\/Library\/Developer\/CoreSimulator\/Devices\/DD9C9FB7-5D2F-4700-8C82-0CCBFCCE5BD5\/data",
         "dataPathSize" : 4096,
-        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/93FCC14B-1F57-498B-AF71-37140CA6C6D0",
-        "udid" : "93FCC14B-1F57-498B-AF71-37140CA6C6D0",
+        "logPath" : "\/Users\/runner\/Library\/Logs\/CoreSimulator\/DD9C9FB7-5D2F-4700-8C82-0CCBFCCE5BD5",
+        "udid" : "DD9C9FB7-5D2F-4700-8C82-0CCBFCCE5BD5",
         "isAvailable" : true,
         "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.Apple-Vision-Pro-4K",
         "state" : "Shutdown",
@@ -3878,80 +3878,80 @@
     ]
   },
   "pairs" : {
-    "21969C7D-7DCD-4402-8A9F-5B9B131D5F4D" : {
-      "watch" : {
-        "name" : "Apple Watch Series 11 (46mm)",
-        "udid" : "5A942514-40AA-4931-B61F-969151943FC7",
-        "state" : "Shutdown"
-      },
-      "phone" : {
-        "name" : "iPhone 17 Pro Max",
-        "udid" : "36E2B8D9-F7DC-43ED-8383-C3824D1485A8",
-        "state" : "Shutdown"
-      },
-      "state" : "(active, disconnected)"
-    },
-    "F644790E-D320-4EDB-BFB1-D1F742AD0BB5" : {
+    "E683AA66-0B43-49C5-881E-FD11CDAE48FD" : {
       "watch" : {
         "name" : "Apple Watch Ultra 3 (49mm)",
-        "udid" : "5432DD47-4EE3-4C2B-ABF3-436F9B865E6B",
+        "udid" : "D64CADF9-1B04-4FB8-8B5E-154EE8747596",
         "state" : "Shutdown"
       },
       "phone" : {
         "name" : "iPhone 17",
-        "udid" : "2FB8D9D0-0E7C-4DE0-9836-3F7CBA959484",
+        "udid" : "10B884BF-749F-4E8B-AFCD-26AB8F1DBD01",
         "state" : "Shutdown"
       },
       "state" : "(active, disconnected)"
     },
-    "CE4323E4-FB07-4061-A16B-9872C03F62C3" : {
+    "444E4E3C-A14E-45D9-BA82-1FAE54E743DD" : {
       "watch" : {
         "name" : "Apple Watch Series 11 (42mm)",
-        "udid" : "4FA98031-3809-4E24-9F22-52C4551A1C15",
+        "udid" : "3247AD54-0DF6-4C16-ACFA-731CEAE230A8",
         "state" : "Shutdown"
       },
       "phone" : {
         "name" : "iPhone Air",
-        "udid" : "D8AAABAD-F0D0-4A6C-8B1B-8249EADEEEDE",
+        "udid" : "3E8A6C6F-3253-4050-8CF7-715CB81ADF06",
         "state" : "Shutdown"
       },
       "state" : "(active, disconnected)"
     },
-    "4E8AB68B-2240-41B4-9061-BFD4FBDCE021" : {
-      "watch" : {
-        "name" : "Apple Watch Series 11 (42mm)",
-        "udid" : "CFC2087B-B723-4A51-9BCD-FA26571CC5A8",
-        "state" : "Shutdown"
-      },
-      "phone" : {
-        "name" : "iPhone Air",
-        "udid" : "14818EE9-508F-4481-A5BB-B25046EE207C",
-        "state" : "Shutdown"
-      },
-      "state" : "(active, disconnected)"
-    },
-    "533C1AA9-0B36-4DD3-BDC3-1C8D9B712D7C" : {
+    "299F3F3D-B2BD-4F5B-A71E-BEE9FB726774" : {
       "watch" : {
         "name" : "Apple Watch Series 11 (46mm)",
-        "udid" : "742C28D1-F312-4B24-8AA6-105CE73B04A3",
+        "udid" : "23BE74B1-E23D-4719-9F84-59B73767CF9A",
         "state" : "Shutdown"
       },
       "phone" : {
         "name" : "iPhone 17 Pro Max",
-        "udid" : "CDFBE5B7-49AC-41DA-BEF5-734F34972AEC",
+        "udid" : "6EEDD2B9-6E06-4333-91B6-8661FDCCBA47",
         "state" : "Shutdown"
       },
       "state" : "(active, disconnected)"
     },
-    "37F66B50-CF2C-4AD1-9479-819FE9B08C91" : {
+    "4CEC7F1D-3D34-4170-8F05-7807AF19B34B" : {
+      "watch" : {
+        "name" : "Apple Watch Series 11 (42mm)",
+        "udid" : "1DB7B305-6CD2-4325-9772-B736740EB91E",
+        "state" : "Shutdown"
+      },
+      "phone" : {
+        "name" : "iPhone Air",
+        "udid" : "726D52AF-426A-408A-974D-CA8B9BE8A479",
+        "state" : "Shutdown"
+      },
+      "state" : "(active, disconnected)"
+    },
+    "6DAE99C2-1413-4748-ACDC-248ECEC80D7D" : {
       "watch" : {
         "name" : "Apple Watch Ultra 3 (49mm)",
-        "udid" : "E1C880B0-741C-4D68-8547-8F50DB49405E",
+        "udid" : "29A1E363-85C3-4D88-B651-B5D5218C8FF4",
         "state" : "Shutdown"
       },
       "phone" : {
         "name" : "iPhone 17",
-        "udid" : "F94FB7BA-C33C-4B3B-B505-F0FB478DB847",
+        "udid" : "24E049C8-1AEC-4A9D-95C6-C11145A59D62",
+        "state" : "Shutdown"
+      },
+      "state" : "(active, disconnected)"
+    },
+    "C58EA69C-0893-42D9-8703-A8418665AE74" : {
+      "watch" : {
+        "name" : "Apple Watch Series 11 (46mm)",
+        "udid" : "1686B7A7-548B-40D6-BF1A-E0A20F229E21",
+        "state" : "Shutdown"
+      },
+      "phone" : {
+        "name" : "iPhone 17 Pro Max",
+        "udid" : "8B500E0C-CA36-4F12-853D-3B697FBEA084",
         "state" : "Shutdown"
       },
       "state" : "(active, disconnected)"
