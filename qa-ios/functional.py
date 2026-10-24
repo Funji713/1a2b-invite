@@ -3,7 +3,7 @@ from pathlib import Path
 out=Path('qa-ios-evidence');out.mkdir(exist_ok=True)
 base='http://127.0.0.1:4723';session=None;web=None;code=None
 root='https://funji713.github.io/1a2b-invite/'
-report={'checks':[],'phase':'startup'}
+report={'started':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'run':os.getenv('GITHUB_RUN_ID'),'checks':[],'phase':'startup'}
 def save():out.joinpath('functional-result.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
 def call(method,path,body=None,timeout=None):
     req=urllib.request.Request(base+path,data=None if body is None else json.dumps(body).encode(),headers={'Content-Type':'application/json'},method=method)
@@ -22,8 +22,13 @@ def webview():
     for attempt in range(8):
         contexts=cmd('GET','/contexts');out.joinpath('contexts.json').write_text(json.dumps(contexts,indent=2))
         candidates=[x for x in contexts if x!='NATIVE_APP']
-        if candidates:
-            web=candidates[-1];cmd('POST','/context',{'name':web});return
+        for candidate in candidates:
+            try:
+                cmd('POST','/context',{'name':candidate})
+                href=execute('return location.href')
+                if href.startswith(root):web=candidate;return
+            except Exception:pass
+        native()
         time.sleep(4)
     raise AssertionError('No actual Safari web context')
 def check(name,condition,details=None):
@@ -54,7 +59,7 @@ def tap_ocr(needle,label,exact=False,lowest=False):
     execute('mobile: tap',[{'x':row['x']*rect['width'],'y':row['y']*rect['height']}]);time.sleep(1)
 def page_state():
     webview()
-    return execute('return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!document.getElementById("status"),engine:typeof Engine,standalone:navigator.standalone};')
+    return execute('const s=document.getElementById("status");return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!s && !s.hidden && getComputedStyle(s).display!=="none" && getComputedStyle(s).visibility!=="hidden",engine:typeof Engine,standalone:navigator.standalone};')
 def close_room():
     global code
     if not code:return
@@ -104,12 +109,27 @@ try:
         time.sleep(1)
     check('native keyboard nickname reaches real WSS room',code is not None,code)
     capture('actual-room-created',True)
+    # The app's chat drawer has a visible text toggle; find it from actual pixels.
+    tap_ocr('<<','chat-open')
+    tap_ocr('輸入訊息','chat-input-focus')
+    check('real iOS chat software keyboard shown',execute('mobile: isKeyboardShown'))
+    active=cmd('GET','/element/active')
+    cmd('POST','/element/'+eid(active)+'/value',{'text':'原生中文聊天驗證'})
+    capture('ios-chinese-chat-keyboard',True)
+    if not click_native('Done'):
+        rect=cmd('GET','/window/rect');execute('mobile: tap',[{'x':rect['width']*0.35,'y':rect['height']*0.25}]);time.sleep(1)
+    tap_ocr('傳送','chat-send')
+    rows=capture('ios-chinese-chat-sent',True)
+    check('Chinese chat visible after send',any('原生中文聊天驗證' in r['text'].replace(' ','') for r in rows),[r['text'] for r in rows])
+    tap_ocr('>>','chat-close')
     tap_ocr('開始第一回合','start-game')
     for digit in ['1','2','3','4']:tap_ocr(digit,'guess-key-'+digit,exact=True,lowest=True)
     tap_ocr('送出猜測','guess-submit')
     tap_ocr('猜測紀錄','guess-history')
     rows=capture('actual-guess-history',True)
-    check('history rendered after actual four-digit submission',any('筆' in r['text'] for r in rows),[r['text'] for r in rows])
+    text=' '.join(r['text'] for r in rows)
+    check('positive history count after actual four-digit submission',bool(re.search(r'[1-9][0-9]*\s*筆',text)),text)
+    check('actual guess digits and score rendered',all(d in text for d in '1234') and bool(re.search(r'[0-4]\s*A',text,re.I)),text)
     tap_ocr('數字狀態','notes-tab')
     tap_ocr('1位','position-select')
     tap_ocr('設為數字3','position-three')
@@ -132,7 +152,8 @@ try:
         execute('mobile: swipe',[{'direction':'up'}]);time.sleep(1)
         check('Add to Home Screen action reachable',click_native('Add to Home Screen',True))
     capture('add-home-dialog')
-    switches=cmd('POST','/elements',{'using':'class name','value':'XCUIElementTypeSwitch'})
+    switches=cmd('POST','/elements',{'using':'-ios predicate string','value':'type == "XCUIElementTypeSwitch" AND (label CONTAINS "Open as Web App" OR name CONTAINS "Open as Web App")'})
+    check('Open as Web App control identified',len(switches)==1)
     for switch in switches:
         val=cmd('GET','/element/'+eid(switch)+'/attribute/value')
         if val=='0':cmd('POST','/element/'+eid(switch)+'/click',{})
@@ -142,10 +163,18 @@ try:
     check('installed 1A2B icon launches',click_native('1A2B',True))
     time.sleep(6);web=None
     info=execute('mobile: activeAppInfo');report['installed_app_info']=info
+    check('installed app uses a separate native web app',info.get('bundleId')!='com.apple.mobilesafari',info)
     state=page_state()
     check('actual installed app reports standalone',state.get('standalone') is True,state)
     check('installed root launch excludes invitation room','room=' not in state['href'])
     capture('installed-standalone',True)
+    rows=capture('standalone-entry',True)
+    if any('以訪客身分登入' in r['text'].replace(' ','') for r in rows):tap_ocr('以訪客身分登入','standalone-guest')
+    tap_ocr('開始遊戲','standalone-start')
+    tap_ocr('你的暱稱','standalone-nickname',exact=True,lowest=True)
+    check('standalone native keyboard visible',execute('mobile: isKeyboardShown'))
+    active=cmd('GET','/element/active');cmd('POST','/element/'+eid(active)+'/value',{'text':'StandaloneiOSQA'})
+    capture('standalone-native-input',True)
     native();execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2);check('installed app relaunch',click_native('1A2B',True));time.sleep(3);capture('installed-relaunched')
     report['phase']='complete';report['passed']=True;save();print('IOS26_FUNCTIONAL_ACCEPTANCE_PASSED',flush=True)
 except Exception:
