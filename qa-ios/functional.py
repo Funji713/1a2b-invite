@@ -1,7 +1,7 @@
 import os,json,time,urllib.request,urllib.error,base64,traceback,subprocess,re
 from pathlib import Path
 out=Path('qa-ios-evidence');out.mkdir(exist_ok=True)
-base='http://127.0.0.1:4723';session=None;web=None;code=None
+base='http://127.0.0.1:4723';session=None;web=None;code=None;want_standalone=False
 root='https://funji713.github.io/1a2b-invite/'
 report={'started':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'run':os.getenv('GITHUB_RUN_ID'),'checks':[],'phase':'startup'}
 def save():out.joinpath('functional-result.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
@@ -16,7 +16,7 @@ def call(method,path,body=None,timeout=None):
 def cmd(method,path,body=None,timeout=None):return call(method,'/session/'+session+path,body,timeout)
 def execute(script,args=None):return cmd('POST','/execute/sync',{'script':script,'args':args or []})
 def native():cmd('POST','/context',{'name':'NATIVE_APP'})
-def webview():
+def webview(allow_blank=False):
     global web
     if web:cmd('POST','/context',{'name':web});return
     for attempt in range(8):
@@ -26,7 +26,8 @@ def webview():
             try:
                 cmd('POST','/context',{'name':candidate})
                 href=execute('return location.href')
-                if href.startswith(root):web=candidate;return
+                eligible=href.startswith(root) or (allow_blank and href=='about:blank')
+                if eligible and (not want_standalone or execute('return navigator.standalone===true')):web=candidate;return
             except Exception:pass
         native()
         time.sleep(4)
@@ -60,6 +61,12 @@ def tap_ocr(needle,label,exact=False,lowest=False):
 def page_state():
     webview()
     return execute('const s=document.getElementById("status");return {href:location.href,ua:navigator.userAgent,inner:[innerWidth,innerHeight],canvas:document.querySelector("canvas")?.getBoundingClientRect().toJSON(),status:!!s && !s.hidden && getComputedStyle(s).display!=="none" && getComputedStyle(s).visibility!=="hidden",engine:typeof Engine,standalone:navigator.standalone};')
+def layout_check(name):
+    webview()
+    state=execute('const r=document.querySelector("canvas").getBoundingClientRect(),v=visualViewport;return {rect:r.toJSON(),viewport:{width:v.width,height:v.height,offsetTop:v.offsetTop,offsetLeft:v.offsetLeft,scale:v.scale},innerHeight:innerHeight};')
+    v=state['viewport'];r=state['rect'];top=max(0,min(v['offsetTop'],state['innerHeight']-v['height']))
+    check(name,abs(r['height']-v['height'])<2 and abs(r['width']-v['width'])<2 and abs(r['top']-top)<2,state)
+    native()
 def close_room():
     global code
     if not code:return
@@ -73,13 +80,19 @@ def close_room():
         capture('room-cleaned',True);code=None
     except Exception as e:report['cleanup_error']=str(e);save()
 try:
-    caps={'platformName':'iOS','appium:platformVersion':'26.5','appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:bundleId':'com.apple.mobilesafari','appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':True}
+    caps={'platformName':'iOS','browserName':'Safari','appium:platformVersion':'26.5','appium:safariInitialUrl':'about:blank','appium:webviewConnectTimeout':20000,'appium:automationName':'XCUITest','appium:udid':Path('qa-ios-evidence/udid.txt').read_text().strip(),'appium:showXcodeLog':True,'appium:includeSafariInWebviews':True,'appium:connectHardwareKeyboard':False,'appium:forceSimulatorSoftwareKeyboardPresence':True,'appium:newCommandTimeout':180,'appium:wdaLaunchTimeout':120000,'appium:usePreinstalledWDA':True,'appium:prebuiltWDAPath':Path('qa-ios-evidence/wda-path.txt').read_text().strip(),'appium:noReset':False}
     value=call('POST','/session',{'capabilities':{'alwaysMatch':caps}});session=value['sessionId']
     report['phase']='native-ready';save();capture('native-session-ready')
     report['active_app']=execute('mobile: activeAppInfo');save()
     for name in ['Continue','Start Browsing','Not Now']:
         if click_native(name):capture('onboarding-'+name.replace(' ','-'))
-    execute('mobile: deepLink',[{'url':root,'bundleId':'com.apple.mobilesafari'}]);time.sleep(8)
+    click_native('xmark.circle.fill')
+    webview(allow_blank=True)
+    control=execute('const c=document.createElement("canvas");c.width=256;c.height=256;document.body.append(c);const gl=c.getContext("webgl2");if(!gl)return {supported:false};gl.clearColor(0,1,0,1);gl.clear(gl.COLOR_BUFFER_BIT);const p=new Uint8Array(4);gl.readPixels(0,0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,p);return {supported:true,lost:gl.isContextLost(),pixel:Array.from(p),renderer:gl.getParameter(gl.RENDERER),error:gl.getError()};')
+    capture('webgl2-positive-control',True)
+    check('plain WebGL2 positive control on actual simulator',control.get('supported') and not control.get('lost') and control.get('pixel')==[0,255,0,255],control)
+    webview(allow_blank=True);cmd('POST','/url',{'url':root},timeout=90);web=None
+    native();click_native('xmark.circle.fill');time.sleep(8)
     capture('safari-opened')
     deadline=time.monotonic()+100;state={}
     while time.monotonic()<deadline:
@@ -94,12 +107,15 @@ try:
     keyboard=execute('mobile: isKeyboardShown')
     check('real iOS software keyboard shown',keyboard)
     capture('ios-keyboard-before-input')
+    layout_check('native keyboard visible canvas layout')
     active=cmd('GET','/element/active')
     cmd('POST','/element/'+eid(active)+'/value',{'text':'iOS26QA'})
     capture('ios-keyboard-typed',True)
     # Use the actual software keyboard Done control when available.
     if not click_native('Done'):
         rect=cmd('GET','/window/rect');execute('mobile: tap',[{'x':20,'y':rect['height']*0.22}]);time.sleep(1)
+    check('native keyboard dismissed',not execute('mobile: isKeyboardShown'))
+    layout_check('native keyboard hidden canvas layout')
     tap_ocr('建立並成為房主','create-room')
     deadline=time.monotonic()+15;rooms=[]
     while time.monotonic()<deadline:
@@ -134,6 +150,13 @@ try:
     tap_ocr('1位','position-select')
     tap_ocr('設為數字3','position-three')
     capture('actual-note-confirmed',True)
+    cmd('POST','/orientation',{'orientation':'LANDSCAPE'});time.sleep(2);capture('actual-landscape-notes',True);layout_check('actual iOS landscape canvas bounds')
+    cmd('POST','/orientation',{'orientation':'PORTRAIT'});time.sleep(2);capture('actual-portrait-restored',True);layout_check('actual iOS portrait canvas bounds')
+    native();execute('mobile: pinch',[{'scale':1.5,'velocity':1.0}]);time.sleep(1)
+    webview();zoom=execute('return {scale:visualViewport.scale,x:visualViewport.offsetLeft,y:visualViewport.offsetTop};')
+    check('actual native iOS pinch zooms browser',zoom['scale']>1.1,zoom);capture('actual-native-pinch')
+    rect=cmd('GET','/window/rect');execute('mobile: dragFromToForDuration',[{'duration':0.5,'fromX':rect['width']*0.65,'fromY':rect['height']*0.55,'toX':rect['width']*0.4,'toY':rect['height']*0.4}]);time.sleep(1);capture('actual-zoomed-pan')
+    native();execute('mobile: pinch',[{'scale':0.5,'velocity':-1.0}]);time.sleep(1);capture('actual-pinch-restored',True)
     execute('mobile: pressButton',[{'name':'home'}]);time.sleep(3)
     execute('mobile: activateApp',[{'bundleId':'com.apple.mobilesafari'}]);time.sleep(3)
     capture('actual-background-resume',True)
@@ -161,10 +184,15 @@ try:
     execute('mobile: pressButton',[{'name':'home'}]);time.sleep(2)
     capture('springboard-installed')
     check('installed 1A2B icon launches',click_native('1A2B',True))
-    time.sleep(6);web=None
+    time.sleep(6);web=None;want_standalone=True
     info=execute('mobile: activeAppInfo');report['installed_app_info']=info
     check('installed app uses a separate native web app',info.get('bundleId')!='com.apple.mobilesafari',info)
-    state=page_state()
+    deadline=time.monotonic()+80;state={}
+    while time.monotonic()<deadline:
+        state=page_state()
+        if state.get('canvas') and not state.get('status',True):break
+        time.sleep(2)
+    check('installed Godot startup resolved',state.get('canvas') and not state.get('status',True),state)
     check('actual installed app reports standalone',state.get('standalone') is True,state)
     check('installed root launch excludes invitation room','room=' not in state['href'])
     capture('installed-standalone',True)
