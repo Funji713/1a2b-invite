@@ -29,8 +29,8 @@
   <canvas id="canvas" tabindex="0">此瀏覽器不支援遊戲畫面。</canvas>
   <main id="status" role="status" aria-live="polite">
     <h1>1A2B</h1>
-    <p id="message">正在載入遊戲…首次開啟需下載約 45 MB。</p>
-    <progress id="progress" aria-label="遊戲下載進度"></progress>
+    <p id="message">正在載入遊戲…未快取或版本更新時會下載資源。</p>
+    <progress id="progress" aria-label="遊戲資源載入進度"></progress>
     <p id="recovery" hidden><a id="retry" href="./">重新載入</a> · <a id="direct" href="https://140-120-53-5.sslip.io/">使用備用遊戲入口</a><br><a href="https://github.com/Funji713/1a2b-invite/releases/latest">下載 Windows 版</a></p>
   </main>
   <noscript>請開啟 JavaScript 以遊玩 1A2B。</noscript>
@@ -170,10 +170,29 @@
     document.body.style.position = 'fixed';
     document.body.style.inset = '0';
     document.body.style.overflow = 'hidden';
+    let pinchLayout = null;
+    let settleTimer = null;
     function resize() {
         const view = window.visualViewport;
         // Keep browser pinch zoom available without resizing the game underneath it.
-        if (view && Math.abs(view.scale - 1) > 0.0001) return;
+        if (view && Math.abs(view.scale - 1) > 0.0001) {
+            if (!pinchLayout) pinchLayout = [innerWidth, innerHeight];
+            clearTimeout(settleTimer); settleTimer = null;
+            return;
+        }
+        const focused = document.activeElement;
+        const editing = focused && (focused.tagName === 'INPUT' || focused.tagName === 'TEXTAREA' || focused.isContentEditable);
+        if (pinchLayout && pinchLayout[0] === innerWidth && pinchLayout[1] === innerHeight && !editing) {
+            // Some mobile browsers report scale=1 before visualViewport bounds
+            // finish settling. Keep the last game layout throughout that tail.
+            // A real layout resize or keyboard focus takes precedence; the hold
+            // is bounded so visual-only toolbar changes cannot remain frozen.
+            if (settleTimer === null) settleTimer = setTimeout(() => {
+                pinchLayout = null; settleTimer = null; resize();
+            }, 250);
+            return;
+        }
+        clearTimeout(settleTimer); settleTimer = null; pinchLayout = null;
         // Remove the residual scale from near-1x viewport measurements. Pinch
         // animation must not allocate a slightly smaller drawing buffer.
         const width = Math.max(1, Math.round(view ? view.width * view.scale : innerWidth));
@@ -235,7 +254,7 @@
       try {
         const missing = Engine.getMissingFeatures({ threads: false });
         if (missing.length) throw new Error('Unsupported browser');
-        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4657016,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4660680,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
         config.executable = backend + '/index';
         config.mainPack = backend + '/index.pck';
         config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
