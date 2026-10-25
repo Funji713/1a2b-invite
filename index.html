@@ -170,14 +170,14 @@
     document.body.style.position = 'fixed';
     document.body.style.inset = '0';
     document.body.style.overflow = 'hidden';
-    let pending = false;
     function resize() {
-        pending = false;
         const view = window.visualViewport;
         // Keep browser pinch zoom available without resizing the game underneath it.
-        if (view && Math.abs(view.scale - 1) > 0.01) return;
-        const width = Math.max(1, Math.round(view ? view.width : innerWidth));
-        const height = Math.max(1, Math.round(view ? view.height : innerHeight));
+        if (view && Math.abs(view.scale - 1) > 0.0001) return;
+        // Remove the residual scale from near-1x viewport measurements. Pinch
+        // animation must not allocate a slightly smaller drawing buffer.
+        const width = Math.max(1, Math.round(view ? view.width * view.scale : innerWidth));
+        const height = Math.max(1, Math.round(view ? view.height * view.scale : innerHeight));
         const left = view ? Math.max(0, Math.min(view.offsetLeft, innerWidth - width)) : 0;
         const top = view ? Math.max(0, Math.min(view.offsetTop, innerHeight - height)) : 0;
         const ratio = window.devicePixelRatio || 1;
@@ -189,21 +189,21 @@
         const bufferWidth = Math.round(width * ratio);
         const bufferHeight = Math.round(height * ratio);
         // Assigning even an unchanged buffer size clears a canvas.
+        // Shrink before growing the other axis (especially on rotation), so
+        // the intermediate allocation never exceeds both complete sizes.
+        if (canvas.height > bufferHeight) canvas.height = bufferHeight;
         if (canvas.width !== bufferWidth) canvas.width = bufferWidth;
         if (canvas.height !== bufferHeight) canvas.height = bufferHeight;
     }
-    function schedule() {
-        if (!pending) {
-            pending = true;
-            requestAnimationFrame(resize);
-        }
-    }
-    window.addEventListener('resize', schedule);
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('pageshow', schedule);
+    // Resize events run before animation callbacks. Update now so Godot sees
+    // the buffer before drawing. A separate RAF can run after Godot's draw,
+    // clear that completed frame and expose black until the next engine frame.
+    window.addEventListener('resize', resize);
+    window.addEventListener('scroll', resize, { passive: true });
+    window.addEventListener('pageshow', resize);
     if (window.visualViewport) {
-        visualViewport.addEventListener('resize', schedule);
-        visualViewport.addEventListener('scroll', schedule);
+        visualViewport.addEventListener('resize', resize);
+        visualViewport.addEventListener('scroll', resize);
     }
     resize();
 })();
