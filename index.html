@@ -236,10 +236,12 @@
     const room = query.get('room') || '';
     if (/^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{5}$/.test(room)) document.getElementById('direct').href += '?room=' + room;
     let failed = false;
+    let ready = false;
     let deadline;
     const started = Date.now();
     let downloaded = 0;
     function fail() {
+      if (ready || failed) return;
       failed = true; clearTimeout(deadline);
       status.hidden = false; progress.hidden = true; recovery.hidden = false;
       message.textContent = '遊戲暫時無法載入。請檢查網路後重試，或使用備用入口。';
@@ -254,18 +256,18 @@
       try {
         const missing = Engine.getMissingFeatures({ threads: false });
         if (missing.length) throw new Error('Unsupported browser');
-        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4666536,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4665880,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
         config.executable = backend + '/index';
         config.mainPack = backend + '/index.pck';
         config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
         config.onProgress = (current, total) => {
-          if (failed) return;
+          if (failed || ready) return;
           if (current > downloaded) { downloaded = current; armDeadline(); }
           if (total > 0) { progress.max = total; progress.value = current; }
         };
         const engine = new Engine(config);
         await engine.startGame();
-        if (!failed) { clearTimeout(deadline); status.hidden = true; }
+        if (!failed) { ready = true; clearTimeout(deadline); status.hidden = true; }
       } catch (_) { fail(); }
     };
     armDeadline(); document.body.appendChild(loader);
