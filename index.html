@@ -12,6 +12,11 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="./app-icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./app-icon-192.png">
+<style>
+/* Godot's hidden native editors otherwise inherit the browser's 13px input
+   default, which can trigger iPhone focus zoom independently of canvas text. */
+body > input, body > textarea { font-size: 16px; }
+</style>
 
   <style>
     html, body { margin: 0; padding: 0; background: #101925; color: #f3f7fb; font-family: system-ui, "Microsoft JhengHei", sans-serif; }
@@ -256,7 +261,7 @@
       try {
         const missing = Engine.getMissingFeatures({ threads: false });
         if (missing.length) throw new Error('Unsupported browser');
-        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4673720,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+        const config = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":4699364,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
         config.executable = backend + '/index';
         config.mainPack = backend + '/index.pck';
         config.fileSizes = Object.fromEntries(Object.entries(config.fileSizes).map(([name, size]) => [backend + '/' + name, size]));
